@@ -1,5 +1,7 @@
 ## 👋 Olá, me chamo Gabriel (Gb)
 
+Estou cursando **Análise e Desenvolvimento de Sistemas** na Cesuca, com conhecimento intermediário em **Python**. Atualmente, meu foco é aprimorar minhas habilidades em Python e aprofundar meus conhecimentos na biblioteca **Pandas**. Sou movido pelo aprendizado constante, especialmente na área de **tecnologia**, que é minha grande paixão.  
+
 - 🎨 Front-End Básico  
 - 🐍 Estudando Python  
 - 📊 Aprofundando conhecimentos na biblioteca **Pandas**
@@ -42,9 +44,9 @@
    <a href="https://www.instagram.com/gbsconci" target="_blank">
      <img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white">
    </a>
-   <a href="https://mail.google.com/mail/?view=cm&fs=1&to=gabrielsconci@gmail.com" target="_blank">
-  <img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white">
-    </a>
+   <a href="mailto:gabrielsconci@gmail.com" target="_blank">
+     <img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white">
+   </a>
    <a href="https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344" target="_blank">
      <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white">
    </a> 
