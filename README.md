@@ -10,21 +10,7 @@ Estou cursando **Análise e Desenvolvimento de Sistemas** na Cesuca, com conheci
 
 ### 📈 Estatísticas do GitHub
 
-<p>
-  <img 
-    alt="GitHub Stats" 
-    height="200" 
-    src="https://github-readme-stats.vercel.app/api?username=3Gb3&show_icons=true&theme=tokyonight&include_all_commits=true&locale=pt-br" 
-  />
-</p>
 
-<p>
-  <img 
-    alt="Top Languages" 
-    height="200" 
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=3Gb3&theme=tokyonight&layout=compact&custom_title=Tecnologias&langs_count=9" 
-  />
-</p>
 
 ---
 
