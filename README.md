@@ -1,6 +1,6 @@
-# 🌟 Portfólio Pessoal - Gabriel Schwingel Conci
+# 🌟 Portfólio Pessoal
 
-Site pessoal profissional desenvolvido com HTML, CSS e JavaScript. Confira online: [**3gb3.github.io/3Gb3**](https://3gb3.github.io/3Gb3/)
+Site pessoal: [**3gb3.github.io/3Gb3**](https://3gb3.github.io/3Gb3/)
 
 ---
 
