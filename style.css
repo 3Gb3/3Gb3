@@ -34,6 +34,82 @@
     --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
+/* Dark Mode - Elementos específicos */
+[data-theme="dark"] .navbar {
+    background: rgba(15, 23, 42, 0.95);
+}
+
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .highlight-item,
+[data-theme="dark"] .resume-item,
+[data-theme="dark"] .skills-category,
+[data-theme="dark"] .contact-item,
+[data-theme="dark"] .contact-form {
+    background: var(--bg-secondary);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .project-info h3,
+[data-theme="dark"] .resume-header h4,
+[data-theme="dark"] .highlight-item h3,
+[data-theme="dark"] .skills-category h3,
+[data-theme="dark"] .contact-item h4 {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .project-info p,
+[data-theme="dark"] .resume-description,
+[data-theme="dark"] .highlight-item p,
+[data-theme="dark"] .contact-item p {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea {
+    background: var(--bg-color);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .form-group input::placeholder,
+[data-theme="dark"] .form-group textarea::placeholder {
+    color: var(--text-light);
+    opacity: 0.6;
+}
+
+[data-theme="dark"] .skill-bar {
+    background: var(--bg-color);
+}
+
+[data-theme="dark"] .about-text p {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .resume-company {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .resume-date,
+[data-theme="dark"] .contact-item a {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .contact-item a:hover {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .project-image {
+    background: var(--bg-color);
+}
+
+[data-theme="dark"] .contact-info > p {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .contact-info h3 {
+    color: var(--text-color);
+}
+
 html {
     scroll-behavior: smooth;
 }
