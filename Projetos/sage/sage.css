@@ -1,0 +1,31 @@
+/* Importando estilos base do portfólio principal */
+@import url('../../portfolio.css');
+
+/* Estilos específicos do projeto Sage Bot Discord */
+.project-detail-info h2 {
+    color: #5865f2;
+}
+
+.project-detail-info h3 {
+    color: #4752c4;
+}
+
+.tag {
+    background: linear-gradient(135deg, #5865f2, #4752c4);
+}
+
+.project-status {
+    background: rgba(88, 101, 242, 0.1);
+    border-left-color: #5865f2;
+}
+
+.project-status i {
+    color: #5865f2;
+}
+
+.project-detail-header h1 {
+    background: linear-gradient(135deg, #5865f2, #4752c4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}

@@ -1,0 +1,15 @@
+/* Importando estilos base do portfólio principal */
+@import url('../../portfolio.css');
+
+/* Estilos específicos do projeto BNCC */
+.project-detail-info h2 {
+    color: #48bb78;
+}
+
+.project-detail-info h3 {
+    color: #38a169;
+}
+
+.tag {
+    background: linear-gradient(135deg, #48bb78, #38a169);
+}

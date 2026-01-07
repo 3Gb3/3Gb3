@@ -949,3 +949,194 @@ section {
         height: 150px;
     }
 }
+
+/* Projects Intro Section */
+.projects-intro {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.projects-intro p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.projects-intro .btn {
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+}
+
+/* Projects Page Header */
+.projects-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 6rem 0 3rem;
+    text-align: center;
+}
+
+.projects-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.projects-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* All Projects Section */
+.all-projects-section {
+    padding: 4rem 0;
+}
+
+.all-projects-section .project-card {
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.all-projects-section .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Project Detail Section */
+.project-detail-section {
+    padding: 4rem 0;
+    min-height: calc(100vh - 200px);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    transition: var(--transition);
+}
+
+.back-link:hover {
+    gap: 1rem;
+}
+
+.project-detail-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.project-detail-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.project-detail-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.project-detail-image {
+    width: 100%;
+    margin-bottom: 3rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.project-detail-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-detail-info h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.project-detail-info h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.project-detail-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.project-detail-info ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+}
+
+.project-detail-info ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.project-detail-info ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.project-links {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.project-links .btn {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+}
+
+.project-status {
+    padding: 1rem;
+    background: rgba(102, 126, 234, 0.1);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 4px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.project-status i {
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* Responsividade para páginas de projeto */
+@media (max-width: 768px) {
+    .projects-header h1 {
+        font-size: 2rem;
+    }
+    
+    .projects-header p {
+        font-size: 1rem;
+    }
+    
+    .project-detail-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .project-detail-info h2 {
+        font-size: 1.5rem;
+    }
+    
+    .project-detail-info h3 {
+        font-size: 1.3rem;
+    }
+}

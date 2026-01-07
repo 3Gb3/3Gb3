@@ -1,0 +1,15 @@
+/* Importando estilos base do portfólio principal */
+@import url('../../portfolio.css');
+
+/* Estilos específicos do projeto Code Logic */
+.project-detail-info h2 {
+    color: #667eea;
+}
+
+.project-detail-info h3 {
+    color: #764ba2;
+}
+
+.tag {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}

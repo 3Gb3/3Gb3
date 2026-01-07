@@ -1,0 +1,19 @@
+/* Importando estilos base do portfólio principal */
+@import url('../../portfolio.css');
+
+/* Estilos específicos do projeto Sustentabilidade */
+.project-detail-info h2 {
+    color: #38a169;
+}
+
+.project-detail-info h3 {
+    color: #2f855a;
+}
+
+.tag {
+    background: linear-gradient(135deg, #38a169, #2f855a);
+}
+
+.project-detail-header h1 {
+    color: #2f855a;
+}

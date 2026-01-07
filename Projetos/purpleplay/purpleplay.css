@@ -1,0 +1,22 @@
+/* Importando estilos base do portfólio principal */
+@import url('../../portfolio.css');
+
+/* Estilos específicos do projeto PurplePlay */
+.project-detail-info h2 {
+    color: #9f7aea;
+}
+
+.project-detail-info h3 {
+    color: #805ad5;
+}
+
+.tag {
+    background: linear-gradient(135deg, #9f7aea, #805ad5);
+}
+
+.project-detail-header h1 {
+    background: linear-gradient(135deg, #9f7aea, #805ad5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
