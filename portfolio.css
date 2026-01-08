@@ -1062,6 +1062,10 @@ section {
         width: 100%;
         max-width: 300px;
     }
+
+    .projects-section {
+        padding-top: 5rem;
+    }
 }
 
 /* Mobile - até 480px */
@@ -1225,6 +1229,10 @@ section {
 
     .footer p {
         font-size: 0.9rem;
+    }
+
+    .projects-section {
+        padding-top: 4rem;
     }
 }
 
