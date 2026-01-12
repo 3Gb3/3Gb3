@@ -432,6 +432,7 @@ section {
 .highlight-item i {
     font-size: 3rem;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
