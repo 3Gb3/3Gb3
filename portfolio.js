@@ -29,16 +29,40 @@ function updateThemeIcon(theme) {
     }
 }
 
-// Tratamento de imagens de projetos que não carregarem
+// Pré-carregamento e tratamento de imagens de projetos
 document.addEventListener('DOMContentLoaded', () => {
     const projectImages = document.querySelectorAll('.project-image img');
     
     projectImages.forEach(img => {
-        // Verifica se a imagem carregou
+        // Adiciona classe de carregamento
+        const imageContainer = img.parentElement;
+        imageContainer.classList.add('loading');
+        
+        // Cria uma nova instância da imagem para forçar o carregamento
+        const preloadImg = new Image();
+        preloadImg.src = img.src;
+        
+        // Quando a imagem carregar
+        preloadImg.onload = function() {
+            img.src = preloadImg.src;
+            imageContainer.classList.remove('loading');
+            imageContainer.classList.add('loaded');
+        };
+        
+        // Se a imagem já estiver carregada
+        if (img.complete && img.naturalHeight > 0) {
+            imageContainer.classList.remove('loading');
+            imageContainer.classList.add('loaded');
+        }
+        
+        // Tratamento de erro de carregamento
         img.addEventListener('error', function() {
             const projectCard = this.closest('.project-card');
-            const projectTitle = projectCard.querySelector('.project-info h3').textContent;
+            const projectTitle = projectCard ? projectCard.querySelector('.project-info h3')?.textContent : 'Projeto';
             const projectImageDiv = this.parentElement;
+            
+            // Remove classes de carregamento
+            projectImageDiv.classList.remove('loading');
             
             // Remove a imagem
             this.remove();
@@ -52,10 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
             projectImageDiv.appendChild(placeholder);
         });
         
-        // Força a verificação para imagens que já falharam
-        if (!img.complete || img.naturalHeight === 0) {
+        preloadImg.onerror = function() {
             img.dispatchEvent(new Event('error'));
-        }
+        };
     });
 });
 
