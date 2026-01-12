@@ -21,7 +21,7 @@ Estou cursando **Análise e Desenvolvimento de Sistemas** na Cesuca (3° semestr
   <img 
     alt="GitHub Stats" 
     height="180" 
-    src="https://github-readme-stats.vercel.app/api?username=3Gb3&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&locale=pt-br" 
+    src="[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=3Gb3)](https://github.com/3Gb3/github-readme-stats)
   />
   <img 
     alt="Top Languages" 
