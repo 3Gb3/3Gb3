@@ -3,16 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel - Portfolio</title>
+    <title>Gabriel Schwingel Conci | Desenvolvedor Full-Stack Júnior</title>
+    <meta name="description" content="Portfólio de Gabriel Schwingel Conci, desenvolvedor full-stack júnior com foco em Python, Flask, IA aplicada, bots para Discord e interfaces web responsivas.">
+    <meta property="og:title" content="Gabriel Schwingel Conci | Desenvolvedor Full-Stack Júnior">
+    <meta property="og:description" content="Conheça meu trabalho com desenvolvimento web, automação, QA e inteligência artificial aplicada.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image" content="img/gabriel.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gabriel Schwingel Conci | Desenvolvedor Full-Stack Júnior">
+    <meta name="twitter:description" content="Portfólio com projetos e experiência em Python, Flask, QA e IA aplicada.">
+    <meta name="twitter:image" content="img/gabriel.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="portfolio.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Gabriel Schwingel Conci",
+            "jobTitle": "Desenvolvedor Full-Stack Júnior",
+            "url": "#",
+            "sameAs": [
+                "https://github.com/3Gb3",
+                "https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344/",
+                "https://www.instagram.com/gbsconci/"
+            ]
+        }
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#mainContent">Pular para o conteúdo principal</a>
+
     <!-- Navegação -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Navegação principal">
         <div class="container">
-            <div class="logo">Portfólio</div>
-            <ul class="nav-links">
+            <a href="#home" class="logo">Portfólio</a>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">Sobre</a></li>
                 <li><a href="#resume" class="nav-link">Currículo</a></li>
@@ -20,34 +49,50 @@
                 <li><a href="#skills" class="nav-link">Habilidades</a></li>
                 <li><a href="#contact" class="nav-link">Contato</a></li>
             </ul>
-            <div class="theme-toggle" id="themeToggle">
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar para tema escuro" aria-pressed="false">
                 <i class="fas fa-moon"></i>
-            </div>
-            <div class="menu-toggle">
+            </button>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
         </div>
     </nav>
+
+    <main id="mainContent">
 
     <!-- Home Section -->
     <section id="home" class="home-section">
         <div class="container">
             <div class="home-content">
                 <div class="profile-image">
-                    <img src="img/gabriel.jpg" alt="Foto de Perfil">
+                    <img src="img/gabriel.jpg" alt="Foto de Gabriel Schwingel Conci" width="400" height="400">
                 </div>
                 <h1 class="name">Gabriel Schwingel Conci</h1>
-                <p class="title">Desenvolvedor Full-Stack Júnior | Desenvolvedor Python | Entusiasta de IA</p>
+                <p class="title">Desenvolvedor Full-Stack Júnior</p>
+                <p class="hero-pitch">Transformo ideias em soluções digitais com foco em qualidade, performance e experiências claras para o usuário.</p>
                 <div class="home-buttons">
-                    <a href="#about" class="btn btn-primary">Sobre Mim</a>
-                    <a href="#projects" class="btn btn-secondary">Projetos</a>
-                    <a href="#contact" class="btn btn-outline">Contato</a>
+                    <a href="#contact" class="btn btn-primary">Falar Comigo</a>
+                    <a href="#projects" class="btn btn-secondary">Ver Projetos</a>
+                    <a href="files/Gabriel_Conci.pdf" class="btn btn-outline" download>Baixar Currículo</a>
+                </div>
+                <div class="impact-strip" aria-label="Resumo profissional">
+                    <div class="impact-item">
+                        <strong>3 Frentes</strong>
+                        <span>Web, Bots e IA aplicada</span>
+                    </div>
+                    <div class="impact-item">
+                        <strong>Desde 2024</strong>
+                        <span>Projetos práticos em tecnologia</span>
+                    </div>
+                    <div class="impact-item">
+                        <strong>ADS 3º Semestre</strong>
+                        <span>Evolução constante com base acadêmica</span>
+                    </div>
                 </div>
                 <div class="social-links">
                     <a href="https://github.com/3Gb3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="https://www.instagram.com/gbsconci/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://discord.com/users/3gbzin" target="_blank" rel="noopener noreferrer" aria-label="Discord"><i class="fab fa-discord"></i></a>
                 </div>
             </div>
         </div>
@@ -60,28 +105,20 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        Olá! Me chamo Gabriel Schwingel Conci e sou um desenvolvedor apaixonado por criar soluções através da tecnologia. 
-                        Atualmente estou no 3º semestre de Análise e Desenvolvimento de Sistemas na CESUCA, em Cachoeirinha/RS, 
-                        onde venho aprimorando minhas habilidades em programação e desenvolvimento de sistemas.
+                        Sou Gabriel Schwingel Conci, desenvolvedor full-stack júnior e estudante de Análise e Desenvolvimento de Sistemas na CESUCA.
+                        Gosto de construir soluções úteis, com código limpo e foco na experiência de quem usa.
                     </p>
 
                     <p>
-                        Trabalho principalmente com Python, desenvolvendo aplicações web com Flask e jogos utilizando Pygame. 
-                        Também possuo experiência em desenvolvimento front-end com HTML, CSS e JavaScript, além da criação de 
-                        bots personalizados para Discord, focados em automação de tarefas e funcionalidades para comunidades.
+                        Hoje atuo com desenvolvimento web em Python/Flask, front-end com HTML/CSS/JavaScript,
+                        automação com bots para Discord e validação de fluxos conversacionais em QA para chatbots.
                     </p>
-
-                    <p>
-                        Tenho grande interesse em Inteligência Artificial e desenvolvi minha própria IA local utilizando OLLAMA, 
-                        com modelos LLMs como Llama 3.1, além da integração do Whisper para processamento de áudio. 
-                        Essa experiência me proporcionou uma compreensão mais prática sobre o funcionamento de modelos de linguagem 
-                        e suas aplicações no desenvolvimento de soluções inteligentes.
-                    </p>
-
-                    <p>
-                        Estou em constante aprendizado, sempre buscando novos conhecimentos por meio de cursos online e projetos práticos. 
-                        Acredito que a melhor forma de evoluir na área de tecnologia é colocando a mão na massa e desenvolvendo projetos reais.
-                    </p>
+                    <ul class="about-bullets">
+                        <li>Desenvolvimento de aplicações web e interfaces responsivas.</li>
+                        <li>Automação e bots personalizados para comunidades no Discord.</li>
+                        <li>Experimentos com IA local usando OLLAMA, Llama 3.1 e Whisper.</li>
+                        <li>Evolução contínua por meio de projetos reais e cursos práticos.</li>
+                    </ul>
                     <div class="about-highlights">
                         <div class="highlight-item">
                             <i class="fas fa-gamepad"></i>
@@ -99,9 +136,9 @@
                             <p>Flask, HTML, CSS, JS</p>
                         </div>
                         <div class="highlight-item">
-                            <i class="fas fa-brain"></i>
-                            <h3>IA & LLMs</h3>
-                            <p>OLLAMA, Llama 3.1, Whisper</p>
+                            <i class="fas fa-clipboard-check"></i>
+                            <h3>QA & Chatbots</h3>
+                            <p>Testes, fluxos e melhoria contínua</p>
                         </div>
                     </div>
                 </div>
@@ -162,7 +199,7 @@
                     <div class="resume-item">
                         <div class="resume-header">
                             <h4>Análise e Desenvolvimento de Sistemas</h4>
-                            <span class="resume-date">2025 - Presente (3° Semestre)</span>
+                            <span class="resume-date">2025 - Presente (3º Semestre)</span>
                         </div>
                         <p class="resume-company">CESUCA - Cachoeirinha/RS</p>
                         <ul class="resume-description">
@@ -224,7 +261,7 @@
         <div class="container">
             <h2 class="section-title">Projetos</h2>
             <div class="projects-intro">
-                <p>Confira meu portfólio completo de projetos desenvolvidos em diversas tecnologias.</p>
+                <p>Projetos autorais e acadêmicos com foco em utilidade real, boa experiência e evolução técnica constante.</p>
                 <a href="projetos.html" class="btn btn-primary">
                     <i class="fas fa-folder-open"></i> Ver Todos os Projetos
                 </a>
@@ -236,230 +273,74 @@
     <section id="skills" class="skills-section">
         <div class="container">
             <h2 class="section-title">Habilidades</h2>
+            <p class="skills-intro">Níveis organizados por experiência prática em projetos e rotinas reais.</p>
             <div class="skills-content">
-                <!-- Programming Languages -->
-                <div class="skills-category">
-                    <h3><i class="fas fa-code"></i> Linguagens de Programação</h3>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Python</span>
-                            <span>50%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-50"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>HTML & CSS</span>
-                            <span>45%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-45"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>JavaScript</span>
-                            <span>35%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-35"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>VisualG (Lógica)</span>
-                            <span>35%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-35"></div>
-                        </div>
-                    </div>
-                </div>
+                <article class="skills-category">
+                    <h3><i class="fas fa-code"></i> Linguagens e Fundamentos</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-name">Python</span><span class="skill-level level-evolucao">Em evolução</span></li>
+                        <li class="skill-item"><span class="skill-name">Pandas</span><span class="skill-level level-base">Base</span></li>
+                        <li class="skill-item"><span class="skill-name">HTML e CSS</span><span class="skill-level level-intermediario">Intermediário</span></li>
+                        <li class="skill-item"><span class="skill-name">JavaScript</span><span class="skill-level level-base">Base</span></li>
+                        <li class="skill-item"><span class="skill-name">Lógica com VisualG</span><span class="skill-level level-intermediario">Intermediário</span></li>
+                    </ul>
+                    <p class="skills-evidence"><strong>Aplicação:</strong> projetos acadêmicos e autorais com foco em resolução de problemas reais.</p>
+                </article>
 
-                <!-- Web Development -->
-                <div class="skills-category">
+                <article class="skills-category">
                     <h3><i class="fas fa-laptop-code"></i> Desenvolvimento Web</h3>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Flask</span>
-                            <span>20%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-20"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Design Responsivo</span>
-                            <span>30%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-30"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Front-end</span>
-                            <span>28%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-28"></div>
-                        </div>
-                    </div>
-                </div>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-name">Flask</span><span class="skill-level level-base">Base</span></li>
+                        <li class="skill-item"><span class="skill-name">Front-end responsivo</span><span class="skill-level level-intermediario">Intermediário</span></li>
+                        <li class="skill-item"><span class="skill-name">Consumo de APIs</span><span class="skill-level level-base">Base</span></li>
+                        <li class="skill-item"><span class="skill-name">Firebase</span><span class="skill-level level-base">Base</span></li>
+                    </ul>
+                    <p class="skills-evidence"><strong>Aplicação:</strong> interfaces para portfólio, páginas de produto e fluxos integrados com APIs.</p>
+                </article>
 
-                <!-- Game Development -->
-                <div class="skills-category">
-                    <h3><i class="fas fa-gamepad"></i> Game Development</h3>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Pygame</span>
-                            <span>42%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-42"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Game Design</span>
-                            <span>35%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-35"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Desenvolvimento 2D</span>
-                            <span>38%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-38"></div>
-                        </div>
-                    </div>
-                </div>
+                <article class="skills-category">
+                    <h3><i class="fas fa-clipboard-check"></i> QA e Qualidade</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-name">Testes funcionais</span><span class="skill-level level-intermediario">Intermediário</span></li>
+                        <li class="skill-item"><span class="skill-name">Documentação de bugs</span><span class="skill-level level-intermediario">Intermediário</span></li>
+                        <li class="skill-item"><span class="skill-name">Fluxos de chatbot</span><span class="skill-level level-intermediario">Intermediário</span></li>
+                        <li class="skill-item"><span class="skill-name">Critérios de aceite</span><span class="skill-level level-base">Base</span></li>
+                    </ul>
+                    <p class="skills-evidence"><strong>Aplicação:</strong> atuação em validação de experiências conversacionais com foco no usuário final.</p>
+                </article>
 
-                <!-- Bots & Automation -->
-                <div class="skills-category">
-                    <h3><i class="fas fa-robot"></i> Bots & Automação</h3>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Discord Bots</span>
-                            <span>40%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-40"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Discord.py</span>
-                            <span>38%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-38"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Automação com Python</span>
-                            <span>35%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-35"></div>
-                        </div>
-                    </div>
-                </div>
+                <article class="skills-category">
+                    <h3><i class="fas fa-robot"></i> Bots e Automação</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-name">Discord.py</span><span class="skill-level level-base">Base</span></li>
+                        <li class="skill-item"><span class="skill-name">Automação com Python</span><span class="skill-level level-evolucao">Em evolução</span></li>
+                        <li class="skill-item"><span class="skill-name">Comandos e eventos personalizados</span><span class="skill-level level-base">Base</span></li>
+                        <li class="skill-item"><span class="skill-name">Integração de APIs em bots</span><span class="skill-level level-evolucao">Em evolução</span></li>
+                    </ul>
+                    <p class="skills-evidence"><strong>Aplicação:</strong> bots para comunidades com recursos de moderação, utilidade e automação.</p>
+                </article>
 
-                <!-- Database & APIs -->
-                <div class="skills-category">
-                    <h3><i class="fas fa-database"></i> Banco de Dados & APIs</h3>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>SQL</span>
-                            <span>25%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-25"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Utilização de APIs</span>
-                            <span>20%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-20"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- AI & Machine Learning -->
-                <div class="skills-category">
+                <article class="skills-category">
                     <h3><i class="fas fa-brain"></i> Inteligência Artificial</h3>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>OLLAMA (LLMs - Llama 3.1)</span>
-                            <span>30%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-30"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Whisper AI</span>
-                            <span>25%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-25"></div>
-                        </div>
-                    </div>
-                </div>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-name">OLLAMA e LLMs locais</span><span class="skill-level level-evolucao">Em evolução</span></li>
+                        <li class="skill-item"><span class="skill-name">Llama 3.1 em cenários locais</span><span class="skill-level level-evolucao">Em evolução</span></li>
+                        <li class="skill-item"><span class="skill-name">Whisper para áudio</span><span class="skill-level level-evolucao">Em evolução</span></li>
+                        <li class="skill-item"><span class="skill-name">Orquestração de fluxos de IA</span><span class="skill-level level-evolucao">Em evolução</span></li>
+                    </ul>
+                    <p class="skills-evidence"><strong>Aplicação:</strong> experimentação de assistentes locais e automação de tarefas com IA.</p>
+                </article>
 
-                <!-- Tools & Others -->
-                <div class="skills-category">
-                    <h3><i class="fas fa-tools"></i> Ferramentas & Outros</h3>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>VS Code</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-80"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Firebase</span>
-                            <span>50%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-50"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Git/GitHub</span>
-                            <span>35%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-35"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Microsoft Office</span>
-                            <span>30%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress skill-w-30"></div>
-                        </div>
-                    </div>
-                </div>
+                <article class="skills-category">
+                    <h3><i class="fas fa-tools"></i> Ferramentas e Rotina</h3>
+                    <ul class="skill-list">
+                        <li class="skill-item"><span class="skill-name">VS Code</span><span class="skill-level level-forte">Forte</span></li>
+                        <li class="skill-item"><span class="skill-name">Git e GitHub</span><span class="skill-level level-evolucao">Em evolução</span></li>
+                        <li class="skill-item"><span class="skill-name">Microsoft Office</span><span class="skill-level level-intermediario">Intermediário</span></li>
+                        <li class="skill-item"><span class="skill-name">Organização de entregas</span><span class="skill-level level-intermediario">Intermediário</span></li>
+                    </ul>
+                    <p class="skills-evidence"><strong>Aplicação:</strong> rotina de estudos, documentação de tarefas e evolução contínua do portfólio.</p>
+                </article>
             </div>
         </div>
     </section>
@@ -471,7 +352,7 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Vamos Conversar!</h3>
-                    <p>Estou sempre aberto a novos projetos, colaborações ou apenas um bate-papo sobre tecnologia e modding.</p>
+                    <p>Estou aberto a oportunidades júnior, projetos colaborativos e conversas sobre web, automação e IA aplicada.</p>
                     
                     <div class="contact-details">
                         <div class="contact-item">
@@ -514,17 +395,27 @@
 
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Seu Nome" required>
+                        <label for="name">Nome</label>
+                        <input type="text" id="name" name="name" placeholder="Seu nome" autocomplete="name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Seu Email" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="subject" placeholder="Assunto" required>
+                        <label for="subject">Assunto</label>
+                        <input type="text" id="subject" name="subject" placeholder="Assunto da mensagem" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" rows="6" placeholder="Sua Mensagem" required></textarea>
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Como posso te ajudar?" required></textarea>
+                        <p class="field-help">Retorno por e-mail em até 2 dias úteis.</p>
                     </div>
+                    <div class="form-hp" aria-hidden="true">
+                        <label for="company">Empresa</label>
+                        <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+                    </div>
+                    <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
                     <button type="submit" class="btn btn-primary">
                         <i class="fas fa-paper-plane"></i> Enviar Mensagem
                     </button>
@@ -533,15 +424,16 @@
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Gabriel Schwingel Conci. Todos os direitos reservados.</p>
+            <p>&copy; <span id="currentYear">2026</span> Gabriel Schwingel Conci. Todos os direitos reservados.</p>
             <div class="footer-social">
                 <a href="https://github.com/3Gb3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="https://www.instagram.com/gbsconci/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://discord.com/users/3gbzin" target="_blank" rel="noopener noreferrer" aria-label="Discord"><i class="fab fa-discord"></i></a>
             </div>
         </div>
     </footer>
