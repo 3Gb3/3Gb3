@@ -141,6 +141,7 @@ img {
     left: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow);
     z-index: 1000;
@@ -353,6 +354,7 @@ img {
 .btn-secondary {
     background: rgba(255, 255, 255, 0.2);
     color: white;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -432,8 +434,8 @@ section {
 .highlight-item i {
     font-size: 3rem;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
 }
@@ -720,6 +722,18 @@ section {
     border-radius: 10px;
     transition: width 1s ease;
 }
+
+.skill-w-20 { width: 20%; }
+.skill-w-25 { width: 25%; }
+.skill-w-28 { width: 28%; }
+.skill-w-30 { width: 30%; }
+.skill-w-35 { width: 35%; }
+.skill-w-38 { width: 38%; }
+.skill-w-40 { width: 40%; }
+.skill-w-42 { width: 42%; }
+.skill-w-45 { width: 45%; }
+.skill-w-50 { width: 50%; }
+.skill-w-80 { width: 80%; }
 
 /* Contact Section */
 .contact-section {
@@ -1500,7 +1514,7 @@ section {
 
     .project-detail-section {
         padding: 3rem 0;
-        min-height: auto;
+        min-height: 0;
     }
 
     .back-link {
