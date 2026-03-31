@@ -49,10 +49,22 @@
                 <li><a href="#skills" class="nav-link">Habilidades</a></li>
                 <li><a href="#contact" class="nav-link">Contato</a></li>
             </ul>
-            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar para tema escuro" aria-pressed="false">
-                <i class="fas fa-moon"></i>
-            </button>
-            <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language to Portuguese" title="Switch language to Portuguese" aria-pressed="false">EN</button>
+            <div class="nav-switches" aria-label="Controles de interface">
+                <button class="theme-toggle toggle-switch toggle-switch--theme" id="themeToggle" type="button" aria-label="Alternar para tema escuro" aria-pressed="false" data-theme-mode="light">
+                    <span class="toggle-switch__track" aria-hidden="true">
+                        <span class="toggle-switch__label" data-theme-label="light">☀</span>
+                        <span class="toggle-switch__label" data-theme-label="dark">☾</span>
+                    </span>
+                    <span class="toggle-switch__thumb" aria-hidden="true"></span>
+                </button>
+                <button class="language-toggle toggle-switch toggle-switch--language" id="languageToggle" type="button" aria-label="Mudar idioma para português" title="Mudar idioma para português" aria-pressed="false" data-language-switch="true" data-language="en">
+                    <span class="toggle-switch__track" aria-hidden="true">
+                        <span class="toggle-switch__label" data-lang-label="en">EN</span>
+                        <span class="toggle-switch__label" data-lang-label="pt">BR</span>
+                    </span>
+                    <span class="toggle-switch__thumb" aria-hidden="true"></span>
+                </button>
+            </div>
             <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks">
                 <i class="fas fa-bars"></i>
             </button>

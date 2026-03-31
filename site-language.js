@@ -21,6 +21,7 @@
         'Habilidades': 'Skills',
         'Contato': 'Contact',
         'Navegação principal': 'Main navigation',
+        'Controles de interface': 'Interface controls',
         'Alternar para tema escuro': 'Switch to dark theme',
         'Alternar para tema claro': 'Switch to light theme',
         'Abrir menu de navegação': 'Open navigation menu',
@@ -272,7 +273,52 @@
         'Informações baseadas em entrevista real com a empresa': 'Information based on a real interview with the company',
         'Layout institucional e responsivo': 'Institutional and responsive layout',
         'Sustentabilidade e consciência ambiental': 'Sustainability and environmental awareness',
-        'Como trabalho acadêmico, o objetivo foi criar uma plataforma web que apresentasse de forma clara e profissional o projeto social da América Ambiental. O site serve como vitrine digital das práticas sustentáveis da empresa, demonstrando como a tecnologia web pode ser utilizada para promover conscientização sobre responsabilidade ambiental e social corporativa.': 'As an academic project, the objective was to create a web platform that clearly and professionally presented América Ambiental\'s social project. The site works as a digital showcase for the company\'s sustainable practices, demonstrating how web technology can promote awareness of corporate environmental and social responsibility.'
+        'Como trabalho acadêmico, o objetivo foi criar uma plataforma web que apresentasse de forma clara e profissional o projeto social da América Ambiental. O site serve como vitrine digital das práticas sustentáveis da empresa, demonstrando como a tecnologia web pode ser utilizada para promover conscientização sobre responsabilidade ambiental e social corporativa.': 'As an academic project, the objective was to create a web platform that clearly and professionally presented América Ambiental\'s social project. The site works as a digital showcase for the company\'s sustainable practices, demonstrating how web technology can promote awareness of corporate environmental and social responsibility.',
+
+        // Sustainability details (new layout)
+        'Detalhes do projeto Portal Verde América com tecnologias, recursos técnicos e galeria de imagens.': 'Portal Verde America project details with technologies, technical features, and image gallery.',
+        'Projeto Institucional': 'Institutional Project',
+        'Portal Verde América - Sustentabilidade Empresarial': 'Portal Verde America - Corporate Sustainability',
+        'Página desenvolvida para apresentar o projeto socioambiental da América Serviços Automotivos LTDA, reforçando impacto ambiental, ações sociais e engajamento da comunidade.': 'Page developed to present the socio-environmental project of América Serviços Automotivos LTDA, highlighting environmental impact, social actions, and community engagement.',
+        'Responsivo': 'Responsive',
+        'O que é o projeto': 'What the project is',
+        'O Portal Verde América é uma landing page institucional de impacto socioambiental. A proposta é comunicar de forma clara e emocional a iniciativa de sustentabilidade empresarial, com foco na destinação responsável de resíduos, apoio a cooperativas, contribuição para hospital de câncer infantil e melhoria contínua das ações.': 'Portal Verde America is an institutional landing page with socio-environmental impact. Its purpose is to communicate the corporate sustainability initiative in a clear and emotional way, focusing on responsible waste destination, support for cooperatives, contribution to a children\'s cancer hospital, and continuous improvement of actions.',
+        'Tecnologias utilizadas': 'Technologies used',
+        'Estrutura:': 'Structure:',
+        'HTML5 semântico para organizar blocos e conteúdo.': 'Semantic HTML5 to organize page blocks and content.',
+        'Visual:': 'Visual:',
+        'CSS3 com variáveis, gradientes, sombras e layout responsivo.': 'CSS3 with variables, gradients, shadows, and responsive layout.',
+        'Interações:': 'Interactions:',
+        'JavaScript Vanilla para animações e navegação dinâmica.': 'Vanilla JavaScript for animations and dynamic navigation.',
+        'Tipografia:': 'Typography:',
+        'Google Fonts (família Poppins).': 'Google Fonts (Poppins family).',
+        'Contato:': 'Contact:',
+        'Link direto para WhatsApp com wa.me.': 'Direct WhatsApp link using wa.me.',
+        'Recursos técnicos implementados': 'Technical features implemented',
+        'Navegação de página única com âncoras internas e rolagem suave.': 'Single-page navigation with internal anchors and smooth scrolling.',
+        'Animações de entrada com Intersection Observer.': 'Entrance animations using Intersection Observer.',
+        'Efeito parallax leve na hero section.': 'Light parallax effect in the hero section.',
+        'Hover interativo em cards de conteúdo.': 'Interactive hover effect on content cards.',
+        'Botão flutuante de WhatsApp com exibição condicional no scroll.': 'Floating WhatsApp button with conditional display on scroll.',
+        'Efeito de digitação no título principal.': 'Typing effect on the main title.',
+        'Estrutura pronta para lazy loading de imagens com data-src.': 'Structure ready for image lazy loading using data-src.',
+        'Debounce para otimização de eventos de alta frequência.': 'Debounce for high-frequency event optimization.',
+        'Arquitetura e organização': 'Architecture and organization',
+        'index.html: estrutura e conteúdo principal da página.': 'index.html: page structure and main content.',
+        'styles.css: identidade visual, animações e responsividade.': 'styles.css: visual identity, animations, and responsiveness.',
+        'script.js: interatividade, observadores de scroll e efeitos dinâmicos.': 'script.js: interactivity, scroll observers, and dynamic effects.',
+        'README.md: documentação geral do projeto.': 'README.md: general project documentation.',
+        'Galeria do projeto': 'Project gallery',
+        'Algumas telas utilizadas para demonstrar o visual e a estrutura da landing page.': 'Some screens used to showcase the look and structure of the landing page.',
+        'Abertura e hero': 'Opening and hero',
+        'Conteúdo e indicadores': 'Content and indicators',
+        'Fechamento e contato': 'Closing and contact',
+        'Seção de abertura com chamada principal e posicionamento institucional.': 'Opening section with the main call-to-action and institutional positioning.',
+        'Blocos de conteúdo com informações sobre destinação de materiais e resultados.': 'Content blocks with information about material destination and results.',
+        'Seção final com chamadas de participação e contatos da iniciativa.': 'Final section with participation calls and initiative contact channels.',
+        'Resumo executivo': 'Executive summary',
+        'Este projeto é uma solução estática, moderna e responsiva, construída com front-end puro, sem dependência de frameworks. O foco principal foi combinar performance, clareza de mensagem e engajamento social em uma experiência digital objetiva.': 'This project is a static, modern, and responsive solution built with pure front-end, without framework dependencies. The main focus was to combine performance, message clarity, and social engagement in an objective digital experience.',
+        'Acessar site': 'Visit website'
     };
 
     const MESSAGE_CATALOG = {
@@ -496,13 +542,36 @@
         }
 
         const isEnglish = state.currentLanguage === 'en';
-        const label = isEnglish ? 'EN' : 'PT';
         const switchMessage = isEnglish ? 'Switch language to Portuguese' : 'Mudar idioma para inglês';
 
-        languageToggleButton.textContent = label;
+        if (languageToggleButton.hasAttribute('data-language-switch')) {
+            languageToggleButton.setAttribute('data-language', isEnglish ? 'en' : 'pt');
+        } else {
+            const label = isEnglish ? 'EN' : 'PT';
+            languageToggleButton.textContent = label;
+        }
+
         languageToggleButton.setAttribute('aria-label', switchMessage);
         languageToggleButton.setAttribute('title', switchMessage);
         languageToggleButton.setAttribute('aria-pressed', String(!isEnglish));
+    }
+
+    function triggerLanguageTransition() {
+        if (!document.body) {
+            return;
+        }
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            return;
+        }
+
+        document.body.classList.remove('language-switching');
+        void document.body.offsetWidth;
+        document.body.classList.add('language-switching');
+
+        window.setTimeout(() => {
+            document.body.classList.remove('language-switching');
+        }, 320);
     }
 
     function emitLanguageChangedEvent() {
@@ -519,6 +588,7 @@
         const resolvedLanguage = resolveLanguage(language);
         const shouldPersist = options.persist !== false;
         const shouldEmitEvent = options.emitEvent !== false;
+        const shouldAnimate = options.animate !== false;
 
         state.currentLanguage = resolvedLanguage;
 
@@ -530,6 +600,10 @@
 
         updateDocumentLanguage(resolvedLanguage);
         updateLanguageToggleButton();
+
+        if (shouldAnimate) {
+            triggerLanguageTransition();
+        }
 
         if (shouldPersist) {
             localStorage.setItem(STORAGE_KEY, resolvedLanguage);
@@ -589,13 +663,20 @@
 
         const storedLanguage = localStorage.getItem(STORAGE_KEY);
         const preferredLanguage = resolveLanguage(storedLanguage || DEFAULT_LANGUAGE);
-        applyLanguage(preferredLanguage, { persist: false, emitEvent: false });
+        applyLanguage(preferredLanguage, { persist: false, emitEvent: false, animate: false });
     }
 
     window.siteLanguage = {
         applyLanguage,
         getCurrentLanguage: () => state.currentLanguage,
-        t
+        t,
+        translateText: (value) => {
+            if (state.currentLanguage !== 'en') {
+                return value;
+            }
+
+            return translateFromPortuguese(value);
+        }
     };
 
     if (document.readyState === 'loading') {

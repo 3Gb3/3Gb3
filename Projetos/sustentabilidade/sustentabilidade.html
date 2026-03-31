@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Sustentabilidade Empresarial - Gabriel Schwingel Conci</title>
+    <meta name="description" content="Detalhes do projeto Portal Verde América com tecnologias, recursos técnicos e galeria de imagens.">
     <link rel="stylesheet" href="sustentabilidade.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navegação -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Navegação principal">
         <div class="container">
             <div class="logo">Portfólio</div>
             <ul class="nav-links">
@@ -20,68 +20,133 @@
                 <li><a href="../../index.html#skills" class="nav-link">Habilidades</a></li>
                 <li><a href="../../index.html#contact" class="nav-link">Contato</a></li>
             </ul>
-            <div class="theme-toggle" id="themeToggle">
-                <i class="fas fa-moon"></i>
+            <div class="nav-switches" aria-label="Controles de interface">
+                <button class="theme-toggle toggle-switch toggle-switch--theme" id="themeToggle" type="button" aria-label="Alternar para tema escuro" aria-pressed="false" data-theme-mode="light">
+                    <span class="toggle-switch__track" aria-hidden="true">
+                        <span class="toggle-switch__label" data-theme-label="light">☀</span>
+                        <span class="toggle-switch__label" data-theme-label="dark">☾</span>
+                    </span>
+                    <span class="toggle-switch__thumb" aria-hidden="true"></span>
+                </button>
+                <button class="language-toggle toggle-switch toggle-switch--language" id="languageToggle" type="button" aria-label="Mudar idioma para português" title="Mudar idioma para português" aria-pressed="false" data-language-switch="true" data-language="en">
+                    <span class="toggle-switch__track" aria-hidden="true">
+                        <span class="toggle-switch__label" data-lang-label="en">EN</span>
+                        <span class="toggle-switch__label" data-lang-label="pt">BR</span>
+                    </span>
+                    <span class="toggle-switch__thumb" aria-hidden="true"></span>
+                </button>
             </div>
-            <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language to Portuguese" title="Switch language to Portuguese" aria-pressed="false">EN</button>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- Project Detail Section -->
     <section class="project-detail-section">
         <div class="container">
-            <a href="../../projetos.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar aos Projetos</a>
-            
+            <a href="../../projetos.html" class="back-link"><i class="fas fa-arrow-left" aria-hidden="true"></i> Voltar aos Projetos</a>
+
             <div class="project-detail-content">
-                <div class="project-detail-header">
-                    <h1>Projeto Sustentabilidade Empresarial</h1>
+                <header class="project-detail-header reveal">
+                    <p class="project-kicker">Projeto Institucional</p>
+                    <h1>Portal Verde América - Sustentabilidade Empresarial</h1>
+                    <p class="project-subtitle">
+                        Página desenvolvida para apresentar o projeto socioambiental da América Serviços Automotivos LTDA,
+                        reforçando impacto ambiental, ações sociais e engajamento da comunidade.
+                    </p>
                     <div class="project-tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
                         <span class="tag">JavaScript</span>
+                        <span class="tag">Landing Page</span>
+                        <span class="tag">Responsivo</span>
                     </div>
-                </div>
+                </header>
+
+                <figure class="project-showcase reveal">
+                    <img src="img/principal.png" alt="Tela principal do Portal Verde América" loading="eager" decoding="async">
+                </figure>
 
                 <div class="project-detail-info">
-                    <h2>Sobre o Projeto</h2>
-                    <p>
-                        O Projeto Sustentabilidade Empresarial é um site desenvolvido para a faculdade com base em uma empresa 
-                        real chamada América Ambiental. Após realizar uma entrevista sobre um projeto social da empresa, criei 
-                        este site institucional para apresentar as práticas sustentáveis e iniciativas ambientais da organização. 
-                        O projeto demonstra como empresas podem integrar responsabilidade social e ambiental em suas operações.
-                    </p>
+                    <section class="info-block reveal">
+                        <h2>O que é o projeto</h2>
+                        <p>
+                            O Portal Verde América é uma landing page institucional de impacto socioambiental. A proposta é
+                            comunicar de forma clara e emocional a iniciativa de sustentabilidade empresarial, com foco na
+                            destinação responsável de resíduos, apoio a cooperativas, contribuição para hospital de câncer
+                            infantil e melhoria contínua das ações.
+                        </p>
+                    </section>
 
-                    <h3>Funcionalidades</h3>
-                    <ul>
-                        <li>Apresentação do projeto social da América Ambiental</li>
-                        <li>Interface institucional limpa e profissional</li>
-                        <li>Conteúdo informativo sobre sustentabilidade empresarial</li>
-                        <li>Design responsivo e acessível</li>
-                        <li>Navegação intuitiva e organizada</li>
-                        <li>Informações baseadas em entrevista real com a empresa</li>
-                    </ul>
+                    <section class="info-block reveal">
+                        <h3>Tecnologias utilizadas</h3>
+                        <ul>
+                            <li><strong>Estrutura:</strong> HTML5 semântico para organizar blocos e conteúdo.</li>
+                            <li><strong>Visual:</strong> CSS3 com variáveis, gradientes, sombras e layout responsivo.</li>
+                            <li><strong>Interações:</strong> JavaScript Vanilla para animações e navegação dinâmica.</li>
+                            <li><strong>Tipografia:</strong> Google Fonts (família Poppins).</li>
+                            <li><strong>Contato:</strong> Link direto para WhatsApp com wa.me.</li>
+                        </ul>
+                    </section>
 
-                    <h3>Tecnologias Utilizadas</h3>
-                    <ul>
-                        <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript</li>
-                        <li><strong>Design:</strong> Layout institucional e responsivo</li>
-                        <li><strong>Foco:</strong> Sustentabilidade e consciência ambiental</li>
-                    </ul>
+                    <section class="info-block reveal">
+                        <h3>Recursos técnicos implementados</h3>
+                        <ul>
+                            <li>Navegação de página única com âncoras internas e rolagem suave.</li>
+                            <li>Animações de entrada com Intersection Observer.</li>
+                            <li>Efeito parallax leve na hero section.</li>
+                            <li>Hover interativo em cards de conteúdo.</li>
+                            <li>Botão flutuante de WhatsApp com exibição condicional no scroll.</li>
+                            <li>Efeito de digitação no título principal.</li>
+                            <li>Estrutura pronta para lazy loading de imagens com data-src.</li>
+                            <li>Debounce para otimização de eventos de alta frequência.</li>
+                        </ul>
+                    </section>
 
-                    <h3>Objetivos do Projeto</h3>
-                    <p>
-                        Como trabalho acadêmico, o objetivo foi criar uma plataforma web que apresentasse de forma clara 
-                        e profissional o projeto social da América Ambiental. O site serve como vitrine digital das 
-                        práticas sustentáveis da empresa, demonstrando como a tecnologia web pode ser utilizada para 
-                        promover conscientização sobre responsabilidade ambiental e social corporativa.
-                    </p>
+                    <section class="info-block reveal">
+                        <h3>Arquitetura e organização</h3>
+                        <ul>
+                            <li><strong>index.html:</strong> estrutura e conteúdo principal da página.</li>
+                            <li><strong>styles.css:</strong> identidade visual, animações e responsividade.</li>
+                            <li><strong>script.js:</strong> interatividade, observadores de scroll e efeitos dinâmicos.</li>
+                            <li><strong>README.md:</strong> documentação geral do projeto.</li>
+                        </ul>
+                    </section>
 
-                    <div class="project-links">
+                    <section class="info-block reveal">
+                        <h3>Galeria do projeto</h3>
+                        <p>Algumas telas utilizadas para demonstrar o visual e a estrutura da landing page.</p>
+                        <div class="gallery-grid">
+                            <button class="gallery-item" type="button" data-image="img/principal.png" data-caption="Seção de abertura com chamada principal e posicionamento institucional.">
+                                <img src="img/principal.png" alt="Visual da abertura do projeto" loading="lazy" decoding="async">
+                                <span>Abertura e hero</span>
+                            </button>
+                            <button class="gallery-item" type="button" data-image="img/sustentabilidade.png" data-caption="Blocos de conteúdo com informações sobre destinação de materiais e resultados.">
+                                <img src="img/sustentabilidade.png" alt="Blocos de conteúdo do projeto" loading="lazy" decoding="async">
+                                <span>Conteúdo e indicadores</span>
+                            </button>
+                            <button class="gallery-item" type="button" data-image="img/footer.png" data-caption="Seção final com chamadas de participação e contatos da iniciativa.">
+                                <img src="img/footer.png" alt="Rodapé e fechamento do projeto" loading="lazy" decoding="async">
+                                <span>Fechamento e contato</span>
+                            </button>
+                        </div>
+                    </section>
+
+                    <section class="info-block reveal">
+                        <h3>Resumo executivo</h3>
+                        <p>
+                            Este projeto é uma solução estática, moderna e responsiva, construída com front-end puro, sem
+                            dependência de frameworks. O foco principal foi combinar performance, clareza de mensagem e
+                            engajamento social em uma experiência digital objetiva.
+                        </p>
+                    </section>
+
+                    <div class="project-links reveal">
                         <a href="https://github.com/3Gb3/Projeto_Sustentabilidade_Empresarial" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                            <i class="fab fa-github"></i> Ver no GitHub
+                            <i class="fab fa-github" aria-hidden="true"></i> Ver no GitHub
+                        </a>
+                        <a href="https://3gb3.github.io/Projeto_Sustentabilidade_Empresarial/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            <i class="fas fa-globe" aria-hidden="true"></i> Acessar site
                         </a>
                     </div>
                 </div>
@@ -89,7 +154,14 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true" role="dialog" aria-label="Visualização ampliada da imagem">
+        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Fechar visualização">
+            <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        <img id="lightboxImage" src="" alt="Imagem ampliada do projeto">
+        <p id="lightboxCaption"></p>
+    </div>
+
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Gabriel Schwingel Conci. Todos os direitos reservados.</p>
@@ -102,7 +174,6 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Button -->
     <a href="https://wa.me/5551994464827" target="_blank" rel="noopener noreferrer" class="whatsapp-button" title="Fale comigo no WhatsApp" aria-label="Fale comigo no WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>

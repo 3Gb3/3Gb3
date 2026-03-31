@@ -161,6 +161,24 @@ body {
     transition: opacity 0.42s cubic-bezier(0.2, 0.78, 0.16, 1), transform 0.42s cubic-bezier(0.2, 0.78, 0.16, 1), filter 0.42s ease;
 }
 
+body.language-switching {
+    animation: languageSwitchPulse 0.3s ease;
+}
+
+@keyframes languageSwitchPulse {
+    0% {
+        opacity: 0.86;
+        transform: translateY(2px);
+        filter: saturate(0.92);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: saturate(1);
+    }
+}
+
 /* Page transition */
 body.page-entering {
     opacity: 0;
@@ -376,6 +394,12 @@ img {
     margin-left: auto;
 }
 
+.nav-switches {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .language-toggle {
     cursor: pointer;
     color: var(--text-color);
@@ -444,6 +468,118 @@ img {
 .theme-toggle:hover {
     background: var(--bg-secondary);
     transform: rotate(20deg);
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 86px;
+    height: 36px;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease, transform 0.28s ease;
+}
+
+.toggle-switch:hover {
+    transform: translateY(-1px);
+    border-color: rgba(29, 78, 216, 0.4);
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
+}
+
+.toggle-switch:focus-visible {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+.toggle-switch__track {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    padding: 0 0.18rem;
+}
+
+.toggle-switch__label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--text-light);
+    transition: color 0.26s ease, opacity 0.26s ease;
+    pointer-events: none;
+}
+
+.toggle-switch__thumb {
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: calc(50% - 3px);
+    height: calc(100% - 6px);
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 7px 15px rgba(15, 23, 42, 0.2);
+    transition: transform 0.28s cubic-bezier(0.2, 0.78, 0.16, 1), background 0.28s ease;
+    z-index: 1;
+}
+
+.toggle-switch[aria-pressed="true"] .toggle-switch__thumb {
+    transform: translateX(100%);
+}
+
+.toggle-switch--language[aria-pressed="false"] [data-lang-label="en"],
+.toggle-switch--language[aria-pressed="true"] [data-lang-label="pt"],
+.toggle-switch--theme[aria-pressed="false"] [data-theme-label="light"],
+.toggle-switch--theme[aria-pressed="true"] [data-theme-label="dark"] {
+    color: #ffffff;
+}
+
+.toggle-switch--theme .toggle-switch__label {
+    font-size: 0.92rem;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+.theme-toggle.toggle-switch,
+.language-toggle.toggle-switch {
+    padding: 0;
+    min-width: 0;
+}
+
+.theme-toggle.toggle-switch {
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    border-radius: 999px;
+}
+
+.theme-toggle.toggle-switch:hover {
+    transform: translateY(-1px);
+    background: var(--surface-color);
+}
+
+.theme-toggle.toggle-switch .toggle-switch__thumb {
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+}
+
+[data-theme="dark"] .theme-toggle.toggle-switch .toggle-switch__thumb {
+    background: linear-gradient(135deg, #60a5fa, #1d4ed8);
+}
+
+[data-theme="dark"] .toggle-switch {
+    background: var(--bg-secondary);
+    border-color: rgba(148, 163, 184, 0.3);
+}
+
+[data-theme="dark"] .toggle-switch:hover {
+    border-color: rgba(96, 165, 250, 0.55);
 }
 
 .menu-toggle {
@@ -1599,16 +1735,25 @@ section {
         font-size: 1.3rem;
     }
 
-    .theme-toggle,
-    .language-toggle,
     .menu-toggle {
         font-size: 1.1rem;
     }
 
-    .language-toggle {
-        font-size: 0.72rem;
-        padding: 0.32rem 0.58rem;
-        min-width: 2.9rem;
+    .nav-switches {
+        gap: 0.4rem;
+    }
+
+    .toggle-switch {
+        width: 76px;
+        height: 33px;
+    }
+
+    .toggle-switch__label {
+        font-size: 0.65rem;
+    }
+
+    .toggle-switch--theme .toggle-switch__label {
+        font-size: 0.84rem;
     }
 
     .home-section {

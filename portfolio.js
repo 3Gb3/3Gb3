@@ -171,21 +171,21 @@ function updateThemeButton(theme) {
         return;
     }
 
-    const icon = themeToggle.querySelector('i');
-    if (!icon) {
-        return;
-    }
-
     const isDark = theme === 'dark';
-    icon.classList.toggle('fa-moon', !isDark);
-    icon.classList.toggle('fa-sun', isDark);
     themeToggle.setAttribute('aria-pressed', String(isDark));
+    themeToggle.setAttribute('data-theme-mode', isDark ? 'dark' : 'light');
     themeToggle.setAttribute(
         'aria-label',
         isDark
             ? translateMessage('theme.toLight', {}, 'Alternar para tema claro')
             : translateMessage('theme.toDark', {}, 'Alternar para tema escuro')
     );
+
+    const icon = themeToggle.querySelector('i');
+    if (icon) {
+        icon.classList.toggle('fa-moon', !isDark);
+        icon.classList.toggle('fa-sun', isDark);
+    }
 }
 
 function setupVisualEffects() {
