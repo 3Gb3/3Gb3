@@ -4,19 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projetos - Gabriel Schwingel Conci</title>
+    <meta name="description" content="Catálogo completo de projetos de Gabriel Schwingel Conci com foco em desenvolvimento web, automação e soluções em Python.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="projetos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Preload das imagens -->
     <link rel="preload" as="image" href="img/codelogic.png">
     <link rel="preload" as="image" href="img/bncc.jpg">
     <link rel="preload" as="image" href="img/purpleplay.jpg">
+    <link rel="preload" as="image" href="img/america.jpg">
+    <link rel="preload" as="image" href="img/sage.jpg">
 </head>
-<body>
+<body class="projects-page">
+    <a class="skip-link" href="#mainContent">Pular para o conteúdo principal</a>
+
     <!-- Navegação -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Navegação principal">
         <div class="container">
             <a href="index.html" class="logo">Portfólio</a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="index.html#about" class="nav-link">Sobre</a></li>
                 <li><a href="index.html#resume" class="nav-link">Currículo</a></li>
@@ -24,110 +33,178 @@
                 <li><a href="index.html#skills" class="nav-link">Habilidades</a></li>
                 <li><a href="index.html#contact" class="nav-link">Contato</a></li>
             </ul>
-            <div class="theme-toggle" id="themeToggle">
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar para tema escuro" aria-pressed="false">
                 <i class="fas fa-moon"></i>
-            </div>
-            <div class="menu-toggle">
+            </button>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
         </div>
     </nav>
 
-    <!-- Projects Page Header -->
-    <section class="projects-header">
-        <div class="container">
-            <h1>Meus Projetos</h1>
-            <p>Explore meu portfólio completo de projetos desenvolvidos</p>
-        </div>
-    </section>
-
-    <!-- All Projects Section -->
-    <section class="all-projects-section">
-        <div class="container">
-            <div class="projects-grid">
-                <!-- Projeto 1 -->
-                <div class="project-card" onclick="window.location.href='Projetos/codelogic/codelogic.html'">
-                    <div class="project-image">
-                        <img src="img/codelogic.png" alt="Code Logic" loading="eager" decoding="async">
+    <main id="mainContent">
+        <!-- Projects Page Header -->
+        <section class="projects-header">
+            <div class="container">
+                <p class="projects-eyebrow">Portfólio em destaque</p>
+                <h1>Projetos construídos para gerar resultado real</h1>
+                <p class="projects-subtitle">Explore por tecnologia e categoria para encontrar rápido o tipo de solução que você quer analisar.</p>
+                <div class="projects-highlights">
+                    <div class="projects-highlight-item">
+                        <strong>5</strong>
+                        <span>Projetos publicados</span>
                     </div>
-                    <div class="project-info">
-                        <h3>Code Logic</h3>
-                        <p>Aplicação web desenvolvida com Flask para ensino de lógica de programação.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">HTML/CSS</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
+                    <div class="projects-highlight-item">
+                        <strong>3</strong>
+                        <span>Frentes principais: Web, Educação e Automação</span>
                     </div>
-                </div>
-
-                <!-- Projeto 2 -->
-                <div class="project-card" onclick="window.location.href='Projetos/bncc/bncc.html'">
-                    <div class="project-image">
-                        <img src="img/bncc.jpg" alt="Projeto BNCC" loading="eager" decoding="async">
-                    </div>
-                    <div class="project-info">
-                        <h3>Projeto BNCC</h3>
-                        <p>Aplicação educativa desenvolvida em Python usando Pygame.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Pygame</span>
-                            <span class="tag">Educação</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projeto 3 -->
-                <div class="project-card" onclick="window.location.href='Projetos/purpleplay/purpleplay.html'">
-                    <div class="project-image">
-                        <img src="img/purpleplay.jpg" alt="PurplePlay" loading="eager" decoding="async">
-                    </div>
-                    <div class="project-info">
-                        <h3>PurplePlay</h3>
-                        <p>Plataforma web de entretenimento desenvolvida com HTML, CSS e JavaScript.</p>
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projeto 4 -->
-                <div class="project-card" onclick="window.location.href='Projetos/sustentabilidade/sustentabilidade.html'">
-                    <div class="project-image">
-                        <img src="img/america.jpg" alt="Sustentabilidade Empresarial" loading="eager" decoding="async">
-                    </div>
-                    <div class="project-info">
-                        <h3>Projeto Sustentabilidade Empresarial</h3>
-                        <p>Site institucional focado em sustentabilidade empresarial.</p>
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projeto 5 -->
-                <div class="project-card" onclick="window.location.href='Projetos/sage/sage.html'">
-                    <div class="project-image">
-                        <img src="img/sage.jpg" alt="Bot de Discord Sage" loading="eager" decoding="async">
-                    </div>
-                    <div class="project-info">
-                        <h3>Sage - Bot de Discord</h3>
-                        <p>Bot multifuncional desenvolvido em Python utilizando discord.py.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Discord.py</span>
-                            <span class="tag">Automação</span>
-                        </div>
+                    <div class="projects-highlight-item">
+                        <strong>100%</strong>
+                        <span>Projetos com demonstração navegável</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Controls -->
+        <section class="projects-controls" aria-label="Ferramentas de organização dos projetos">
+            <div class="container">
+                <div class="projects-search-wrapper">
+                    <label class="sr-only" for="projectSearch">Buscar projeto</label>
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input type="search" id="projectSearch" class="projects-search" placeholder="Buscar por nome, tecnologia ou categoria">
+                </div>
+                <div class="projects-filters" role="toolbar" aria-label="Filtrar projetos">
+                    <button class="filter-chip is-active" type="button" data-filter="all" aria-pressed="true">Todos</button>
+                    <button class="filter-chip" type="button" data-filter="web" aria-pressed="false">Web</button>
+                    <button class="filter-chip" type="button" data-filter="python" aria-pressed="false">Python</button>
+                    <button class="filter-chip" type="button" data-filter="educacao" aria-pressed="false">Educação</button>
+                    <button class="filter-chip" type="button" data-filter="automacao" aria-pressed="false">Automação</button>
+                </div>
+                <p id="projectResults" class="projects-results" aria-live="polite">Mostrando 5 de 5 projetos</p>
+            </div>
+        </section>
+
+        <!-- All Projects Section -->
+        <section class="all-projects-section">
+            <div class="container">
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Projeto 1 -->
+                    <a class="project-card" data-project-card data-category="python web educacao" data-keywords="code logic flask logica programacao ensino app web" href="Projetos/codelogic/codelogic.html" aria-label="Abrir projeto Code Logic">
+                        <div class="project-image">
+                            <img src="img/codelogic.png" alt="Code Logic" loading="eager" decoding="async">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-info-top">
+                                <span class="project-badge">Web App</span>
+                                <span class="project-year">2025</span>
+                            </div>
+                            <h3>Code Logic</h3>
+                            <p>Aplicação web em Flask para apoiar o ensino de lógica de programação com experiência didática.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Flask</span>
+                                <span class="tag">HTML/CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <span class="project-cta">Explorar projeto <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Projeto 2 -->
+                    <a class="project-card" data-project-card data-category="python educacao" data-keywords="bncc python pygame jogo educativo aprendizagem" href="Projetos/bncc/bncc.html" aria-label="Abrir Projeto BNCC">
+                        <div class="project-image">
+                            <img src="img/bncc.jpg" alt="Projeto BNCC" loading="eager" decoding="async">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-info-top">
+                                <span class="project-badge">Educação</span>
+                                <span class="project-year">2025</span>
+                            </div>
+                            <h3>Projeto BNCC</h3>
+                            <p>Aplicação educativa desenvolvida em Python com Pygame para aprendizado interativo.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Pygame</span>
+                                <span class="tag">Educação</span>
+                            </div>
+                            <span class="project-cta">Explorar projeto <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Projeto 3 -->
+                    <a class="project-card" data-project-card data-category="web" data-keywords="purpleplay plataforma web entretenimento html css javascript" href="Projetos/purpleplay/purpleplay.html" aria-label="Abrir projeto PurplePlay">
+                        <div class="project-image">
+                            <img src="img/purpleplay.jpg" alt="PurplePlay" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-info-top">
+                                <span class="project-badge">Front-end</span>
+                                <span class="project-year">2025</span>
+                            </div>
+                            <h3>PurplePlay</h3>
+                            <p>Plataforma web de entretenimento com foco em interface, navegação fluida e experiência moderna.</p>
+                            <div class="project-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <span class="project-cta">Explorar projeto <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Projeto 4 -->
+                    <a class="project-card" data-project-card data-category="web educacao" data-keywords="sustentabilidade empresarial website institucional" href="Projetos/sustentabilidade/sustentabilidade.html" aria-label="Abrir projeto Sustentabilidade Empresarial">
+                        <div class="project-image">
+                            <img src="img/america.jpg" alt="Sustentabilidade Empresarial" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-info-top">
+                                <span class="project-badge">Institucional</span>
+                                <span class="project-year">2025</span>
+                            </div>
+                            <h3>Sustentabilidade Empresarial</h3>
+                            <p>Site institucional com comunicação clara sobre práticas de sustentabilidade e impacto corporativo.</p>
+                            <div class="project-tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <span class="project-cta">Explorar projeto <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Projeto 5 -->
+                    <a class="project-card" data-project-card data-category="python automacao" data-keywords="sage bot discord automacao python comunidade" href="Projetos/sage/sage.html" aria-label="Abrir projeto Sage bot para Discord">
+                        <div class="project-image">
+                            <img src="img/sage.jpg" alt="Bot de Discord Sage" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-info-top">
+                                <span class="project-badge">Automação</span>
+                                <span class="project-year">2026</span>
+                            </div>
+                            <h3>Sage - Bot de Discord</h3>
+                            <p>Bot multifuncional em Python com comandos personalizados para automação e gestão de comunidades.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Discord.py</span>
+                                <span class="tag">Automação</span>
+                            </div>
+                            <span class="project-cta">Explorar projeto <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+                </div>
+
+                <div id="projectEmptyState" class="projects-empty" hidden>
+                    <i class="fas fa-folder-open" aria-hidden="true"></i>
+                    <h2>Nenhum projeto encontrado</h2>
+                    <p>Tente outro termo de busca ou limpe os filtros para visualizar todos os projetos novamente.</p>
+                    <button id="clearProjectFilters" class="btn btn-secondary" type="button">Limpar filtros</button>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -152,5 +229,6 @@
     </a>
 
     <script src="portfolio.js"></script>
+    <script src="projetos.js"></script>
 </body>
 </html>
