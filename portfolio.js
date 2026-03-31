@@ -20,6 +20,22 @@ const PAGE_TRANSITION_MAX_AGE_MS = 7000;
 let pageTransitionOverlay = null;
 let pageTransitionInProgress = false;
 
+function translateMessage(key, params = {}, fallback = '') {
+    if (window.siteLanguage && typeof window.siteLanguage.t === 'function') {
+        return window.siteLanguage.t(key, params, fallback);
+    }
+
+    return fallback;
+}
+
+function getActiveLanguage() {
+    if (window.siteLanguage && typeof window.siteLanguage.getCurrentLanguage === 'function') {
+        return window.siteLanguage.getCurrentLanguage();
+    }
+
+    return 'pt';
+}
+
 const initialTheme = localStorage.getItem('theme') ||
     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
@@ -51,7 +67,12 @@ function setupNavigation() {
         menuToggle.addEventListener('click', () => {
             const isOpen = navLinksContainer.classList.toggle('active');
             menuToggle.setAttribute('aria-expanded', String(isOpen));
-            menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
+            menuToggle.setAttribute(
+                'aria-label',
+                isOpen
+                    ? translateMessage('nav.closeMenu', {}, 'Fechar menu de navegação')
+                    : translateMessage('nav.openMenu', {}, 'Abrir menu de navegação')
+            );
         });
     }
 
@@ -63,6 +84,22 @@ function setupNavigation() {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
+
+    window.addEventListener('siteLanguageChanged', () => {
+        const isOpen = Boolean(navLinksContainer && navLinksContainer.classList.contains('active'));
+
+        if (menuToggle) {
+            menuToggle.setAttribute(
+                'aria-label',
+                isOpen
+                    ? translateMessage('nav.closeMenu', {}, 'Fechar menu de navegação')
+                    : translateMessage('nav.openMenu', {}, 'Abrir menu de navegação')
+            );
+        }
+
+        const activeTheme = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        updateThemeButton(activeTheme);
+    });
 }
 
 function setupScrollTopButton() {
@@ -121,7 +158,7 @@ function closeMobileMenu() {
 
     navLinksContainer.classList.remove('active');
     menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.setAttribute('aria-label', 'Abrir menu de navegação');
+    menuToggle.setAttribute('aria-label', translateMessage('nav.openMenu', {}, 'Abrir menu de navegação'));
 }
 
 function setTheme(theme) {
@@ -143,7 +180,12 @@ function updateThemeButton(theme) {
     icon.classList.toggle('fa-moon', !isDark);
     icon.classList.toggle('fa-sun', isDark);
     themeToggle.setAttribute('aria-pressed', String(isDark));
-    themeToggle.setAttribute('aria-label', isDark ? 'Alternar para tema claro' : 'Alternar para tema escuro');
+    themeToggle.setAttribute(
+        'aria-label',
+        isDark
+            ? translateMessage('theme.toLight', {}, 'Alternar para tema claro')
+            : translateMessage('theme.toDark', {}, 'Alternar para tema escuro')
+    );
 }
 
 function setupVisualEffects() {
@@ -335,7 +377,7 @@ function createPageTransitionOverlay() {
     overlay.innerHTML = `
         <div class="page-transition-card">
             <span class="page-transition-spinner" aria-hidden="true"></span>
-            <span class="page-transition-text">Carregando...</span>
+            <span class="page-transition-text">${translateMessage('transition.loading', {}, 'Carregando...')}</span>
         </div>
     `;
 
@@ -397,17 +439,17 @@ function getTransitionMessage(destinationUrl) {
         const destination = new URL(destinationUrl, window.location.href);
 
         if (isHomePagePath(destination.pathname)) {
-            return 'Voltando ao portfolio...';
+            return translateMessage('transition.backToPortfolio', {}, 'Voltando ao portfolio...');
         }
 
         if (isProjectsPagePath(destination.pathname)) {
-            return 'Abrindo projetos...';
+            return translateMessage('transition.openProjects', {}, 'Abrindo projetos...');
         }
     } catch (_error) {
-        return 'Carregando...';
+        return translateMessage('transition.loading', {}, 'Carregando...');
     }
 
-    return 'Carregando...';
+    return translateMessage('transition.loading', {}, 'Carregando...');
 }
 
 function setupProjectImages() {
@@ -532,20 +574,20 @@ function setupContactForm() {
         const filledTooFast = Date.now() - startedAt < MIN_FORM_FILL_TIME_MS;
 
         if (honeypotValue || filledTooFast) {
-            showFormFeedback('Não foi possível enviar. Atualize a página e tente novamente.', 'error');
+            showFormFeedback(translateMessage('form.blocked', {}, 'Não foi possível enviar. Atualize a página e tente novamente.'), 'error');
             return;
         }
 
         if (!contactForm.checkValidity()) {
             requiredInputs.forEach(toggleInputValidity);
-            showFormFeedback('Revise os campos obrigatórios antes de enviar.', 'error');
+            showFormFeedback(translateMessage('form.reviewRequired', {}, 'Revise os campos obrigatórios antes de enviar.'), 'error');
             contactForm.reportValidity();
             return;
         }
 
         const lastSubmit = Number(localStorage.getItem('portfolioLastSubmit') || '0');
         if (Date.now() - lastSubmit < SUBMIT_COOLDOWN_MS) {
-            showFormFeedback('Aguarde alguns segundos antes de enviar uma nova mensagem.', 'error');
+            showFormFeedback(translateMessage('form.cooldown', {}, 'Aguarde alguns segundos antes de enviar uma nova mensagem.'), 'error');
             return;
         }
 
@@ -555,16 +597,18 @@ function setupContactForm() {
 
         const originalButtonContent = submitButton.innerHTML;
         submitButton.disabled = true;
-        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Enviando...';
+        submitButton.innerHTML = `<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> ${translateMessage('form.buttonSending', {}, 'Enviando...')}`;
 
-        showFormFeedback('Enviando mensagem...', '');
+        showFormFeedback(translateMessage('form.sending', {}, 'Enviando mensagem...'), '');
+
+        const activeLocale = getActiveLanguage() === 'en' ? 'en-US' : 'pt-BR';
 
         const payload = {
             name: String(formData.get('name') || '').trim(),
             email: String(formData.get('email') || '').trim(),
             subject: String(formData.get('subject') || '').trim(),
             message: String(formData.get('message') || '').trim(),
-            time: new Date().toLocaleString('pt-BR', {
+            time: new Date().toLocaleString(activeLocale, {
                 day: '2-digit',
                 month: '2-digit',
                 year: 'numeric',
@@ -584,10 +628,10 @@ function setupContactForm() {
                 input.classList.remove('invalid');
             });
 
-            showFormFeedback('Mensagem enviada com sucesso. Obrigado pelo contato!', 'success');
+            showFormFeedback(translateMessage('form.success', {}, 'Mensagem enviada com sucesso. Obrigado pelo contato!'), 'success');
         } catch (error) {
             console.error('Erro ao enviar formulario:', error);
-            showFormFeedback('Não foi possível enviar agora. Tente novamente em instantes ou use o e-mail direto.', 'error');
+            showFormFeedback(translateMessage('form.failed', {}, 'Não foi possível enviar agora. Tente novamente em instantes ou use o e-mail direto.'), 'error');
         } finally {
             submitButton.disabled = false;
             submitButton.innerHTML = originalButtonContent;
@@ -612,7 +656,7 @@ function showFormFeedback(message, type = '') {
 
 function sendContactMessage(payload) {
     if (typeof emailjs === 'undefined' || typeof emailjs.send !== 'function') {
-        return Promise.reject(new Error('EmailJS não disponível'));
+        return Promise.reject(new Error(translateMessage('form.emailjsUnavailable', {}, 'EmailJS não disponível')));
     }
 
     return emailjs.send('service_lm0ubti', 'template_y440a0r', payload);

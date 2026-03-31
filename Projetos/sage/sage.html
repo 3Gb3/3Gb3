@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,7 @@
             <div class="theme-toggle" id="themeToggle">
                 <i class="fas fa-moon"></i>
             </div>
+            <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language to Portuguese" title="Switch language to Portuguese" aria-pressed="false">EN</button>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
@@ -84,7 +85,7 @@
                     </p>
 
                     <div class="project-links">
-                        <a href="https://github.com/3Gb3" target="_blank" class="btn btn-primary">
+                        <a href="https://github.com/3Gb3" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                             <i class="fab fa-github"></i> Ver no GitHub
                         </a>
                     </div>
@@ -98,19 +99,20 @@
         <div class="container">
             <p>&copy; 2026 Gabriel Schwingel Conci. Todos os direitos reservados.</p>
             <div class="footer-social">
-                <a href="https://github.com/3Gb3" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/gbsconci/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://discord.com/users/3gbzin" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="https://github.com/3Gb3" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/gbsconci/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://discord.com/users/3gbzin" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/5551994464827" target="_blank" class="whatsapp-button" title="Fale comigo no WhatsApp">
+    <a href="https://wa.me/5551994464827" target="_blank" rel="noopener noreferrer" class="whatsapp-button" title="Fale comigo no WhatsApp" aria-label="Fale comigo no WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <script src="../../site-language.js"></script>
     <script src="sage.js"></script>
 </body>
 </html>

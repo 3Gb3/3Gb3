@@ -25,6 +25,13 @@ function setupProjectsCatalog() {
     let revealCleanupTimer = null;
 
     const normalizeText = (value) => String(value || '').trim().toLowerCase();
+    const translateMessage = (key, params = {}, fallback = '') => {
+        if (window.siteLanguage && typeof window.siteLanguage.t === 'function') {
+            return window.siteLanguage.t(key, params, fallback);
+        }
+
+        return fallback;
+    };
 
     const clearAnimationState = () => {
         if (revealCleanupTimer) {
@@ -40,7 +47,14 @@ function setupProjectsCatalog() {
 
     const updateResultsAndEmptyState = (visibleCards) => {
         if (resultsElement) {
-            resultsElement.textContent = `Mostrando ${visibleCards} de ${projectCards.length} projetos`;
+            resultsElement.textContent = translateMessage(
+                'projects.results',
+                {
+                    visible: visibleCards,
+                    total: projectCards.length
+                },
+                `Mostrando ${visibleCards} de ${projectCards.length} projetos`
+            );
         }
 
         if (emptyState) {
@@ -244,6 +258,11 @@ function setupProjectsCatalog() {
     }
 
     applyCurrentState({ animate: false, persist: false });
+
+    window.addEventListener('siteLanguageChanged', () => {
+        clearAnimationState();
+        applyCurrentState({ animate: false, persist: false });
+    });
 
     window.addEventListener('pageshow', (event) => {
         if (event.persisted) {

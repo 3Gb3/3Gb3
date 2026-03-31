@@ -353,8 +353,9 @@ img {
 
 .navbar .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 0.8rem;
     padding: 1rem 20px;
 }
 
@@ -372,6 +373,34 @@ img {
     display: flex;
     list-style: none;
     gap: 2rem;
+    margin-left: auto;
+}
+
+.language-toggle {
+    cursor: pointer;
+    color: var(--text-color);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1;
+    min-width: 3.2rem;
+    transition: var(--transition);
+}
+
+.language-toggle:hover {
+    background: var(--surface-color);
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+.language-toggle:focus-visible {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
 }
 
 .nav-link {
@@ -1432,6 +1461,7 @@ section {
         height: calc(100vh - 72px);
         background: var(--bg-color);
         flex-direction: column;
+        margin-left: 0;
         padding: 2rem;
         transition: var(--transition);
         box-shadow: var(--shadow-lg);
@@ -1570,8 +1600,15 @@ section {
     }
 
     .theme-toggle,
+    .language-toggle,
     .menu-toggle {
         font-size: 1.1rem;
+    }
+
+    .language-toggle {
+        font-size: 0.72rem;
+        padding: 0.32rem 0.58rem;
+        min-width: 2.9rem;
     }
 
     .home-section {
