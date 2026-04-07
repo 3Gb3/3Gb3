@@ -1,31 +1,583 @@
-/* Importando estilos base do portfólio principal */
+/* Estilos da página Sage */
 @import url('../../portfolio.css');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-/* Estilos específicos do projeto Sage Bot Discord */
-.project-detail-info h2 {
-    color: #5865f2;
+.sage-page {
+    --sage-indigo: #5865f2;
+    --sage-indigo-strong: #434ebf;
+    --sage-sky: #38bdf8;
+    --sage-mint: #14b8a6;
+    --sage-panel-border: rgba(88, 101, 242, 0.24);
+    --sage-panel-bg: rgba(255, 255, 255, 0.86);
+    --sage-shadow: 0 18px 44px rgba(23, 37, 84, 0.2);
+    font-family: 'Space Grotesk', 'Manrope', 'Segoe UI', sans-serif;
+    background:
+        radial-gradient(circle at 6% 8%, rgba(56, 189, 248, 0.18), transparent 36%),
+        radial-gradient(circle at 92% 4%, rgba(88, 101, 242, 0.24), transparent 34%),
+        linear-gradient(180deg, #eef4ff 0%, #f6f8fc 42%, #edf2f8 100%);
 }
 
-.project-detail-info h3 {
-    color: #4752c4;
+[data-theme="dark"] .sage-page {
+    --sage-panel-border: rgba(56, 189, 248, 0.26);
+    --sage-panel-bg: rgba(12, 20, 40, 0.8);
+    --sage-shadow: 0 22px 52px rgba(2, 6, 23, 0.62);
+    background:
+        radial-gradient(circle at 6% 8%, rgba(56, 189, 248, 0.16), transparent 40%),
+        radial-gradient(circle at 92% 4%, rgba(88, 101, 242, 0.2), transparent 38%),
+        linear-gradient(180deg, #070f20 0%, #0b1428 44%, #091225 100%);
 }
 
-.tag {
-    background: linear-gradient(135deg, #5865f2, #4752c4);
+.sage-page .project-detail-section {
+    position: relative;
+    padding: 5.2rem 0 4.8rem;
+    min-height: calc(100vh - 200px);
+    overflow: hidden;
 }
 
-.project-status {
-    background: rgba(88, 101, 242, 0.1);
-    border-left-color: #5865f2;
+.sage-page .project-detail-section::before,
+.sage-page .project-detail-section::after {
+    content: '';
+    position: absolute;
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 0;
 }
 
-.project-status i {
-    color: #5865f2;
+.sage-page .project-detail-section::before {
+    width: 420px;
+    height: 420px;
+    top: -120px;
+    left: -180px;
+    background: radial-gradient(circle, rgba(88, 101, 242, 0.22) 0%, transparent 70%);
 }
 
-.project-detail-header h1 {
-    background: linear-gradient(135deg, #5865f2, #4752c4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.sage-page .project-detail-section::after {
+    width: 360px;
+    height: 360px;
+    right: -120px;
+    bottom: -120px;
+    background: radial-gradient(circle, rgba(20, 184, 166, 0.18) 0%, transparent 70%);
+}
+
+.sage-page .project-detail-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.sage-page .back-link {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(88, 101, 242, 0.28);
+    background: rgba(255, 255, 255, 0.48);
+    color: var(--sage-indigo-strong);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+.sage-page .back-link:hover {
+    gap: 0.7rem;
+    border-color: rgba(88, 101, 242, 0.44);
+    background: rgba(255, 255, 255, 0.72);
+}
+
+[data-theme="dark"] .sage-page .back-link {
+    background: rgba(7, 13, 29, 0.72);
+    color: #93c5fd;
+    border-color: rgba(56, 189, 248, 0.32);
+}
+
+[data-theme="dark"] .sage-page .back-link:hover {
+    border-color: rgba(56, 189, 248, 0.5);
+    background: rgba(7, 13, 29, 0.92);
+}
+
+.sage-page .project-detail-content {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.sage-page .sage-hero {
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1.35fr 0.95fr;
+    gap: 1rem;
+    margin-bottom: 1.1rem;
+    padding: 1.3rem;
+    border-radius: 28px;
+    border: 1px solid var(--sage-panel-border);
+    background:
+        radial-gradient(circle at 12% 12%, rgba(255, 255, 255, 0.64), transparent 46%),
+        linear-gradient(148deg, rgba(88, 101, 242, 0.14) 0%, rgba(20, 184, 166, 0.14) 100%);
+    box-shadow: var(--sage-shadow);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.sage-page .sage-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        122deg,
+        rgba(255, 255, 255, 0.11),
+        rgba(255, 255, 255, 0.11) 2px,
+        transparent 2px,
+        transparent 22px
+    );
+    opacity: 0.32;
+    pointer-events: none;
+}
+
+[data-theme="dark"] .sage-page .sage-hero {
+    background:
+        radial-gradient(circle at 12% 12%, rgba(59, 130, 246, 0.2), transparent 48%),
+        linear-gradient(145deg, rgba(88, 101, 242, 0.2) 0%, rgba(20, 184, 166, 0.16) 100%);
+}
+
+.sage-page .sage-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+.sage-page .sage-hero-main {
+    padding: 0.35rem 0.4rem 0.35rem 0.25rem;
+}
+
+.sage-page .sage-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.48rem;
+    margin-bottom: 1rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid rgba(88, 101, 242, 0.34);
+    background: rgba(255, 255, 255, 0.66);
+    color: var(--sage-indigo-strong);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+[data-theme="dark"] .sage-page .sage-eyebrow {
+    color: #93c5fd;
+    border-color: rgba(56, 189, 248, 0.42);
+    background: rgba(2, 6, 23, 0.42);
+}
+
+.sage-page .project-detail-header h1 {
+    margin: 0;
+    font-family: 'Sora', 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 3.8vw, 3.1rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: #101827;
+}
+
+[data-theme="dark"] .sage-page .project-detail-header h1 {
+    color: #f8fafc;
+}
+
+.sage-page .sage-lead {
+    margin: 0.9rem 0 1rem;
+    max-width: 62ch;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: #334155;
+}
+
+[data-theme="dark"] .sage-page .sage-lead {
+    color: #cbd5e1;
+}
+
+.sage-page .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.sage-page .tag {
+    padding: 0.35rem 0.88rem;
+    border-radius: 999px;
+    border: 1px solid rgba(88, 101, 242, 0.26);
+    background: linear-gradient(135deg, var(--sage-indigo) 0%, #4f46e5 44%, var(--sage-mint) 100%);
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.sage-page .sage-status-card {
+    border-radius: 20px;
+    border: 1px solid var(--sage-panel-border);
+    padding: 1rem;
+    background: var(--sage-panel-bg);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.sage-page .sage-status-card h2 {
+    margin: 0 0 0.65rem;
+    font-size: 1.06rem;
+    color: var(--sage-indigo-strong);
+    font-family: 'Sora', 'Space Grotesk', sans-serif;
+    letter-spacing: -0.01em;
+}
+
+[data-theme="dark"] .sage-page .sage-status-card h2 {
+    color: #93c5fd;
+}
+
+.sage-page .project-status {
+    margin: 0;
+    padding: 0.75rem 0.85rem;
+    border-radius: 14px;
+    border-left: 4px solid var(--sage-indigo);
+    background: rgba(88, 101, 242, 0.12);
+    color: #1e293b;
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+[data-theme="dark"] .sage-page .project-status {
+    background: rgba(56, 189, 248, 0.12);
+    color: #dbeafe;
+    border-left-color: #38bdf8;
+}
+
+.sage-page .project-status i {
+    color: var(--sage-indigo);
+    margin-right: 0.4rem;
+    animation: sageStatusPulse 2.3s ease-in-out infinite;
+}
+
+[data-theme="dark"] .sage-page .project-status i {
+    color: #38bdf8;
+}
+
+@keyframes sageStatusPulse {
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.74;
+        transform: scale(1.14);
+    }
+}
+
+.sage-page .sage-status-list {
+    list-style: none;
+    margin: 0.85rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.sage-page .sage-status-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.62rem 0.72rem;
+    border: 1px solid rgba(88, 101, 242, 0.2);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+[data-theme="dark"] .sage-page .sage-status-list li {
+    border-color: rgba(56, 189, 248, 0.28);
+    background: rgba(2, 6, 23, 0.48);
+}
+
+.sage-page .sage-status-list span {
+    color: #475569;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+[data-theme="dark"] .sage-page .sage-status-list span {
+    color: #93c5fd;
+}
+
+.sage-page .sage-status-list strong {
+    color: #0f172a;
+    font-size: 0.84rem;
+    text-align: right;
+}
+
+[data-theme="dark"] .sage-page .sage-status-list strong {
+    color: #e5e7eb;
+}
+
+.sage-page .sage-content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.sage-page .sage-panel {
+    padding: 1.2rem;
+    border-radius: 20px;
+    border: 1px solid var(--sage-panel-border);
+    background: var(--sage-panel-bg);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.12);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+[data-theme="dark"] .sage-page .sage-panel {
+    box-shadow: 0 16px 38px rgba(2, 6, 23, 0.5);
+}
+
+.sage-page .sage-panel--full {
+    grid-column: 1 / -1;
+}
+
+.sage-page .sage-panel h2,
+.sage-page .sage-panel h3 {
+    margin: 0 0 0.78rem;
+    font-family: 'Sora', 'Space Grotesk', sans-serif;
+    font-size: 1.22rem;
+    letter-spacing: -0.01em;
+    color: var(--sage-indigo-strong);
+}
+
+[data-theme="dark"] .sage-page .sage-panel h2,
+[data-theme="dark"] .sage-page .sage-panel h3 {
+    color: #93c5fd;
+}
+
+.sage-page .sage-panel p {
+    margin: 0;
+    color: #334155;
+    line-height: 1.78;
+    font-size: 1rem;
+}
+
+[data-theme="dark"] .sage-page .sage-panel p {
+    color: #cbd5e1;
+}
+
+.sage-page .sage-panel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.6rem;
+}
+
+.sage-page .sage-panel ul li {
+    position: relative;
+    padding-left: 1.15rem;
+    color: #334155;
+    line-height: 1.5;
+    font-size: 0.96rem;
+}
+
+[data-theme="dark"] .sage-page .sage-panel ul li {
+    color: #cbd5e1;
+}
+
+.sage-page .sage-panel ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.48rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sage-indigo), var(--sage-mint));
+}
+
+.sage-page .sage-roadmap {
+    margin-top: 1rem;
+    padding: 1.15rem;
+    border-radius: 20px;
+    border: 1px solid var(--sage-panel-border);
+    background:
+        radial-gradient(circle at 6% 8%, rgba(88, 101, 242, 0.18), transparent 40%),
+        linear-gradient(162deg, rgba(88, 101, 242, 0.1) 0%, rgba(20, 184, 166, 0.1) 100%);
+    box-shadow: 0 14px 34px rgba(29, 78, 216, 0.14);
+}
+
+[data-theme="dark"] .sage-page .sage-roadmap {
+    box-shadow: 0 16px 40px rgba(2, 6, 23, 0.58);
+}
+
+.sage-page .sage-roadmap h3 {
+    margin: 0;
+    font-family: 'Sora', 'Space Grotesk', sans-serif;
+    color: var(--sage-indigo-strong);
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+}
+
+[data-theme="dark"] .sage-page .sage-roadmap h3 {
+    color: #93c5fd;
+}
+
+.sage-page .sage-roadmap p {
+    margin: 0.3rem 0 0.95rem;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+[data-theme="dark"] .sage-page .sage-roadmap p {
+    color: #cbd5e1;
+}
+
+.sage-page .sage-roadmap-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.7rem;
+}
+
+.sage-page .sage-roadmap-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.9rem;
+    border-radius: 14px;
+    border: 1px solid rgba(88, 101, 242, 0.2);
+    background: rgba(255, 255, 255, 0.72);
+    color: #1f2937;
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+[data-theme="dark"] .sage-page .sage-roadmap-list li {
+    border-color: rgba(56, 189, 248, 0.28);
+    background: rgba(2, 6, 23, 0.44);
+    color: #e5e7eb;
+}
+
+.sage-page .sage-roadmap-step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--sage-indigo), var(--sage-mint));
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.sage-page .sage-reveal {
+    opacity: 0;
+    transform: translateY(18px) scale(0.99);
+    transition:
+        opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+        transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition-delay: var(--sage-reveal-delay, 0ms);
+}
+
+.sage-page .sage-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+@media (max-width: 1024px) {
+    .sage-page .project-detail-section {
+        padding-top: 4.6rem;
+    }
+
+    .sage-page .project-detail-content {
+        max-width: 960px;
+    }
+
+    .sage-page .sage-hero {
+        grid-template-columns: 1fr;
+        padding: 1.15rem;
+    }
+
+    .sage-page .sage-status-card {
+        padding: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sage-page .project-detail-section {
+        padding: 3.7rem 0 3.2rem;
+    }
+
+    .sage-page .back-link {
+        font-size: 0.92rem;
+        margin-bottom: 1rem;
+    }
+
+    .sage-page .project-detail-header h1 {
+        font-size: 1.82rem;
+    }
+
+    .sage-page .sage-lead {
+        font-size: 0.96rem;
+        line-height: 1.65;
+    }
+
+    .sage-page .sage-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sage-page .sage-panel,
+    .sage-page .sage-roadmap {
+        padding: 1rem;
+        border-radius: 18px;
+    }
+
+    .sage-page .sage-panel--full {
+        grid-column: auto;
+    }
+
+    .sage-page .sage-roadmap-list {
+        grid-template-columns: 1fr;
+    }
+
+    .sage-page .sage-status-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sage-page .sage-status-list strong {
+        text-align: left;
+    }
+}
+
+@media (max-width: 520px) {
+    .sage-page .sage-eyebrow {
+        font-size: 0.7rem;
+    }
+
+    .sage-page .project-detail-header h1 {
+        font-size: 1.62rem;
+    }
+
+    .sage-page .tag {
+        font-size: 0.76rem;
+        padding: 0.32rem 0.72rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sage-page .sage-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .sage-page .project-status i {
+        animation: none;
+    }
 }

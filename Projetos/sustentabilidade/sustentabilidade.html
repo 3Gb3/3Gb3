@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="sustentabilidade.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="sustentabilidade-page">
     <nav class="navbar" aria-label="Navegação principal">
         <div class="container">
             <div class="logo">Portfólio</div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="../../index.html" class="nav-link">Home</a></li>
                 <li><a href="../../index.html#about" class="nav-link">Sobre</a></li>
                 <li><a href="../../index.html#resume" class="nav-link">Currículo</a></li>
@@ -36,7 +36,7 @@
                     <span class="toggle-switch__thumb" aria-hidden="true"></span>
                 </button>
             </div>
-            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false">
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks">
                 <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
         </div>
@@ -47,28 +47,44 @@
             <a href="../../projetos.html" class="back-link"><i class="fas fa-arrow-left" aria-hidden="true"></i> Voltar aos Projetos</a>
 
             <div class="project-detail-content">
-                <header class="project-detail-header reveal">
-                    <p class="project-kicker">Projeto Institucional</p>
-                    <h1>Portal Verde América - Sustentabilidade Empresarial</h1>
-                    <p class="project-subtitle">
-                        Página desenvolvida para apresentar o projeto socioambiental da América Serviços Automotivos LTDA,
-                        reforçando impacto ambiental, ações sociais e engajamento da comunidade.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Landing Page</span>
-                        <span class="tag">Responsivo</span>
+                <header class="project-detail-header sustent-hero sustent-reveal">
+                    <div class="sustent-hero-main">
+                        <p class="sustent-kicker">Projeto Institucional</p>
+                        <h1>Portal Verde América - Sustentabilidade Empresarial</h1>
+                        <p class="sustent-subtitle">
+                            Página desenvolvida para apresentar o projeto socioambiental da América Serviços Automotivos LTDA,
+                            reforçando impacto ambiental, ações sociais e engajamento da comunidade.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Projeto Institucional</span>
+                            <span class="tag">Responsivo</span>
+                        </div>
                     </div>
+
+                    <aside class="sustent-snapshot-card">
+                        <h2>Snapshot do Projeto</h2>
+                        <ul class="sustent-snapshot-list">
+                            <li>
+                                <span>Categoria</span>
+                                <strong>Institucional</strong>
+                            </li>
+                            <li>
+                                <span>Contexto</span>
+                                <strong>Projeto acadêmico</strong>
+                            </li>
+                            <li>
+                                <span>Foco:</span>
+                                <strong>Sustentabilidade e consciência ambiental</strong>
+                            </li>
+                        </ul>
+                    </aside>
                 </header>
 
-                <figure class="project-showcase reveal">
-                    <img src="img/principal.png" alt="Tela principal do Portal Verde América" loading="eager" decoding="async">
-                </figure>
-
-                <div class="project-detail-info">
-                    <section class="info-block reveal">
+                <div class="sustent-content-grid">
+                    <article class="sustent-panel sustent-panel--full sustent-reveal">
                         <h2>O que é o projeto</h2>
                         <p>
                             O Portal Verde América é uma landing page institucional de impacto socioambiental. A proposta é
@@ -76,9 +92,9 @@
                             destinação responsável de resíduos, apoio a cooperativas, contribuição para hospital de câncer
                             infantil e melhoria contínua das ações.
                         </p>
-                    </section>
+                    </article>
 
-                    <section class="info-block reveal">
+                    <article class="sustent-panel sustent-reveal">
                         <h3>Tecnologias utilizadas</h3>
                         <ul>
                             <li><strong>Estrutura:</strong> HTML5 semântico para organizar blocos e conteúdo.</li>
@@ -87,9 +103,9 @@
                             <li><strong>Tipografia:</strong> Google Fonts (família Poppins).</li>
                             <li><strong>Contato:</strong> Link direto para WhatsApp com wa.me.</li>
                         </ul>
-                    </section>
+                    </article>
 
-                    <section class="info-block reveal">
+                    <article class="sustent-panel sustent-reveal">
                         <h3>Recursos técnicos implementados</h3>
                         <ul>
                             <li>Navegação de página única com âncoras internas e rolagem suave.</li>
@@ -101,9 +117,9 @@
                             <li>Estrutura pronta para lazy loading de imagens com data-src.</li>
                             <li>Debounce para otimização de eventos de alta frequência.</li>
                         </ul>
-                    </section>
+                    </article>
 
-                    <section class="info-block reveal">
+                    <article class="sustent-panel sustent-panel--full sustent-reveal">
                         <h3>Arquitetura e organização</h3>
                         <ul>
                             <li><strong>index.html:</strong> estrutura e conteúdo principal da página.</li>
@@ -111,56 +127,43 @@
                             <li><strong>script.js:</strong> interatividade, observadores de scroll e efeitos dinâmicos.</li>
                             <li><strong>README.md:</strong> documentação geral do projeto.</li>
                         </ul>
-                    </section>
+                    </article>
+                </div>
 
-                    <section class="info-block reveal">
-                        <h3>Galeria do projeto</h3>
-                        <p>Algumas telas utilizadas para demonstrar o visual e a estrutura da landing page.</p>
-                        <div class="gallery-grid">
-                            <button class="gallery-item" type="button" data-image="img/principal.png" data-caption="Seção de abertura com chamada principal e posicionamento institucional.">
-                                <img src="img/principal.png" alt="Visual da abertura do projeto" loading="lazy" decoding="async">
-                                <span>Abertura e hero</span>
-                            </button>
-                            <button class="gallery-item" type="button" data-image="img/sustentabilidade.png" data-caption="Blocos de conteúdo com informações sobre destinação de materiais e resultados.">
-                                <img src="img/sustentabilidade.png" alt="Blocos de conteúdo do projeto" loading="lazy" decoding="async">
-                                <span>Conteúdo e indicadores</span>
-                            </button>
-                            <button class="gallery-item" type="button" data-image="img/footer.png" data-caption="Seção final com chamadas de participação e contatos da iniciativa.">
-                                <img src="img/footer.png" alt="Rodapé e fechamento do projeto" loading="lazy" decoding="async">
-                                <span>Fechamento e contato</span>
-                            </button>
-                        </div>
-                    </section>
-
-                    <section class="info-block reveal">
-                        <h3>Resumo executivo</h3>
-                        <p>
-                            Este projeto é uma solução estática, moderna e responsiva, construída com front-end puro, sem
-                            dependência de frameworks. O foco principal foi combinar performance, clareza de mensagem e
-                            engajamento social em uma experiência digital objetiva.
-                        </p>
-                    </section>
-
-                    <div class="project-links reveal">
-                        <a href="https://github.com/3Gb3/Projeto_Sustentabilidade_Empresarial" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                            <i class="fab fa-github" aria-hidden="true"></i> Ver no GitHub
-                        </a>
-                        <a href="https://3gb3.github.io/Projeto_Sustentabilidade_Empresarial/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                            <i class="fas fa-globe" aria-hidden="true"></i> Acessar site
-                        </a>
+                <section class="sustent-gallery sustent-reveal" aria-label="Galeria do projeto">
+                    <h3>Galeria do projeto</h3>
+                    <p>Algumas telas utilizadas para demonstrar o visual e a estrutura da landing page.</p>
+                    <div class="sustent-gallery-grid">
+                        <figure class="sustent-shot">
+                            <img src="img/principal.png" alt="Visual da abertura do projeto" loading="lazy" decoding="async">
+                            <figcaption>Abertura e hero</figcaption>
+                        </figure>
+                        <figure class="sustent-shot">
+                            <img src="img/sustentabilidade.png" alt="Blocos de conteúdo do projeto" loading="lazy" decoding="async">
+                            <figcaption>Conteúdo e indicadores</figcaption>
+                        </figure>
+                        <figure class="sustent-shot">
+                            <img src="img/footer.png" alt="Rodapé e fechamento do projeto" loading="lazy" decoding="async">
+                            <figcaption>Fechamento e contato</figcaption>
+                        </figure>
+                        <figure class="sustent-shot">
+                            <img src="img/america.jpg" alt="Imagem institucional da América Ambiental" loading="lazy" decoding="async">
+                            <figcaption>Projeto Institucional</figcaption>
+                        </figure>
                     </div>
+                </section>
+
+                <div class="project-links sustent-reveal">
+                    <a href="https://github.com/3Gb3/Projeto_Sustentabilidade_Empresarial" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <i class="fab fa-github" aria-hidden="true"></i> Ver no GitHub
+                    </a>
+                    <a href="https://3gb3.github.io/Projeto_Sustentabilidade_Empresarial/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <i class="fas fa-globe" aria-hidden="true"></i> Acessar site
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-
-    <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true" role="dialog" aria-label="Visualização ampliada da imagem">
-        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Fechar visualização">
-            <i class="fas fa-times" aria-hidden="true"></i>
-        </button>
-        <img id="lightboxImage" src="" alt="Imagem ampliada do projeto">
-        <p id="lightboxCaption"></p>
-    </div>
 
     <footer class="footer">
         <div class="container">

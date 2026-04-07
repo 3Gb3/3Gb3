@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="purpleplay.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="purpleplay-page">
     <!-- Navegação -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Navegação principal">
         <div class="container">
             <div class="logo">Portfólio</div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="../../index.html" class="nav-link">Home</a></li>
                 <li><a href="../../index.html#about" class="nav-link">Sobre</a></li>
                 <li><a href="../../index.html#resume" class="nav-link">Currículo</a></li>
@@ -20,13 +20,25 @@
                 <li><a href="../../index.html#skills" class="nav-link">Habilidades</a></li>
                 <li><a href="../../index.html#contact" class="nav-link">Contato</a></li>
             </ul>
-            <div class="theme-toggle" id="themeToggle">
-                <i class="fas fa-moon"></i>
+            <div class="nav-switches" aria-label="Controles de interface">
+                <button class="theme-toggle toggle-switch toggle-switch--theme" id="themeToggle" type="button" aria-label="Alternar para tema escuro" aria-pressed="false" data-theme-mode="light">
+                    <span class="toggle-switch__track" aria-hidden="true">
+                        <span class="toggle-switch__label" data-theme-label="light">☀</span>
+                        <span class="toggle-switch__label" data-theme-label="dark">☾</span>
+                    </span>
+                    <span class="toggle-switch__thumb" aria-hidden="true"></span>
+                </button>
+                <button class="language-toggle toggle-switch toggle-switch--language" id="languageToggle" type="button" aria-label="Mudar idioma para português" title="Mudar idioma para português" aria-pressed="false" data-language-switch="true" data-language="en">
+                    <span class="toggle-switch__track" aria-hidden="true">
+                        <span class="toggle-switch__label" data-lang-label="en">EN</span>
+                        <span class="toggle-switch__label" data-lang-label="pt">BR</span>
+                    </span>
+                    <span class="toggle-switch__thumb" aria-hidden="true"></span>
+                </button>
             </div>
-            <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language to Portuguese" title="Switch language to Portuguese" aria-pressed="false">EN</button>
-            <div class="menu-toggle">
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
         </div>
     </nav>
 
@@ -34,59 +46,122 @@
     <section class="project-detail-section">
         <div class="container">
             <a href="../../projetos.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar aos Projetos</a>
-            
+
             <div class="project-detail-content">
-                <div class="project-detail-header">
-                    <h1>PurplePlay</h1>
-                    <div class="project-tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Firebase</span>
+                <header class="project-detail-header purple-hero purple-reveal">
+                    <div class="purple-hero-main">
+                        <p class="purple-eyebrow"><i class="fas fa-film" aria-hidden="true"></i> Projeto web de entretenimento</p>
+                        <h1>PurplePlay</h1>
+                        <p class="purple-lead">
+                            Plataforma web para organizar fila de filmes, navegar por categorias e consumir trailers com uma
+                            experiência visual direta, fluida e pensada para desktop e mobile.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Firebase</span>
+                        </div>
                     </div>
+
+                    <aside class="purple-snapshot-card">
+                        <h2>Snapshot do Projeto</h2>
+                        <ul class="purple-snapshot-list">
+                            <li>
+                                <span>Categoria</span>
+                                <strong>Front-end</strong>
+                            </li>
+                            <li>
+                                <span>Contexto</span>
+                                <strong>Projeto acadêmico</strong>
+                            </li>
+                            <li>
+                                <span>Stack principal</span>
+                                <strong>HTML, CSS, JS e Firebase</strong>
+                            </li>
+                        </ul>
+                    </aside>
+                </header>
+
+                <div class="purple-content-grid">
+                    <article class="purple-panel purple-panel--full purple-reveal">
+                        <h2>Sobre o Projeto</h2>
+                        <p>
+                            PurplePlay é uma plataforma web de gerenciamento de fila de filmes desenvolvida com HTML, CSS e JavaScript puro,
+                            integrada com Firebase para banco de dados. Este foi meu primeiro site criado para a faculdade, onde os usuários
+                            podem explorar diferentes categorias de filmes, selecionar títulos de interesse, assistir trailers e adicionar
+                            filmes à sua fila pessoal de entretenimento.
+                        </p>
+                    </article>
+
+                    <article class="purple-panel purple-reveal">
+                        <h3>Funcionalidades</h3>
+                        <ul>
+                            <li>Sistema de categorias de filmes organizadas</li>
+                            <li>Visualização de trailers integrada</li>
+                            <li>Fila personalizada de filmes para assistir</li>
+                            <li>Integração com Firebase para armazenamento de dados</li>
+                            <li>Interface moderna e responsiva</li>
+                            <li>Navegação fluida e intuitiva entre categorias</li>
+                            <li>Sistema de seleção e gerenciamento de filmes</li>
+                        </ul>
+                    </article>
+
+                    <article class="purple-panel purple-reveal">
+                        <h3>Tecnologias Utilizadas</h3>
+                        <ul>
+                            <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript Vanilla</li>
+                            <li><strong>Banco de Dados:</strong> Firebase</li>
+                            <li><strong>Design:</strong> Layout responsivo e moderno</li>
+                            <li><strong>Interatividade:</strong> JavaScript puro sem frameworks</li>
+                        </ul>
+                    </article>
+
+                    <article class="purple-panel purple-panel--full purple-reveal">
+                        <h3>Objetivos do Projeto</h3>
+                        <p>
+                            Como meu primeiro projeto para a faculdade, o PurplePlay foi desenvolvido para demonstrar
+                            o domínio de tecnologias web fundamentais e a capacidade de criar uma aplicação funcional e completa.
+                            O sistema de fila de filmes permite que os usuários organizem seu entretenimento de forma prática,
+                            enquanto a integração com Firebase garante a persistência dos dados entre sessões.
+                        </p>
+                    </article>
                 </div>
 
-                <div class="project-detail-info">
-                    <h2>Sobre o Projeto</h2>
-                    <p>
-                        PurplePlay é uma plataforma web de gerenciamento de fila de filmes desenvolvida com HTML, CSS e JavaScript puro, 
-                        integrada com Firebase para banco de dados. Este foi meu primeiro site criado para a faculdade, onde os usuários 
-                        podem explorar diferentes categorias de filmes, selecionar títulos de interesse, assistir trailers e adicionar 
-                        filmes à sua fila pessoal de entretenimento.
-                    </p>
+                <section class="purple-gallery purple-reveal" aria-label="Galeria do projeto">
+                    <h3>Galeria do projeto</h3>
+                    <p>Telas reais do PurplePlay desenvolvidas para fluxo de login, navegação, trailers e gestão da fila de filmes.</p>
 
-                    <h3>Funcionalidades</h3>
-                    <ul>
-                        <li>Sistema de categorias de filmes organizadas</li>
-                        <li>Visualização de trailers integrada</li>
-                        <li>Fila personalizada de filmes para assistir</li>
-                        <li>Integração com Firebase para armazenamento de dados</li>
-                        <li>Interface moderna e responsiva</li>
-                        <li>Navegação fluida e intuitiva entre categorias</li>
-                        <li>Sistema de seleção e gerenciamento de filmes</li>
-                    </ul>
+                    <div class="purple-gallery-grid">
+                        <figure class="purple-shot">
+                            <img src="img/login.png" alt="Tela de login do PurplePlay" loading="lazy" decoding="async">
+                            <figcaption>Tela de login</figcaption>
+                        </figure>
 
-                    <h3>Tecnologias Utilizadas</h3>
-                    <ul>
-                        <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript Vanilla</li>
-                        <li><strong>Banco de Dados:</strong> Firebase</li>
-                        <li><strong>Design:</strong> Layout responsivo e moderno</li>
-                        <li><strong>Interatividade:</strong> JavaScript puro sem frameworks</li>
-                    </ul>
+                        <figure class="purple-shot">
+                            <img src="img/principal.png" alt="Tela principal do PurplePlay" loading="lazy" decoding="async">
+                            <figcaption>Tela principal</figcaption>
+                        </figure>
 
-                    <h3>Objetivos do Projeto</h3>
-                    <p>
-                        Como meu primeiro projeto para a faculdade, o PurplePlay foi desenvolvido para demonstrar 
-                        o domínio de tecnologias web fundamentais e a capacidade de criar uma aplicação funcional e completa. 
-                        O sistema de fila de filmes permite que os usuários organizem seu entretenimento de forma prática, 
-                        enquanto a integração com Firebase garante a persistência dos dados entre sessões.
-                    </p>
+                        <figure class="purple-shot">
+                            <img src="img/meus_filmes.png" alt="Tela de gerenciamento de fila no PurplePlay" loading="lazy" decoding="async">
+                            <figcaption>Fila de filmes</figcaption>
+                        </figure>
 
-                    <div class="project-links">
-                        <a href="https://github.com/3Gb3/PurplePlay" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                            <i class="fab fa-github"></i> Ver no GitHub
-                        </a>
+                        <figure class="purple-shot">
+                            <img src="img/trailer.png" alt="Tela de reprodução de trailer no PurplePlay" loading="lazy" decoding="async">
+                            <figcaption>Reprodução de trailer</figcaption>
+                        </figure>
                     </div>
+                </section>
+
+                <div class="project-links purple-reveal">
+                    <a href="https://github.com/3Gb3/PurplePlay" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <i class="fab fa-github"></i> Ver no GitHub
+                    </a>
+                    <a href="https://3Gb3.github.io/PurplePlay" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <i class="fas fa-globe" aria-hidden="true"></i> Acessar site
+                    </a>
                 </div>
             </div>
         </div>
