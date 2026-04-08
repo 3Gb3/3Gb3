@@ -1,15 +1,594 @@
-/* Importando estilos base do portfólio principal */
+/* Estilos da pagina Code Logic */
 @import url('../../portfolio.css');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
 
-/* Estilos específicos do projeto Code Logic */
-.project-detail-info h2 {
-    color: #667eea;
+.codelogic-page {
+    --logic-blue: #2563eb;
+    --logic-blue-strong: #1e40af;
+    --logic-violet: #7c3aed;
+    --logic-cyan: #06b6d4;
+    --logic-teal: #0f766e;
+    --logic-panel-border: rgba(37, 99, 235, 0.24);
+    --logic-panel-bg: rgba(255, 255, 255, 0.88);
+    --logic-shadow: 0 18px 44px rgba(30, 41, 59, 0.2);
+    font-family: 'Manrope', 'Segoe UI', sans-serif;
+    background:
+        radial-gradient(circle at 7% 8%, rgba(37, 99, 235, 0.2), transparent 36%),
+        radial-gradient(circle at 92% 4%, rgba(124, 58, 237, 0.18), transparent 35%),
+        linear-gradient(180deg, #eef4ff 0%, #f3f7fe 44%, #eaf1fa 100%);
 }
 
-.project-detail-info h3 {
-    color: #764ba2;
+[data-theme="dark"] .codelogic-page {
+    --logic-panel-border: rgba(125, 211, 252, 0.28);
+    --logic-panel-bg: rgba(10, 20, 40, 0.8);
+    --logic-shadow: 0 22px 52px rgba(2, 6, 23, 0.62);
+    background:
+        radial-gradient(circle at 7% 8%, rgba(37, 99, 235, 0.22), transparent 38%),
+        radial-gradient(circle at 92% 4%, rgba(124, 58, 237, 0.2), transparent 37%),
+        linear-gradient(180deg, #050d1d 0%, #081226 44%, #091324 100%);
 }
 
-.tag {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+.codelogic-page .project-detail-section {
+    position: relative;
+    padding: 5.2rem 0 4.8rem;
+    min-height: calc(100vh - 200px);
+    overflow: hidden;
+}
+
+.codelogic-page .project-detail-section::before,
+.codelogic-page .project-detail-section::after {
+    content: '';
+    position: absolute;
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.codelogic-page .project-detail-section::before {
+    width: 430px;
+    height: 430px;
+    left: -170px;
+    top: -140px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.26) 0%, transparent 70%);
+}
+
+.codelogic-page .project-detail-section::after {
+    width: 340px;
+    height: 340px;
+    right: -120px;
+    bottom: -120px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.24) 0%, transparent 70%);
+}
+
+.codelogic-page .project-detail-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.codelogic-page .back-link {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    background: rgba(255, 255, 255, 0.56);
+    color: var(--logic-blue-strong);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+.codelogic-page .back-link:hover {
+    gap: 0.7rem;
+    border-color: rgba(37, 99, 235, 0.48);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+[data-theme="dark"] .codelogic-page .back-link {
+    background: rgba(5, 12, 25, 0.78);
+    color: #93c5fd;
+    border-color: rgba(125, 211, 252, 0.38);
+}
+
+[data-theme="dark"] .codelogic-page .back-link:hover {
+    border-color: rgba(125, 211, 252, 0.56);
+    background: rgba(5, 12, 25, 0.94);
+}
+
+.codelogic-page .project-detail-content {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.codelogic-page .logic-hero {
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 1.3rem;
+    border-radius: 28px;
+    border: 1px solid var(--logic-panel-border);
+    background:
+        radial-gradient(circle at 14% 14%, rgba(255, 255, 255, 0.64), transparent 52%),
+        linear-gradient(145deg, rgba(37, 99, 235, 0.18) 0%, rgba(124, 58, 237, 0.14) 62%, rgba(6, 182, 212, 0.14) 100%);
+    box-shadow: var(--logic-shadow);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.codelogic-page .logic-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        122deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1) 2px,
+        transparent 2px,
+        transparent 23px
+    );
+    opacity: 0.28;
+    pointer-events: none;
+}
+
+[data-theme="dark"] .codelogic-page .logic-hero {
+    background:
+        radial-gradient(circle at 14% 14%, rgba(59, 130, 246, 0.23), transparent 54%),
+        linear-gradient(145deg, rgba(37, 99, 235, 0.24) 0%, rgba(124, 58, 237, 0.2) 62%, rgba(6, 182, 212, 0.18) 100%);
+}
+
+.codelogic-page .logic-hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+.codelogic-page .logic-hero-main {
+    padding: 0.35rem 0.35rem 0.35rem 0.2rem;
+}
+
+.codelogic-page .logic-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.48rem;
+    margin: 0 0 0.9rem;
+    padding: 0.35rem 0.78rem;
+    border-radius: 999px;
+    border: 1px solid rgba(37, 99, 235, 0.34);
+    background: rgba(255, 255, 255, 0.66);
+    color: var(--logic-blue-strong);
+    font-family: 'Space Mono', 'Manrope', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+[data-theme="dark"] .codelogic-page .logic-eyebrow {
+    color: #bfdbfe;
+    border-color: rgba(125, 211, 252, 0.42);
+    background: rgba(2, 6, 23, 0.44);
+}
+
+.codelogic-page .project-detail-header h1 {
+    margin: 0;
+    font-family: 'Sora', 'Manrope', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.12rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: #0f172a;
+}
+
+[data-theme="dark"] .codelogic-page .project-detail-header h1 {
+    color: #f8fafc;
+}
+
+.codelogic-page .logic-lead {
+    margin: 0.92rem 0 1rem;
+    max-width: 63ch;
+    color: #334155;
+    font-size: 1.02rem;
+    line-height: 1.75;
+}
+
+[data-theme="dark"] .codelogic-page .logic-lead {
+    color: #cbd5e1;
+}
+
+.codelogic-page .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.codelogic-page .tag {
+    padding: 0.35rem 0.88rem;
+    border-radius: 999px;
+    border: 1px solid rgba(37, 99, 235, 0.28);
+    background: linear-gradient(135deg, var(--logic-blue), var(--logic-violet) 52%, var(--logic-cyan) 100%);
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.codelogic-page .logic-snapshot-card {
+    border-radius: 20px;
+    border: 1px solid var(--logic-panel-border);
+    padding: 1rem;
+    background: var(--logic-panel-bg);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.codelogic-page .logic-snapshot-card h2 {
+    margin: 0 0 0.65rem;
+    color: var(--logic-blue-strong);
+    font-family: 'Sora', 'Manrope', sans-serif;
+    font-size: 1.08rem;
+    letter-spacing: -0.01em;
+}
+
+[data-theme="dark"] .codelogic-page .logic-snapshot-card h2 {
+    color: #bfdbfe;
+}
+
+.codelogic-page .logic-snapshot-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.codelogic-page .logic-snapshot-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.62rem 0.72rem;
+    border: 1px solid rgba(37, 99, 235, 0.22);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+[data-theme="dark"] .codelogic-page .logic-snapshot-list li {
+    border-color: rgba(125, 211, 252, 0.3);
+    background: rgba(2, 6, 23, 0.5);
+}
+
+.codelogic-page .logic-snapshot-list span {
+    color: #475569;
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+[data-theme="dark"] .codelogic-page .logic-snapshot-list span {
+    color: #bfdbfe;
+}
+
+.codelogic-page .logic-snapshot-list strong {
+    color: #0f172a;
+    font-size: 0.84rem;
+    text-align: right;
+}
+
+[data-theme="dark"] .codelogic-page .logic-snapshot-list strong {
+    color: #e5e7eb;
+}
+
+.codelogic-page .logic-content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.codelogic-page .logic-panel {
+    padding: 1.2rem;
+    border-radius: 20px;
+    border: 1px solid var(--logic-panel-border);
+    background: var(--logic-panel-bg);
+    box-shadow: 0 12px 30px rgba(51, 65, 85, 0.12);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+[data-theme="dark"] .codelogic-page .logic-panel {
+    box-shadow: 0 16px 40px rgba(2, 6, 23, 0.54);
+}
+
+.codelogic-page .logic-panel--full {
+    grid-column: 1 / -1;
+}
+
+.codelogic-page .logic-panel h2,
+.codelogic-page .logic-panel h3 {
+    margin: 0 0 0.8rem;
+    color: var(--logic-blue-strong);
+    font-family: 'Sora', 'Manrope', sans-serif;
+    font-size: 1.22rem;
+    letter-spacing: -0.01em;
+}
+
+[data-theme="dark"] .codelogic-page .logic-panel h2,
+[data-theme="dark"] .codelogic-page .logic-panel h3 {
+    color: #bfdbfe;
+}
+
+.codelogic-page .logic-panel p {
+    margin: 0;
+    color: #334155;
+    line-height: 1.78;
+    font-size: 1rem;
+}
+
+[data-theme="dark"] .codelogic-page .logic-panel p {
+    color: #cbd5e1;
+}
+
+.codelogic-page .logic-panel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.6rem;
+}
+
+.codelogic-page .logic-panel ul li {
+    position: relative;
+    padding-left: 1.15rem;
+    color: #334155;
+    line-height: 1.52;
+    font-size: 0.96rem;
+}
+
+[data-theme="dark"] .codelogic-page .logic-panel ul li {
+    color: #cbd5e1;
+}
+
+.codelogic-page .logic-panel ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.48rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--logic-blue), var(--logic-violet));
+}
+
+.codelogic-page .logic-gallery {
+    margin-top: 1rem;
+    padding: 1.15rem;
+    border-radius: 20px;
+    border: 1px solid var(--logic-panel-border);
+    background:
+        radial-gradient(circle at 8% 10%, rgba(37, 99, 235, 0.15), transparent 42%),
+        linear-gradient(160deg, rgba(37, 99, 235, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+    box-shadow: 0 14px 34px rgba(51, 65, 85, 0.14);
+}
+
+[data-theme="dark"] .codelogic-page .logic-gallery {
+    box-shadow: 0 16px 40px rgba(2, 6, 23, 0.6);
+}
+
+.codelogic-page .logic-gallery h3 {
+    margin: 0;
+    color: var(--logic-blue-strong);
+    font-family: 'Sora', 'Manrope', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+}
+
+[data-theme="dark"] .codelogic-page .logic-gallery h3 {
+    color: #bfdbfe;
+}
+
+.codelogic-page .logic-gallery p {
+    margin: 0.32rem 0 0.95rem;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+[data-theme="dark"] .codelogic-page .logic-gallery p {
+    color: #cbd5e1;
+}
+
+.codelogic-page .logic-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+.codelogic-page .logic-shot {
+    margin: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(37, 99, 235, 0.24);
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow: 0 10px 24px rgba(30, 41, 59, 0.14);
+    transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease;
+}
+
+[data-theme="dark"] .codelogic-page .logic-shot {
+    background: rgba(2, 6, 23, 0.56);
+    border-color: rgba(125, 211, 252, 0.3);
+}
+
+.codelogic-page .logic-shot:hover {
+    transform: translateY(-6px);
+    border-color: rgba(6, 182, 212, 0.44);
+    box-shadow: 0 16px 36px rgba(30, 41, 59, 0.22);
+}
+
+.codelogic-page .logic-shot img {
+    display: block;
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+}
+
+.codelogic-page .logic-shot figcaption {
+    padding: 0.66rem 0.72rem;
+    font-size: 0.86rem;
+    color: #334155;
+    font-weight: 600;
+}
+
+[data-theme="dark"] .codelogic-page .logic-shot figcaption {
+    color: #e5e7eb;
+}
+
+.codelogic-page .project-links {
+    margin-top: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+}
+
+.codelogic-page .project-links .btn {
+    border: none;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(2, 6, 23, 0.42);
+}
+
+.codelogic-page .project-links .btn-primary {
+    background: linear-gradient(135deg, var(--logic-blue), var(--logic-violet));
+}
+
+.codelogic-page .project-links .btn-secondary {
+    background: linear-gradient(135deg, var(--logic-cyan), var(--logic-teal));
+}
+
+.codelogic-page .project-links .btn:hover {
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.28);
+}
+
+.codelogic-page .logic-reveal {
+    opacity: 0;
+    transform: translateY(18px) scale(0.99);
+    transition:
+        opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+        transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition-delay: var(--logic-reveal-delay, 0ms);
+}
+
+.codelogic-page .logic-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+@media (max-width: 1024px) {
+    .codelogic-page .project-detail-section {
+        padding-top: 4.6rem;
+    }
+
+    .codelogic-page .project-detail-content {
+        max-width: 960px;
+    }
+
+    .codelogic-page .logic-hero {
+        grid-template-columns: 1fr;
+        padding: 1.15rem;
+    }
+
+    .codelogic-page .logic-gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .codelogic-page .project-detail-section {
+        padding: 3.8rem 0 3.2rem;
+    }
+
+    .codelogic-page .back-link {
+        font-size: 0.92rem;
+        margin-bottom: 1rem;
+    }
+
+    .codelogic-page .project-detail-header h1 {
+        font-size: 1.84rem;
+    }
+
+    .codelogic-page .logic-lead {
+        font-size: 0.96rem;
+        line-height: 1.66;
+    }
+
+    .codelogic-page .logic-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .codelogic-page .logic-panel,
+    .codelogic-page .logic-gallery {
+        padding: 1rem;
+        border-radius: 18px;
+    }
+
+    .codelogic-page .logic-panel--full {
+        grid-column: auto;
+    }
+
+    .codelogic-page .logic-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .codelogic-page .logic-shot img {
+        height: 190px;
+    }
+
+    .codelogic-page .logic-snapshot-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .codelogic-page .logic-snapshot-list strong {
+        text-align: left;
+    }
+}
+
+@media (max-width: 560px) {
+    .codelogic-page .logic-eyebrow {
+        font-size: 0.68rem;
+    }
+
+    .codelogic-page .tag {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.72rem;
+    }
+
+    .codelogic-page .logic-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .codelogic-page .logic-shot img {
+        height: 220px;
+    }
+
+    .codelogic-page .project-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .codelogic-page .project-links .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .codelogic-page .logic-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .codelogic-page .logic-shot,
+    .codelogic-page .project-links .btn,
+    .codelogic-page .back-link {
+        transition: none;
+    }
 }
