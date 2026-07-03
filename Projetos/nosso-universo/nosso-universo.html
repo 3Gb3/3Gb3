@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Universo - Gabriel Schwingel Conci</title>
+    <meta name="description" content="Experiência web 3D criada com Three.js, planetas interativos, narrativa visual, memórias e trilha sonora.">
+    <link rel="icon" type="image/svg+xml" href="../../img/favicon.svg">
+    <link rel="stylesheet" href="nosso-universo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="universe-page">
+    <a class="skip-link" href="#mainContent">Pular para o conteúdo principal</a>
+
+    <nav class="navbar" aria-label="Navegação principal">
+        <div class="container">
+            <a href="../../index.html" class="logo">Portfólio</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../../index.html" class="nav-link">Home</a></li>
+                <li><a href="../../index.html#about" class="nav-link">Sobre</a></li>
+                <li><a href="../../index.html#resume" class="nav-link">Currículo</a></li>
+                <li><a href="../../projetos.html" class="nav-link active" aria-current="page">Projetos</a></li>
+                <li><a href="../../index.html#skills" class="nav-link">Habilidades</a></li>
+                <li><a href="../../index.html#contact" class="nav-link">Contato</a></li>
+            </ul>
+            <div class="nav-switches" aria-label="Controles de interface">
+                <button class="theme-toggle toggle-switch toggle-switch--theme" id="themeToggle" type="button" aria-label="Alternar para tema escuro" aria-pressed="false" data-theme-mode="light">
+                    <span class="toggle-switch__track" aria-hidden="true">
+                        <span class="toggle-switch__label" data-theme-label="light">☀</span>
+                        <span class="toggle-switch__label" data-theme-label="dark">☾</span>
+                    </span>
+                    <span class="toggle-switch__thumb" aria-hidden="true"></span>
+                </button>
+                <button class="language-toggle toggle-switch toggle-switch--language" id="languageToggle" type="button" aria-label="Mudar idioma para português" title="Mudar idioma para português" aria-pressed="false" data-language-switch="true" data-language="en">
+                    <span class="toggle-switch__track" aria-hidden="true">
+                        <span class="toggle-switch__label" data-lang-label="en">EN</span>
+                        <span class="toggle-switch__label" data-lang-label="pt">BR</span>
+                    </span>
+                    <span class="toggle-switch__thumb" aria-hidden="true"></span>
+                </button>
+            </div>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main id="mainContent">
+        <section class="universe-detail">
+            <div class="container">
+                <a href="../../projetos.html" class="back-link"><i class="fas fa-arrow-left" aria-hidden="true"></i> Voltar aos Projetos</a>
+
+                <header class="universe-hero">
+                    <div class="universe-hero__content">
+                        <p class="universe-eyebrow"><i class="fas fa-meteor" aria-hidden="true"></i> Experiência narrativa em Three.js</p>
+                        <h1>Nosso Universo</h1>
+                        <p class="universe-lead">Uma experiência web imersiva que transforma momentos, sentimentos e planos para o futuro em um sistema solar totalmente navegável.</p>
+                        <div class="universe-actions">
+                            <a href="https://3gb3.github.io/Nosso_Universo/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <i class="fas fa-rocket" aria-hidden="true"></i> Acessar experiência
+                            </a>
+                            <a href="#gallery" class="btn btn-secondary">
+                                <i class="fas fa-images" aria-hidden="true"></i> Ver galeria
+                            </a>
+                        </div>
+                    </div>
+                    <div class="universe-hero__visual" aria-hidden="true">
+                        <img src="img/solaris-selecionado.png" alt="">
+                    </div>
+                </header>
+
+                <div class="universe-stats" aria-label="Resumo do projeto">
+                    <div><strong>7</strong><span>7 mundos temáticos</span></div>
+                    <div><strong>3D</strong><span>Sistema solar navegável</span></div>
+                    <div><strong>2026</strong><span>Projeto publicado</span></div>
+                </div>
+
+                <div class="universe-content-grid">
+                    <article class="universe-panel universe-panel--wide">
+                        <p class="panel-kicker">Sobre a experiência</p>
+                        <h2>Sobre a experiência</h2>
+                        <p>Nosso Universo usa uma navegação espacial em 3D para contar uma história de forma sensorial. Cada planeta funciona como uma seção própria, com identidade visual, movimento e conteúdo específico.</p>
+                        <p>A proposta combina tecnologia e afeto em uma interface que convida a explorar, selecionar planetas e descobrir novas camadas da narrativa.</p>
+                    </article>
+
+                    <article class="universe-panel">
+                        <p class="panel-kicker">Destaques técnicos</p>
+                        <h2>Destaques técnicos</h2>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-cube" aria-hidden="true"></i><span>Cena 3D com órbitas, partículas e transições de câmera</span></li>
+                            <li><i class="fas fa-earth-americas" aria-hidden="true"></i><span>Sete planetas com experiências visuais independentes</span></li>
+                            <li><i class="fas fa-music" aria-hidden="true"></i><span>Integração de áudio e playlist incorporada do Spotify</span></li>
+                            <li><i class="fas fa-hand-pointer" aria-hidden="true"></i><span>Interações por mouse e toque em uma interface responsiva</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="universe-panel">
+                        <p class="panel-kicker">Os mundos do projeto</p>
+                        <h2>Os mundos do projeto</h2>
+                        <p>Solaris apresenta uma jornada cinematográfica; Aurora conta o início da história; Kronara organiza a linha do tempo; Luminis reúne memórias; Auralis guarda mensagens; Harmonia traz a trilha sonora; e Nebulor representa sonhos e planos para o futuro.</p>
+                        <div class="planet-pills" aria-label="Planetas do projeto">
+                            <span>Solaris</span><span>Aurora</span><span>Kronara</span><span>Luminis</span><span>Auralis</span><span>Harmonia</span><span>Nebulor</span>
+                        </div>
+                    </article>
+                </div>
+
+                <section class="universe-tech" aria-labelledby="tech-title">
+                    <p class="panel-kicker">Tecnologias utilizadas</p>
+                    <h2 id="tech-title">Tecnologias utilizadas</h2>
+                    <div class="tech-orbit">
+                        <span>HTML5 e CSS3</span>
+                        <span>JavaScript puro</span>
+                        <span>Three.js e WebGL</span>
+                        <span>Canvas e animações</span>
+                        <span>Spotify Embed API</span>
+                    </div>
+                </section>
+
+                <section class="universe-gallery" id="gallery" aria-labelledby="gallery-title">
+                    <div class="gallery-heading">
+                        <p class="panel-kicker">Galeria do projeto</p>
+                        <h2 id="gallery-title">Galeria do projeto</h2>
+                        <p>Capturas reais da experiência publicada, registradas diretamente no projeto em funcionamento.</p>
+                    </div>
+                    <div class="universe-gallery__grid">
+                        <figure class="universe-shot universe-shot--wide">
+                            <img src="img/sistema-solar.png" alt="Visão geral do sistema solar navegável" loading="eager" decoding="async">
+                            <figcaption>Visão geral do sistema solar navegável</figcaption>
+                        </figure>
+                        <figure class="universe-shot">
+                            <img src="img/solaris-selecionado.png" alt="Seleção do planeta Solaris e seu painel contextual" loading="lazy" decoding="async">
+                            <figcaption>Seleção do planeta Solaris e seu painel contextual</figcaption>
+                        </figure>
+                        <figure class="universe-shot">
+                            <img src="img/experiencia-solaris.png" alt="Jornada cinematográfica dentro de Solaris" loading="lazy" decoding="async">
+                            <figcaption>Jornada cinematográfica dentro de Solaris</figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <section class="universe-cta">
+                    <div>
+                        <p class="panel-kicker">Conhecer Nosso Universo</p>
+                        <h2>Conhecer Nosso Universo</h2>
+                        <p>Abra a experiência publicada e navegue pelos planetas para descobrir cada parte da história.</p>
+                    </div>
+                    <a href="https://3gb3.github.io/Nosso_Universo/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Abrir o site
+                    </a>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear">2026</span> Gabriel Schwingel Conci. Todos os direitos reservados.</p>
+            <div class="footer-social">
+                <a href="https://github.com/3Gb3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/gbsconci/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTop" class="scroll-top" type="button" aria-label="Voltar ao topo" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+    <a href="https://wa.me/5551994464827" target="_blank" rel="noopener noreferrer" class="whatsapp-button" title="Fale comigo no WhatsApp" aria-label="Fale comigo no WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="../../site-language.js"></script>
+    <script src="../../portfolio.js"></script>
+</body>
+</html>

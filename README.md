@@ -6,7 +6,7 @@ Site pessoal: [**3gb3.github.io/3Gb3**](https://3gb3.github.io/3Gb3/)
 
 ## 👋 Olá, me chamo Gabriel (Gb)
 
-Estou cursando **Análise e Desenvolvimento de Sistemas** na Cesuca (3° semestre), com conhecimento em **Python**, **HTML/CSS** e **JavaScript**. Atualmente, meu foco é aprimorar minhas habilidades em Python e desenvolvimento web. Sou movido pelo aprendizado constante, especialmente na área de **tecnologia**, que é minha grande paixão.  
+Estou cursando **Análise e Desenvolvimento de Sistemas** na Cesuca (4° semestre), com conhecimento em **Python**, **HTML/CSS** e **JavaScript**. Atualmente, meu foco é aprimorar minhas habilidades em Python e desenvolvimento web. Sou movido pelo aprendizado constante, especialmente na área de **tecnologia**, que é minha grande paixão.
 
 - 🐍 Python (Flask, Pygame, Discord.py)
 - 🎨 Desenvolvimento Web (HTML, CSS, JavaScript)
