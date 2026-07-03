@@ -42,11 +42,11 @@
         'Ver no GitHub': 'View on GitHub',
 
         // Head metadata
-        'Gabriel Schwingel Conci | Desenvolvedor Full-Stack Júnior': 'Gabriel Schwingel Conci | Junior Full-Stack Developer',
-        'Site profissional de Gabriel Schwingel Conci, desenvolvedor full-stack júnior com foco em Python, Flask, IA aplicada, bots para Discord e interfaces web responsivas.': 'Professional website of Gabriel Schwingel Conci, a junior full-stack developer focused on Python, Flask, applied AI, Discord bots, and responsive web interfaces.',
+        'Gabriel Schwingel Conci | Desenvolvedor Full-Stack': 'Gabriel Schwingel Conci | Full-Stack Developer',
+        'Site profissional de Gabriel Schwingel Conci, desenvolvedor full-stack com foco em Python, Flask, IA aplicada, bots para Discord e interfaces web responsivas.': 'Professional website of Gabriel Schwingel Conci, a full-stack developer focused on Python, Flask, applied AI, Discord bots, and responsive web interfaces.',
         'Conheça meu trabalho com desenvolvimento web, automação, QA e inteligência artificial aplicada.': 'Explore my work in web development, automation, QA, and applied artificial intelligence.',
         'Site profissional com projetos e experiência em Python, Flask, QA e IA aplicada.': 'Professional website featuring projects and experience in Python, Flask, QA, and applied AI.',
-        'Site profissional de Gabriel Schwingel Conci, desenvolvedor full-stack júnior com foco em automação, Python, FastAPI, chatbots e inteligência artificial aplicada.': 'Professional website of Gabriel Schwingel Conci, a junior full-stack developer focused on automation, Python, FastAPI, chatbots, and applied artificial intelligence.',
+        'Site profissional de Gabriel Schwingel Conci, desenvolvedor full-stack com foco em automação, Python, FastAPI, chatbots e inteligência artificial aplicada.': 'Professional website of Gabriel Schwingel Conci, a full-stack developer focused on automation, Python, FastAPI, chatbots, and applied artificial intelligence.',
         'Experiência profissional, projetos e tecnologias de Gabriel Schwingel Conci.': 'Professional experience, projects, and technologies of Gabriel Schwingel Conci.',
         'Projetos - Gabriel Schwingel Conci': 'Projects - Gabriel Schwingel Conci',
         'Experiência | Gabriel Schwingel Conci': 'Experience | Gabriel Schwingel Conci',
@@ -64,8 +64,8 @@
         'pt_BR': 'en_US',
 
         // Home section
-        'Desenvolvedor Full-Stack Júnior': 'Junior Full-Stack Developer',
-        'Desenvolvedor Full-Stack Júnior | Automação e IA': 'Junior Full-Stack Developer | Automation and AI',
+        'Desenvolvedor Full-Stack': 'Full-Stack Developer',
+        'Desenvolvedor Full-Stack | Automação e IA': 'Full-Stack Developer | Automation and AI',
         'Desenvolvo automações, chatbots, APIs e integrações com inteligência artificial para conectar clientes e empresas.': 'I build automations, chatbots, APIs, and AI-powered integrations to connect customers and companies.',
         'Transformo ideias em soluções digitais com foco em qualidade, performance e experiências claras para o usuário.': 'I turn ideas into digital solutions focused on quality, performance, and clear user experiences.',
         'Falar Comigo': 'Talk to Me',
@@ -87,8 +87,8 @@
 
         // About section
         'Sobre Mim': 'About Me',
-        'Sou Gabriel Schwingel Conci, desenvolvedor full-stack júnior e estudante de Análise e Desenvolvimento de Sistemas na CESUCA. Gosto de construir soluções úteis, com código limpo e foco na experiência de quem usa.': 'I am Gabriel Schwingel Conci, a junior full-stack developer and Systems Analysis and Development student at CESUCA. I enjoy building useful solutions with clean code and a strong focus on user experience.',
-        'Sou Gabriel Schwingel Conci, desenvolvedor full-stack júnior com foco em automações, integrações e inteligência artificial aplicada. Gosto de construir soluções úteis, com código organizado e atenção à experiência de quem usa.': 'I am Gabriel Schwingel Conci, a junior full-stack developer focused on automation, integrations, and applied artificial intelligence. I enjoy building useful solutions with organized code and attention to user experience.',
+        'Sou Gabriel Schwingel Conci, desenvolvedor full-stack e estudante de Análise e Desenvolvimento de Sistemas na CESUCA. Gosto de construir soluções úteis, com código limpo e foco na experiência de quem usa.': 'I am Gabriel Schwingel Conci, a full-stack developer and Systems Analysis and Development student at CESUCA. I enjoy building useful solutions with clean code and a strong focus on user experience.',
+        'Sou Gabriel Schwingel Conci, desenvolvedor full-stack com foco em automações, integrações e inteligência artificial aplicada. Gosto de construir soluções úteis, com código organizado e atenção à experiência de quem usa.': 'I am Gabriel Schwingel Conci, a full-stack developer focused on automation, integrations, and applied artificial intelligence. I enjoy building useful solutions with organized code and attention to user experience.',
         'Hoje atuo nas frentes de Business Tech e QQTech da Quero-Quero, trabalhando com ChatGraph, RabbitMQ, DBeaver, PostgreSQL e Docker Desktop.': 'Today I work in Quero-Quero\'s Business Tech and QQTech teams, using ChatGraph, RabbitMQ, DBeaver, PostgreSQL, and Docker Desktop.',
         'Hoje atuo no Business Tech da Quero-Quero, um time focado no desenvolvimento de automações, chatbots e soluções de IA que conectam clientes e empresa em fluxos de atendimento personalizados.': 'Today I work on Quero-Quero\'s Business Tech team, focused on developing automations, chatbots, and AI solutions that connect customers and the company through personalized service flows.',
         'Hoje atuo no Business Tech + QQTech da Quero-Quero, em um time focado no desenvolvimento de automações, chatbots e soluções de IA que conectam clientes e empresa em fluxos de atendimento personalizados.': 'Today I work in Business Tech + QQTech at Quero-Quero, on a team focused on developing automations, chatbots, and AI solutions that connect customers and the company through personalized service flows.',
@@ -204,7 +204,7 @@
 
         // Contact section
         'Vamos Conversar!': "Let's Talk!",
-        'Estou aberto a oportunidades júnior, projetos colaborativos e conversas sobre web, automação e IA aplicada.': 'I am open to junior opportunities, collaborative projects, and conversations about web, automation, and applied AI.',
+        'Estou aberto a oportunidades, projetos colaborativos e conversas sobre web, automação e IA aplicada.': 'I am open to opportunities, collaborative projects, and conversations about web, automation, and applied AI.',
         'Nome': 'Name',
         'Seu nome': 'Your name',
         'Assunto': 'Subject',

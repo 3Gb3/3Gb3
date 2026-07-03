@@ -2,7 +2,7 @@
 
 # Olá, eu sou Gabriel Schwingel Conci 👋
 
-### Desenvolvedor Full-Stack Júnior · Business Tech · Automação e IA
+### Desenvolvedor Full-Stack · Business Tech · Automação e IA
 
 [![Site profissional](https://img.shields.io/badge/Site_profissional-0F766E?style=for-the-badge&logo=googlechrome&logoColor=white)](https://3gb3.github.io/3Gb3/)
 [![Currículo](https://img.shields.io/badge/Currículo-2563EB?style=for-the-badge&logo=readme&logoColor=white)](https://3gb3.github.io/3Gb3/files/Gabriel_Conci.pdf)
@@ -13,7 +13,7 @@
 
 ## Sobre mim
 
-Sou desenvolvedor full-stack júnior e gosto de transformar problemas reais em aplicações úteis, organizadas e fáceis de usar. Atualmente trabalho na **Quero-Quero**, no **Business Tech + QQTech**, em um time focado no desenvolvimento de automações.
+Sou desenvolvedor full-stack e gosto de transformar problemas reais em aplicações úteis, organizadas e fáceis de usar. Atualmente trabalho na **Quero-Quero**, no **Business Tech + QQTech**, em um time focado no desenvolvimento de automações.
 
 Criamos **chatbots e soluções de IA** para personalizar a comunicação nos fluxos **cliente → empresa** e **empresa → cliente**.
 
@@ -103,7 +103,7 @@ Veja a apresentação completa no meu [site profissional](https://3gb3.github.io
 
 ## Contato
 
-Estou aberto a oportunidades júnior, projetos colaborativos e conversas sobre desenvolvimento web, automação, qualidade e IA aplicada.
+Estou aberto a oportunidades, projetos colaborativos e conversas sobre desenvolvimento web, automação, qualidade e IA aplicada.
 
 - [LinkedIn](https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344/)
 - [Instagram](https://www.instagram.com/gbsconci/)

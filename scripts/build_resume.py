@@ -80,7 +80,7 @@ def build():
     c.drawString(13 * mm, page_h - 19 * mm, "GABRIEL SCHWINGEL CONCI")
     c.setFillColor(ACCENT)
     c.setFont("Resume-Bold", 11)
-    c.drawString(13 * mm, page_h - 28 * mm, "DESENVOLVEDOR FULL-STACK JÚNIOR | AUTOMAÇÃO E IA")
+    c.drawString(13 * mm, page_h - 28 * mm, "DESENVOLVEDOR FULL-STACK | AUTOMAÇÃO E IA")
     c.setFillColor(colors.HexColor("#C7D2E2"))
     c.setFont("Resume", 8.6)
     c.drawString(13 * mm, page_h - 36 * mm, "Business Tech + QQTech  |  APIs, chatbots, integrações e produtos digitais")
@@ -135,7 +135,7 @@ def build():
 
     my = section_title(c, "Perfil profissional", mx, my, mw)
     summary = (
-        "Desenvolvedor full-stack júnior com experiência em automações, chatbots, APIs e integrações "
+        "Desenvolvedor full-stack com experiência em automações, chatbots, APIs e integrações "
         "com inteligência artificial. Atuo conectando clientes e empresas por meio de fluxos "
         "conversacionais, mensageria e serviços em Python/FastAPI, com visão de qualidade herdada "
         "da atuação anterior em QA de chatbots."
