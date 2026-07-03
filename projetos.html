@@ -20,39 +20,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="portfolio.css?v=20260703i">
-    <link rel="stylesheet" href="projetos.css?v=20260703i">
+    <link rel="stylesheet" href="portfolio.css?v=20260703j">
+    <link rel="stylesheet" href="projetos.css?v=20260703j">
+    <link rel="stylesheet" href="site.css?v=20260703j">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>document.documentElement.dataset.languageChoice = sessionStorage.getItem('selectedLanguage') ? 'ready' : 'pending';</script>
 </head>
-<body class="projects-page">
-    <a class="skip-link" href="#mainContent">Pular para o conteúdo principal</a>
-
-    <!-- Navegação -->
-    <nav class="navbar" aria-label="Navegação principal">
-        <div class="container">
-            <a href="index.html" class="logo">Gabriel Conci</a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="index.html#about" class="nav-link">Sobre</a></li>
-                <li><a href="index.html#resume" class="nav-link">Currículo</a></li>
-                <li><a href="projetos.html" class="nav-link active">Projetos</a></li>
-                <li><a href="index.html#technologies" class="nav-link">Tecnologias</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contato</a></li>
-            </ul>
-            <div class="nav-switches" aria-label="Controles de interface">
-                <button class="language-toggle toggle-switch toggle-switch--language" id="languageToggle" type="button" aria-label="Mudar idioma para inglês" title="Mudar idioma para inglês" aria-pressed="true" data-language-switch="true" data-language="pt">
-                    <span class="toggle-switch__track" aria-hidden="true">
-                        <span class="toggle-switch__label" data-lang-label="en">EN</span>
-                        <span class="toggle-switch__label" data-lang-label="pt">BR</span>
-                    </span>
-                    <span class="toggle-switch__thumb" aria-hidden="true"></span>
-                </button>
-            </div>
-            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
+<body class="projects-page" data-page="projects">
+    <div data-site-header></div>
 
     <main id="mainContent">
         <!-- Projects Page Header -->
@@ -261,30 +236,10 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Gabriel Schwingel Conci. Todos os direitos reservados.</p>
-            <div class="footer-social">
-                <a href="https://github.com/3Gb3" target="_blank" rel="noopener noreferrer" aria-label="github"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344/" target="_blank" rel="noopener noreferrer" aria-label="linkedin"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/gbsconci/" target="_blank" rel="noopener noreferrer" aria-label="instagram"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollTop" class="scroll-top" aria-label="Voltar ao topo">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/5551994464827" target="_blank" class="whatsapp-button" rel="noopener noreferrer" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script src="site-language.js?v=20260703i"></script>
-    <script src="portfolio.js?v=20260703i"></script>
-    <script src="projetos.js?v=20260703i"></script>
+    <div data-site-footer></div>
+    <script src="site-shell.js?v=20260703j"></script>
+    <script src="site-language.js?v=20260703j"></script>
+    <script src="portfolio.js?v=20260703j"></script>
+    <script src="projetos.js?v=20260703j"></script>
 </body>
 </html>

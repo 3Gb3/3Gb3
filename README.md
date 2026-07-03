@@ -108,3 +108,16 @@ Estou aberto a oportunidades júnior, projetos colaborativos e conversas sobre d
 - [LinkedIn](https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344/)
 - [Instagram](https://www.instagram.com/gbsconci/)
 - [E-mail](mailto:gabrielsconci@gmail.com)
+
+## Estrutura do site profissional
+
+O conteúdo principal está organizado em páginas dedicadas:
+
+- `index.html`: apresentação e visão geral
+- `projetos.html`: catálogo com busca e filtros
+- `experiencia.html`: trajetória profissional
+- `habilidades.html`: tecnologias e práticas
+- `certificacoes.html`: cursos e repositórios de estudo
+- `contato.html`: canais diretos e formulário
+
+O cabeçalho e o rodapé são montados pelo `site-shell.js`, a identidade visual fica centralizada no `site.css` e a tradução compartilhada é controlada pelo `site-language.js`. Na primeira visita de cada aba, a escolha entre português e inglês é gravada em `sessionStorage` na chave `selectedLanguage`.

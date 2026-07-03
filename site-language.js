@@ -1,5 +1,5 @@
 (function () {
-    const STORAGE_KEY = 'portfolioLanguage';
+    const STORAGE_KEY = 'selectedLanguage';
     const DEFAULT_LANGUAGE = 'pt';
     const ATTRIBUTE_NAMES = ['placeholder', 'aria-label', 'title', 'alt'];
     const META_SELECTORS = [
@@ -14,11 +14,15 @@
     const PT_TO_EN_TRANSLATIONS = {
         // Common UI
         'Pular para o conteúdo principal': 'Skip to main content',
-        'Portfólio': 'Portfolio',
+        'Site profissional': 'Professional website',
         'Sobre': 'About',
         'Currículo': 'Resume',
         'Projetos': 'Projects',
         'Habilidades': 'Skills',
+        'Início': 'Home',
+        'Experiência': 'Experience',
+        'Certificações': 'Certifications',
+        'Fale comigo': 'Contact',
         'Contato': 'Contact',
         'Navegação principal': 'Main navigation',
         'Controles de interface': 'Interface controls',
@@ -30,7 +34,7 @@
         'Fale comigo no WhatsApp': 'Message me on WhatsApp',
         'Carregando...': 'Loading...',
         'Abrindo projetos...': 'Opening projects...',
-        'Voltando ao portfolio...': 'Back to portfolio...',
+        'Voltando ao site...': 'Back to the site...',
         'Todos os direitos reservados.': 'All rights reserved.',
         'Gabriel Schwingel Conci. Todos os direitos reservados.': 'Gabriel Schwingel Conci. All rights reserved.',
         '© 2026 Gabriel Schwingel Conci. Todos os direitos reservados.': '© 2026 Gabriel Schwingel Conci. All rights reserved.',
@@ -39,12 +43,20 @@
 
         // Head metadata
         'Gabriel Schwingel Conci | Desenvolvedor Full-Stack Júnior': 'Gabriel Schwingel Conci | Junior Full-Stack Developer',
-        'Portfólio de Gabriel Schwingel Conci, desenvolvedor full-stack júnior com foco em Python, Flask, IA aplicada, bots para Discord e interfaces web responsivas.': 'Portfolio of Gabriel Schwingel Conci, a junior full-stack developer focused on Python, Flask, applied AI, Discord bots, and responsive web interfaces.',
+        'Site profissional de Gabriel Schwingel Conci, desenvolvedor full-stack júnior com foco em Python, Flask, IA aplicada, bots para Discord e interfaces web responsivas.': 'Professional website of Gabriel Schwingel Conci, a junior full-stack developer focused on Python, Flask, applied AI, Discord bots, and responsive web interfaces.',
         'Conheça meu trabalho com desenvolvimento web, automação, QA e inteligência artificial aplicada.': 'Explore my work in web development, automation, QA, and applied artificial intelligence.',
-        'Portfólio com projetos e experiência em Python, Flask, QA e IA aplicada.': 'Portfolio with projects and experience in Python, Flask, QA, and applied AI.',
+        'Site profissional com projetos e experiência em Python, Flask, QA e IA aplicada.': 'Professional website featuring projects and experience in Python, Flask, QA, and applied AI.',
         'Site profissional de Gabriel Schwingel Conci, desenvolvedor full-stack júnior com foco em automação, Python, FastAPI, chatbots e inteligência artificial aplicada.': 'Professional website of Gabriel Schwingel Conci, a junior full-stack developer focused on automation, Python, FastAPI, chatbots, and applied artificial intelligence.',
         'Experiência profissional, projetos e tecnologias de Gabriel Schwingel Conci.': 'Professional experience, projects, and technologies of Gabriel Schwingel Conci.',
         'Projetos - Gabriel Schwingel Conci': 'Projects - Gabriel Schwingel Conci',
+        'Experiência | Gabriel Schwingel Conci': 'Experience | Gabriel Schwingel Conci',
+        'Habilidades | Gabriel Schwingel Conci': 'Skills | Gabriel Schwingel Conci',
+        'Certificações | Gabriel Schwingel Conci': 'Certifications | Gabriel Schwingel Conci',
+        'Contato | Gabriel Schwingel Conci': 'Contact | Gabriel Schwingel Conci',
+        'Trajetória profissional de Gabriel Schwingel Conci em Business Tech, automação, inteligência artificial, QA e desenvolvimento full-stack.': 'Gabriel Schwingel Conci professional journey in Business Tech, automation, artificial intelligence, QA, and full-stack development.',
+        'Habilidades técnicas de Gabriel Schwingel Conci em desenvolvimento, automação, inteligência artificial, dados e infraestrutura.': 'Gabriel Schwingel Conci technical skills in development, automation, artificial intelligence, data, and infrastructure.',
+        'Cursos, formações complementares e aprendizado contínuo de Gabriel Schwingel Conci.': 'Courses, complementary education, and continuous learning by Gabriel Schwingel Conci.',
+        'Entre em contato com Gabriel Schwingel Conci para oportunidades, projetos e conversas sobre desenvolvimento, automação e inteligência artificial.': 'Contact Gabriel Schwingel Conci about opportunities, projects, development, automation, and artificial intelligence.',
         'Catálogo completo de projetos de Gabriel Schwingel Conci com foco em desenvolvimento web, automação e soluções em Python.': 'Complete project catalog by Gabriel Schwingel Conci focused on web development, automation, and Python solutions.',
         'Projeto BNCC - Gabriel Schwingel Conci': 'BNCC Project - Gabriel Schwingel Conci',
         'Sage - Bot de Discord - Gabriel Schwingel Conci': 'Sage - Discord Bot - Gabriel Schwingel Conci',
@@ -119,7 +131,7 @@
         'Análise de fluxos conversacionais e interações com usuários': 'Analysis of conversational flows and user interactions',
         'Identificação e documentação de bugs e melhorias': 'Identification and documentation of bugs and improvements',
         '2024 - Presente': '2024 - Present',
-        'Portfólio Pessoal': 'Personal Portfolio',
+        'Site Profissional': 'Professional Website',
         'Projetos Autorais': 'Independent Projects',
         'Desenvolvimento de aplicações web usando Python (Flask), HTML, CSS e JavaScript': 'Web application development using Python (Flask), HTML, CSS, and JavaScript',
         'Criação de jogos 2D utilizando Pygame': 'Creation of 2D games using Pygame',
@@ -181,13 +193,13 @@
         'Forte': 'Strong',
         'Aplicação:': 'Application:',
         'projetos acadêmicos e autorais com foco em resolução de problemas reais.': 'academic and personal projects focused on solving real-world problems.',
-        'interfaces para portfólio, páginas de produto e fluxos integrados com APIs.': 'interfaces for portfolio pages, product pages, and API-integrated flows.',
+        'interfaces para sites profissionais, páginas de produto e fluxos integrados com APIs.': 'interfaces for professional websites, product pages, and API-integrated flows.',
         'atuação em validação de experiências conversacionais com foco no usuário final.': 'experience validating conversational experiences focused on the end user.',
         'bots para comunidades com recursos de moderação, utilidade e automação.': 'bots for communities with moderation, utility, and automation features.',
         'chatbots e automações que conectam clientes e empresa nos dois sentidos do atendimento.': 'chatbots and automations connecting customers and the company in both directions of the service flow.',
         'experimentação de assistentes locais e automação de tarefas com IA.': 'experimentation with local assistants and task automation with AI.',
         'criação de atendimentos personalizados, integração de modelos e automação de fluxos com IA.': 'creation of personalized customer service, model integration, and AI-powered workflow automation.',
-        'rotina de estudos, documentação de tarefas e evolução contínua do portfólio.': 'study routine, task documentation, and continuous portfolio evolution.',
+        'rotina de estudos, documentação de tarefas e evolução contínua do site profissional.': 'study routine, task documentation, and continuous professional website evolution.',
         'desenvolvimento, acesso a ambientes, transferência de arquivos e gerenciamento de dados no dia a dia.': 'daily development, environment access, file transfer, and data management.',
 
         // Contact section
@@ -205,7 +217,7 @@
         'Enviar Mensagem': 'Send Message',
 
         // Projects page
-        'Portfólio em destaque': 'Portfolio Highlights',
+        'Projetos em destaque': 'Featured Projects',
         'Projetos construídos para gerar resultado real': 'Projects built to deliver real results',
         'Explore por tecnologia e categoria para encontrar rápido o tipo de solução que você quer analisar.': 'Explore by technology and category to quickly find the type of solution you want to review.',
         'Projetos publicados': 'Published projects',
@@ -632,7 +644,6 @@
             'theme.toLight': 'Switch to light theme',
             'transition.loading': 'Loading...',
             'transition.openProjects': 'Opening projects...',
-            'transition.backToPortfolio': 'Back to site...',
             'form.blocked': 'Could not send. Refresh the page and try again.',
             'form.reviewRequired': 'Please review the required fields before sending.',
             'form.cooldown': 'Wait a few seconds before sending another message.',
@@ -650,7 +661,6 @@
             'theme.toLight': 'Alternar para tema claro',
             'transition.loading': 'Carregando...',
             'transition.openProjects': 'Abrindo projetos...',
-            'transition.backToPortfolio': 'Voltando ao site...',
             'form.blocked': 'Não foi possível enviar. Atualize a página e tente novamente.',
             'form.reviewRequired': 'Revise os campos obrigatórios antes de enviar.',
             'form.cooldown': 'Aguarde alguns segundos antes de enviar uma nova mensagem.',
@@ -667,6 +677,7 @@
         currentLanguage: DEFAULT_LANGUAGE,
         originalTitle: '',
         textEntries: [],
+        explicitEntries: [],
         attributeEntries: [],
         metaEntries: [],
         normalizedPtToEn: buildTranslationLookup(PT_TO_EN_TRANSLATIONS)
@@ -739,6 +750,10 @@
                         return NodeFilter.FILTER_REJECT;
                     }
 
+                    if (parent.closest('[data-en], .language-gate')) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+
                     return NodeFilter.FILTER_ACCEPT;
                 }
             }
@@ -759,6 +774,14 @@
         state.textEntries = entries;
     }
 
+    function captureExplicitEntries() {
+        state.explicitEntries = Array.from(document.querySelectorAll('[data-en]')).map((element) => ({
+            element,
+            original: element.textContent,
+            english: element.getAttribute('data-en') || element.textContent
+        }));
+    }
+
     function captureAttributeEntries() {
         if (!document.body) {
             return;
@@ -773,10 +796,12 @@
                     return;
                 }
 
+                const englishAttributeName = `data-en-${attributeName}`;
                 entries.push({
                     element,
                     attributeName,
-                    original: element.getAttribute(attributeName)
+                    original: element.getAttribute(attributeName),
+                    english: element.getAttribute(englishAttributeName)
                 });
             });
         });
@@ -809,6 +834,10 @@
             entry.node.textContent = entry.original;
         });
 
+        state.explicitEntries.forEach((entry) => {
+            entry.element.textContent = entry.original;
+        });
+
         state.attributeEntries.forEach((entry) => {
             entry.element.setAttribute(entry.attributeName, entry.original);
         });
@@ -825,8 +854,12 @@
             entry.node.textContent = translateTextNodeFromOriginal(entry.original);
         });
 
+        state.explicitEntries.forEach((entry) => {
+            entry.element.textContent = entry.english;
+        });
+
         state.attributeEntries.forEach((entry) => {
-            entry.element.setAttribute(entry.attributeName, translateFromPortuguese(entry.original));
+            entry.element.setAttribute(entry.attributeName, entry.english || translateFromPortuguese(entry.original));
         });
 
         state.metaEntries.forEach((entry) => {
@@ -909,7 +942,11 @@
         }
 
         if (shouldPersist) {
-            localStorage.setItem(STORAGE_KEY, resolvedLanguage);
+            try {
+                sessionStorage.setItem(STORAGE_KEY, resolvedLanguage);
+            } catch (_error) {
+                // A interface continua funcional mesmo quando o armazenamento está indisponível.
+            }
         }
 
         if (shouldEmitEvent) {
@@ -927,6 +964,106 @@
             const nextLanguage = state.currentLanguage === 'en' ? 'pt' : 'en';
             applyLanguage(nextLanguage);
         });
+    }
+
+    function getStoredLanguage() {
+        try {
+            const value = sessionStorage.getItem(STORAGE_KEY);
+            return value === 'pt' || value === 'en' ? value : null;
+        } catch (_error) {
+            return null;
+        }
+    }
+
+    function typeLanguageIntroductions(gate) {
+        const portugueseText = 'Seja muito bem-vindo ao meu site profissional. Para visualizar o conteúdo em português, escolha a opção abaixo.';
+        const englishText = 'Welcome to my professional website. To view the content in English, choose the option below.';
+        const portugueseTarget = gate.querySelector('[data-typewriter="pt"]');
+        const englishTarget = gate.querySelector('[data-typewriter="en"]');
+
+        if (!portugueseTarget || !englishTarget) {
+            return;
+        }
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            portugueseTarget.textContent = portugueseText;
+            englishTarget.textContent = englishText;
+            return;
+        }
+
+        const startedAt = performance.now();
+        const charactersPerSecond = 34;
+        const render = (now) => {
+            const visibleCharacters = Math.floor(((now - startedAt) / 1000) * charactersPerSecond);
+            portugueseTarget.textContent = portugueseText.slice(0, visibleCharacters);
+            englishTarget.textContent = englishText.slice(0, visibleCharacters);
+
+            if (visibleCharacters < Math.max(portugueseText.length, englishText.length) && gate.isConnected) {
+                window.requestAnimationFrame(render);
+            }
+        };
+
+        window.requestAnimationFrame(render);
+    }
+
+    function completeInitialLanguageChoice(gate, language) {
+        gate.querySelectorAll('button').forEach((button) => {
+            button.disabled = true;
+        });
+        applyLanguage(language, { animate: false });
+
+        const finish = () => {
+            document.documentElement.dataset.languageChoice = 'ready';
+            document.body.classList.add('site-revealed');
+            gate.remove();
+        };
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            finish();
+            return;
+        }
+
+        gate.classList.add('is-transitioning');
+        window.setTimeout(finish, 760);
+    }
+
+    function createLanguageGate() {
+        const gate = document.createElement('div');
+        gate.className = 'language-gate';
+        gate.setAttribute('role', 'dialog');
+        gate.setAttribute('aria-modal', 'true');
+        gate.setAttribute('aria-labelledby', 'languageGateTitle');
+        gate.innerHTML = `
+            <div class="language-gate__ambient" aria-hidden="true"></div>
+            <div class="language-gate__content">
+                <header class="language-gate__header">
+                    <span class="logo-mark" aria-hidden="true">GC</span>
+                    <div><p>Gabriel Conci</p><h1 id="languageGateTitle">Escolha seu idioma <span>/ Choose your language</span></h1></div>
+                </header>
+                <div class="language-gate__grid">
+                    <article class="language-choice language-choice--pt">
+                        <span class="language-choice__code">PT-BR</span>
+                        <h2>Olá, seja bem-vindo.</h2>
+                        <p class="language-choice__typing" data-typewriter="pt" aria-live="polite"></p>
+                        <button type="button" data-language-choice="pt">Continuar em Português <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                    </article>
+                    <article class="language-choice language-choice--en" lang="en">
+                        <span class="language-choice__code">EN-US</span>
+                        <h2>Hello, welcome.</h2>
+                        <p class="language-choice__typing" data-typewriter="en" aria-live="polite"></p>
+                        <button type="button" data-language-choice="en">Continue in English <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                    </article>
+                </div>
+                <p class="language-gate__note">Sua escolha fica salva somente durante esta sessão. / Your choice is saved only for this session.</p>
+            </div>
+            <div class="language-gate__bands" aria-hidden="true"><span></span><span></span><span></span></div>`;
+
+        document.body.appendChild(gate);
+        gate.querySelectorAll('[data-language-choice]').forEach((button) => {
+            button.addEventListener('click', () => completeInitialLanguageChoice(gate, button.dataset.languageChoice));
+        });
+        typeLanguageIntroductions(gate);
+        window.setTimeout(() => gate.querySelector('[data-language-choice="pt"]')?.focus(), 80);
     }
 
     function interpolate(template, params = {}) {
@@ -959,14 +1096,25 @@
     function initialize() {
         state.originalTitle = document.title;
         captureTextEntries();
+        captureExplicitEntries();
         captureAttributeEntries();
         captureMetaEntries();
 
         initializeLanguageToggleButton();
 
-        const storedLanguage = localStorage.getItem(STORAGE_KEY);
+        const storedLanguage = getStoredLanguage();
         const preferredLanguage = resolveLanguage(storedLanguage || DEFAULT_LANGUAGE);
         applyLanguage(preferredLanguage, { persist: false, emitEvent: false, animate: false });
+
+        const requiresInitialChoice = document.documentElement.hasAttribute('data-language-choice');
+
+        if (storedLanguage || !requiresInitialChoice) {
+            document.documentElement.dataset.languageChoice = 'ready';
+            document.body.classList.add('site-revealed');
+        } else {
+            document.documentElement.dataset.languageChoice = 'pending';
+            createLanguageGate();
+        }
     }
 
     window.siteLanguage = {

@@ -13,7 +13,7 @@ const SUBMIT_COOLDOWN_MS = 60 * 1000;
 const MIN_FORM_FILL_TIME_MS = 3000;
 const PAGE_TRANSITION_DELAY_MS = 220;
 const PAGE_ENTER_ANIMATION_MS = 240;
-const PAGE_TRANSITION_STATE_KEY = 'portfolioPageTransition';
+const PAGE_TRANSITION_STATE_KEY = 'sitePageTransition';
 const PAGE_TRANSITION_MAX_AGE_MS = 7000;
 
 let pageTransitionOverlay = null;
@@ -35,8 +35,37 @@ function getActiveLanguage() {
     return 'pt';
 }
 
+function upgradeLegacyNavigation() {
+    const isProjectDetail = normalizePath(window.location.pathname).includes('/projetos/');
+    if (!isProjectDetail || navLinks.length !== 6) {
+        return;
+    }
+
+    const items = [
+        ['../../index.html', 'Início'],
+        ['../../projetos.html', 'Projetos'],
+        ['../../experiencia.html', 'Experiência'],
+        ['../../habilidades.html', 'Habilidades'],
+        ['../../certificacoes.html', 'Certificações'],
+        ['../../contato.html', 'Fale comigo']
+    ];
+
+    navLinks.forEach((link, index) => {
+        const [href, label] = items[index];
+        link.href = href;
+        link.textContent = label;
+        link.classList.toggle('active', index === 1);
+        if (index === 1) {
+            link.setAttribute('aria-current', 'page');
+        } else {
+            link.removeAttribute('aria-current');
+        }
+    });
+}
+
 html.setAttribute('data-theme', 'dark');
 localStorage.removeItem('theme');
+upgradeLegacyNavigation();
 prepareIncomingPageTransition();
 setupPageTransitions();
 setupNavigation();
@@ -52,7 +81,7 @@ if (document.readyState === 'loading') {
 }
 
 function setupNavigation() {
-    const mobileNavigationQuery = window.matchMedia('(max-width: 768px)');
+    const mobileNavigationQuery = window.matchMedia('(max-width: 820px)');
 
     const syncMobileNavigation = () => {
         if (!menuToggle || !navLinksContainer) {
@@ -259,7 +288,8 @@ function handleScroll() {
 }
 
 function updateActiveNavLink() {
-    if (!sections.length || !navLinks.length) {
+    const inPageLinks = Array.from(navLinks).filter((link) => (link.getAttribute('href') || '').startsWith('#'));
+    if (!sections.length || !inPageLinks.length) {
         return;
     }
 
@@ -272,7 +302,7 @@ function updateActiveNavLink() {
         }
     });
 
-    navLinks.forEach((link) => {
+    inPageLinks.forEach((link) => {
         const targetId = (link.getAttribute('href') || '').replace('#', '');
         const isActive = targetId === currentSectionId;
 
@@ -292,7 +322,7 @@ function closeMobileMenu(returnFocus = false) {
     }
 
     navLinksContainer.classList.remove('active');
-    if (window.matchMedia('(max-width: 768px)').matches) {
+    if (window.matchMedia('(max-width: 820px)').matches) {
         navLinksContainer.setAttribute('aria-hidden', 'true');
         navLinks.forEach((link) => link.setAttribute('tabindex', '-1'));
     } else {
@@ -444,15 +474,6 @@ function normalizePath(pathname) {
     return decodeURIComponent(pathname).replace(/\\/g, '/').toLowerCase();
 }
 
-function isProjectsPagePath(pathname) {
-    return normalizePath(pathname).endsWith('projetos.html');
-}
-
-function isHomePagePath(pathname) {
-    const normalizedPath = normalizePath(pathname);
-    return normalizedPath.endsWith('index.html') || normalizedPath.endsWith('/');
-}
-
 function isTransitionEligibleDestination(destination) {
     if (destination.origin !== window.location.origin) {
         return false;
@@ -465,7 +486,7 @@ function isTransitionEligibleDestination(destination) {
         return false;
     }
 
-    return isProjectsPagePath(destinationPath) || isHomePagePath(destinationPath);
+    return destinationPath.endsWith('.html') || destinationPath.endsWith('/');
 }
 
 function shouldSkipTransition(event, link) {
@@ -557,12 +578,7 @@ function updatePageTransitionMessage(destinationUrl) {
 function getTransitionMessage(destinationUrl) {
     try {
         const destination = new URL(destinationUrl, window.location.href);
-
-        if (isHomePagePath(destination.pathname)) {
-            return translateMessage('transition.backToPortfolio', {}, 'Voltando ao site...');
-        }
-
-        if (isProjectsPagePath(destination.pathname)) {
+        if (normalizePath(destination.pathname).endsWith('projetos.html')) {
             return translateMessage('transition.openProjects', {}, 'Abrindo projetos...');
         }
     } catch (_error) {
@@ -625,7 +641,7 @@ function setupProjectImages() {
 }
 
 function setupScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.project-card, .skills-category, .resume-item, .highlight-item, .contact-item');
+    const animatedElements = document.querySelectorAll('.reveal-on-scroll, .project-card, .skills-category, .resume-item, .highlight-item, .contact-item');
     if (!animatedElements.length) {
         return;
     }
@@ -705,7 +721,7 @@ function setupContactForm() {
             return;
         }
 
-        const lastSubmit = Number(localStorage.getItem('portfolioLastSubmit') || '0');
+        const lastSubmit = Number(localStorage.getItem('siteLastSubmit') || '0');
         if (Date.now() - lastSubmit < SUBMIT_COOLDOWN_MS) {
             showFormFeedback(translateMessage('form.cooldown', {}, 'Aguarde alguns segundos antes de enviar uma nova mensagem.'), 'error');
             return;
@@ -740,7 +756,7 @@ function setupContactForm() {
         try {
             await sendContactMessage(payload);
 
-            localStorage.setItem('portfolioLastSubmit', String(Date.now()));
+            localStorage.setItem('siteLastSubmit', String(Date.now()));
             contactForm.reset();
             contactForm.dataset.startedAt = String(Date.now());
 
