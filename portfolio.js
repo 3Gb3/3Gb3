@@ -37,7 +37,7 @@ function getActiveLanguage() {
 
 function upgradeLegacyNavigation() {
     const isProjectDetail = normalizePath(window.location.pathname).includes('/projetos/');
-    if (!isProjectDetail || navLinks.length !== 6) {
+    if (!isProjectDetail || document.querySelector('[data-site-header]') || navLinks.length !== 6) {
         return;
     }
 
