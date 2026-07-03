@@ -1,201 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Logic - Gabriel Schwingel Conci</title>
+    <meta name="description" content="Plataforma educacional em Flask com Firebase e inteligência artificial para apoiar o ensino de lógica de programação.">
     <link rel="icon" type="image/svg+xml" href="../../img/favicon.svg">
-    <link rel="stylesheet" href="codelogic.css">
+    <link rel="stylesheet" href="codelogic.css?v=20260703d">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="codelogic-page">
-    <nav class="navbar" aria-label="Navegação principal">
-        <div class="container">
-            <div class="logo">Portfólio</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="../../index.html" class="nav-link">Home</a></li>
-                <li><a href="../../index.html#about" class="nav-link">Sobre</a></li>
-                <li><a href="../../index.html#resume" class="nav-link">Currículo</a></li>
-                <li><a href="../../projetos.html" class="nav-link">Projetos</a></li>
-                <li><a href="../../index.html#skills" class="nav-link">Habilidades</a></li>
-                <li><a href="../../index.html#contact" class="nav-link">Contato</a></li>
-            </ul>
-            <div class="nav-switches" aria-label="Controles de interface">
-                <button class="theme-toggle toggle-switch toggle-switch--theme" id="themeToggle" type="button" aria-label="Alternar para tema escuro" aria-pressed="false" data-theme-mode="light">
-                    <span class="toggle-switch__track" aria-hidden="true">
-                        <span class="toggle-switch__label" data-theme-label="light">☀</span>
-                        <span class="toggle-switch__label" data-theme-label="dark">☾</span>
-                    </span>
-                    <span class="toggle-switch__thumb" aria-hidden="true"></span>
-                </button>
-                <button class="language-toggle toggle-switch toggle-switch--language" id="languageToggle" type="button" aria-label="Mudar idioma para português" title="Mudar idioma para português" aria-pressed="false" data-language-switch="true" data-language="en">
-                    <span class="toggle-switch__track" aria-hidden="true">
-                        <span class="toggle-switch__label" data-lang-label="en">EN</span>
-                        <span class="toggle-switch__label" data-lang-label="pt">BR</span>
-                    </span>
-                    <span class="toggle-switch__thumb" aria-hidden="true"></span>
-                </button>
-            </div>
-            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks">
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </button>
+<body class="showcase-page showcase-code">
+    <a class="skip-link" href="#mainContent">Pular para o conteúdo principal</a>
+    <nav class="navbar" aria-label="Navegação principal"><div class="container"><a href="../../index.html" class="logo">Portfólio</a><ul class="nav-links" id="navLinks"><li><a href="../../index.html" class="nav-link">Home</a></li><li><a href="../../index.html#about" class="nav-link">Sobre</a></li><li><a href="../../index.html#resume" class="nav-link">Currículo</a></li><li><a href="../../projetos.html" class="nav-link active" aria-current="page">Projetos</a></li><li><a href="../../index.html#skills" class="nav-link">Habilidades</a></li><li><a href="../../index.html#contact" class="nav-link">Contato</a></li></ul><div class="nav-switches" aria-label="Controles de interface"><button class="theme-toggle toggle-switch toggle-switch--theme" id="themeToggle" type="button" aria-label="Alternar para tema escuro" aria-pressed="false" data-theme-mode="light"><span class="toggle-switch__track" aria-hidden="true"><span class="toggle-switch__label" data-theme-label="light">☀</span><span class="toggle-switch__label" data-theme-label="dark">☾</span></span><span class="toggle-switch__thumb"></span></button><button class="language-toggle toggle-switch toggle-switch--language" id="languageToggle" type="button" aria-label="Mudar idioma para português" title="Mudar idioma para português" aria-pressed="false" data-language-switch="true" data-language="en"><span class="toggle-switch__track" aria-hidden="true"><span class="toggle-switch__label" data-lang-label="en">EN</span><span class="toggle-switch__label" data-lang-label="pt">BR</span></span><span class="toggle-switch__thumb"></span></button></div><button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks"><i class="fas fa-bars"></i></button></div></nav>
+
+    <main id="mainContent"><section class="showcase-detail"><div class="container">
+        <a href="../../projetos.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar aos Projetos</a>
+        <header class="showcase-hero">
+            <div class="showcase-hero__content"><p class="showcase-eyebrow"><i class="fas fa-code-branch"></i> Plataforma educacional com IA</p><h1>Code Logic</h1><p class="showcase-lead">Aplicação web em Flask para apoiar o ensino de lógica de programação com experiência didática, análise inteligente de respostas e progressão personalizada das aulas.</p><div class="showcase-actions"><a href="https://code-logic-iota.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fas fa-globe"></i> Acessar site</a><a href="https://github.com/3Gb3/Code_Logic" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fab fa-github"></i> Ver no GitHub</a></div></div>
+            <div class="showcase-hero__visual"><img src="img/apresentacao.png" alt="Apresentação da plataforma Code Logic"></div>
+        </header>
+        <div class="showcase-stats" aria-label="Resumo do projeto"><div><i class="fas fa-graduation-cap"></i><div><strong>Educação</strong><span>Ensino de lógica</span></div></div><div><i class="fab fa-python"></i><div><strong>Python + Flask</strong><span>Aplicação web</span></div></div><div><i class="fas fa-brain"></i><div><strong>IA aplicada</strong><span>Feedback personalizado</span></div></div></div>
+
+        <div class="showcase-grid">
+            <article class="showcase-panel showcase-panel--wide"><p class="showcase-label">Sobre o Projeto</p><h2>Sobre o Projeto</h2><p>Code Logic é uma aplicação web desenvolvida com Flask destinada ao ensino de lógica de programação. O projeto utiliza Firebase para gerenciamento de banco de dados e implementa um sistema de Inteligência Artificial que analisa as respostas dos alunos, decidindo se eles podem avançar para a próxima aula e auxiliando-os a resolver os exercícios de forma personalizada.</p></article>
+            <article class="showcase-panel"><p class="showcase-label">Funcionalidades</p><h2>Funcionalidades</h2><ul class="showcase-list"><li>Sistema de IA que avalia respostas e fornece feedback personalizado</li><li>Integração com Firebase para armazenamento de dados dos usuários</li><li>Sistema de progressão de aulas baseado em desempenho</li><li>Interface interativa para aprendizado de lógica de programação</li><li>Exercícios práticos com auxílio inteligente</li><li>Design responsivo e moderno</li></ul></article>
+            <article class="showcase-panel"><p class="showcase-label">Objetivos do Projeto</p><h2>Objetivos do Projeto</h2><p>O principal objetivo do Code Logic é tornar o aprendizado de lógica de programação mais acessível e didático através do uso de Inteligência Artificial. O sistema analisa as respostas dos alunos e oferece suporte personalizado, permitindo que cada estudante aprenda no seu próprio ritmo com feedback inteligente e contextualizado.</p></article>
         </div>
-    </nav>
 
-    <section class="project-detail-section">
-        <div class="container">
-            <a href="../../projetos.html" class="back-link"><i class="fas fa-arrow-left" aria-hidden="true"></i> Voltar aos Projetos</a>
+        <section class="showcase-tech" aria-labelledby="tech-title"><p class="showcase-label">Tecnologias Utilizadas</p><h2 id="tech-title">Tecnologias Utilizadas</h2><div class="showcase-tech__grid"><span><i class="fab fa-python"></i> Python</span><span><i class="fas fa-server"></i> Flask</span><span><i class="fab fa-html5"></i> HTML5</span><span><i class="fab fa-css3-alt"></i> CSS3</span><span><i class="fab fa-js"></i> JavaScript</span><span><i class="fas fa-fire"></i> Firebase</span><span><i class="fas fa-brain"></i> IA</span></div></section>
 
-            <div class="project-detail-content">
-                <header class="project-detail-header logic-hero logic-reveal">
-                    <div class="logic-hero-main">
-                        <p class="logic-eyebrow"><i class="fas fa-code-branch" aria-hidden="true"></i> Plataforma educacional com IA</p>
-                        <h1>Code Logic</h1>
-                        <p class="logic-lead">
-                            Aplicação web em Flask para apoiar o ensino de lógica de programação com experiência didática,
-                            análise inteligente de respostas e progressão personalizada das aulas.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Flask</span>
-                            <span class="tag">Firebase</span>
-                            <span class="tag">IA</span>
-                        </div>
-                    </div>
+        <section class="showcase-gallery" id="gallery" aria-labelledby="gallery-title"><div class="showcase-gallery__heading"><p class="showcase-label">Galeria do projeto</p><h2 id="gallery-title">Galeria do projeto</h2><p>Telas reais do Code Logic mostrando autenticação, módulos, explicações, exercícios e acompanhamento da jornada de aprendizado.</p></div><div class="showcase-gallery__grid">
+            <figure class="showcase-shot"><img src="img/login.png" alt="Tela de login do Code Logic com autenticação de estudante" loading="eager" decoding="async"><figcaption>Login e autenticação</figcaption></figure>
+            <figure class="showcase-shot"><img src="img/cadastro.png" alt="Tela de cadastro para criação de conta na plataforma" loading="lazy" decoding="async"><figcaption>Cadastro de usuário</figcaption></figure>
+            <figure class="showcase-shot"><img src="img/modulos.png" alt="Painel com módulos e trilhas de conteúdo de lógica de programação" loading="lazy" decoding="async"><figcaption>Módulos de aprendizado</figcaption></figure>
+            <figure class="showcase-shot"><img src="img/explicacao_conteudo.png" alt="Tela de explicação de conteúdo com exemplos guiados" loading="lazy" decoding="async"><figcaption>Explicação de conteúdo</figcaption></figure>
+            <figure class="showcase-shot"><img src="img/exercicio.png" alt="Tela de exercício prático com campo para resposta do aluno" loading="lazy" decoding="async"><figcaption>Exercícios práticos</figcaption></figure>
+            <figure class="showcase-shot"><img src="img/atividades.png" alt="Área de atividades com desafios para fixação dos conceitos" loading="lazy" decoding="async"><figcaption>Atividades de fixação</figcaption></figure>
+            <figure class="showcase-shot"><img src="img/apresentacao.png" alt="Apresentação da proposta pedagógica da plataforma Code Logic" loading="lazy" decoding="async"><figcaption>Apresentação da plataforma</figcaption></figure>
+            <figure class="showcase-shot"><img src="img/apresentacao2.png" alt="Continuação da apresentação com visão geral do fluxo de estudo" loading="lazy" decoding="async"><figcaption>Visão geral do fluxo de estudo</figcaption></figure>
+        </div></section>
 
-                    <aside class="logic-snapshot-card">
-                        <h2>Snapshot do Projeto</h2>
-                        <ul class="logic-snapshot-list">
-                            <li>
-                                <span>Categoria</span>
-                                <strong>Plataforma educacional</strong>
-                            </li>
-                            <li>
-                                <span>Contexto</span>
-                                <strong>Projeto acadêmico</strong>
-                            </li>
-                            <li>
-                                <span>Stack principal</span>
-                                <strong>Python, Flask, Firebase e IA</strong>
-                            </li>
-                        </ul>
-                    </aside>
-                </header>
-
-                <div class="logic-content-grid">
-                    <article class="logic-panel logic-panel--full logic-reveal">
-                        <h2>Sobre o Projeto</h2>
-                        <p>
-                            Code Logic é uma aplicação web desenvolvida com Flask destinada ao ensino de lógica de programação.
-                            O projeto utiliza Firebase para gerenciamento de banco de dados e implementa um sistema de
-                            Inteligência Artificial que analisa as respostas dos alunos, decidindo se eles podem avançar para
-                            a próxima aula e auxiliando-os a resolver os exercícios de forma personalizada.
-                        </p>
-                    </article>
-
-                    <article class="logic-panel logic-reveal">
-                        <h3>Funcionalidades</h3>
-                        <ul>
-                            <li>Sistema de IA que avalia respostas e fornece feedback personalizado</li>
-                            <li>Integração com Firebase para armazenamento de dados dos usuários</li>
-                            <li>Sistema de progressão de aulas baseado em desempenho</li>
-                            <li>Interface interativa para aprendizado de lógica de programação</li>
-                            <li>Exercícios práticos com auxílio inteligente</li>
-                            <li>Design responsivo e moderno</li>
-                        </ul>
-                    </article>
-
-                    <article class="logic-panel logic-reveal">
-                        <h3>Tecnologias Utilizadas</h3>
-                        <ul>
-                            <li><strong>Backend:</strong> Python, Flask</li>
-                            <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript</li>
-                            <li><strong>Banco de Dados:</strong> Firebase</li>
-                            <li><strong>IA:</strong> Sistema de análise de respostas com IA</li>
-                            <li><strong>Design:</strong> Interface responsiva e amigável</li>
-                        </ul>
-                    </article>
-
-                    <article class="logic-panel logic-panel--full logic-reveal">
-                        <h3>Objetivos do Projeto</h3>
-                        <p>
-                            O principal objetivo do Code Logic é tornar o aprendizado de lógica de programação mais acessível
-                            e didático através do uso de Inteligência Artificial. O sistema analisa as respostas dos alunos
-                            e oferece suporte personalizado, permitindo que cada estudante aprenda no seu próprio ritmo com
-                            feedback inteligente e contextualizado.
-                        </p>
-                    </article>
-                </div>
-
-                <section class="logic-gallery logic-reveal" aria-label="Galeria do projeto">
-                    <h3>Galeria do projeto</h3>
-                    <p>Telas reais do Code Logic mostrando autenticação, módulos, explicações, exercícios e acompanhamento da jornada de aprendizado.</p>
-
-                    <div class="logic-gallery-grid">
-                        <figure class="logic-shot">
-                            <img src="img/login.png" alt="Tela de login do Code Logic com autenticação de estudante" loading="lazy" decoding="async">
-                            <figcaption>Login e autenticação</figcaption>
-                        </figure>
-                        <figure class="logic-shot">
-                            <img src="img/cadastro.png" alt="Tela de cadastro para criação de conta na plataforma" loading="lazy" decoding="async">
-                            <figcaption>Cadastro de usuário</figcaption>
-                        </figure>
-                        <figure class="logic-shot">
-                            <img src="img/modulos.png" alt="Painel com módulos e trilhas de conteúdo de lógica de programação" loading="lazy" decoding="async">
-                            <figcaption>Módulos de aprendizado</figcaption>
-                        </figure>
-                        <figure class="logic-shot">
-                            <img src="img/explicacao_conteudo.png" alt="Tela de explicação de conteúdo com exemplos guiados" loading="lazy" decoding="async">
-                            <figcaption>Explicação de conteúdo</figcaption>
-                        </figure>
-                        <figure class="logic-shot">
-                            <img src="img/exercicio.png" alt="Tela de exercício prático com campo para resposta do aluno" loading="lazy" decoding="async">
-                            <figcaption>Exercícios práticos</figcaption>
-                        </figure>
-                        <figure class="logic-shot">
-                            <img src="img/atividades.png" alt="Área de atividades com desafios para fixação dos conceitos" loading="lazy" decoding="async">
-                            <figcaption>Atividades de fixação</figcaption>
-                        </figure>
-                        <figure class="logic-shot">
-                            <img src="img/apresentacao.png" alt="Apresentação da proposta pedagógica da plataforma Code Logic" loading="lazy" decoding="async">
-                            <figcaption>Apresentação da plataforma</figcaption>
-                        </figure>
-                        <figure class="logic-shot">
-                            <img src="img/apresentacao2.png" alt="Continuação da apresentação com visão geral do fluxo de estudo" loading="lazy" decoding="async">
-                            <figcaption>Visão geral do fluxo de estudo</figcaption>
-                        </figure>
-                    </div>
-                </section>
-
-                <div class="project-links logic-reveal">
-                    <a href="https://github.com/3Gb3/Code_Logic" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                        <i class="fab fa-github" aria-hidden="true"></i> Ver no GitHub
-                    </a>
-                    <a href="https://code-logic-iota.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                        <i class="fas fa-globe" aria-hidden="true"></i> Acessar site
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Gabriel Schwingel Conci. Todos os direitos reservados.</p>
-            <div class="footer-social">
-                <a href="https://github.com/3Gb3" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/gbsconci/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://discord.com/users/3gbzin" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/5551994464827" target="_blank" rel="noopener noreferrer" class="whatsapp-button" title="Fale comigo no WhatsApp" aria-label="Fale comigo no WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script src="../../site-language.js"></script>
-    <script src="codelogic.js"></script>
+        <section class="showcase-cta"><div><p class="showcase-label">Experimentar a plataforma</p><h2>Aprender lógica com suporte inteligente</h2><p>Acesse a versão publicada ou consulte o código completo no GitHub.</p></div><div class="showcase-actions"><a href="https://code-logic-iota.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fas fa-globe"></i> Acessar site</a><a href="https://github.com/3Gb3/Code_Logic" target="_blank" rel="noopener noreferrer" class="btn btn-secondary"><i class="fab fa-github"></i> Ver no GitHub</a></div></section>
+    </div></section></main>
+    <footer class="footer"><div class="container"><p>&copy; <span id="currentYear">2026</span> Gabriel Schwingel Conci. Todos os direitos reservados.</p><div class="footer-social"><a href="https://github.com/3Gb3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="https://www.instagram.com/gbsconci/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div></footer>
+    <button id="scrollTop" class="scroll-top" type="button" aria-label="Voltar ao topo" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button><a href="https://wa.me/5551994464827" target="_blank" rel="noopener noreferrer" class="whatsapp-button" title="Fale comigo no WhatsApp" aria-label="Fale comigo no WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <script src="../../site-language.js"></script><script src="../../portfolio.js"></script>
 </body>
 </html>

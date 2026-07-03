@@ -1,175 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sage - Bot de Discord - Gabriel Schwingel Conci</title>
+    <meta name="description" content="Bot modular em Python para Discord com comandos, automações e evolução planejada para inteligência artificial.">
     <link rel="icon" type="image/svg+xml" href="../../img/favicon.svg">
-    <link rel="stylesheet" href="sage.css">
+    <link rel="stylesheet" href="sage.css?v=20260703d">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="sage-page">
-    <!-- Navegação -->
-    <nav class="navbar" aria-label="Navegação principal">
-        <div class="container">
-            <div class="logo">Portfólio</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="../../index.html" class="nav-link">Home</a></li>
-                <li><a href="../../index.html#about" class="nav-link">Sobre</a></li>
-                <li><a href="../../index.html#resume" class="nav-link">Currículo</a></li>
-                <li><a href="../../projetos.html" class="nav-link">Projetos</a></li>
-                <li><a href="../../index.html#skills" class="nav-link">Habilidades</a></li>
-                <li><a href="../../index.html#contact" class="nav-link">Contato</a></li>
-            </ul>
-            <div class="nav-switches" aria-label="Controles de interface">
-                <button class="theme-toggle toggle-switch toggle-switch--theme" id="themeToggle" type="button" aria-label="Alternar para tema escuro" aria-pressed="false" data-theme-mode="light">
-                    <span class="toggle-switch__track" aria-hidden="true">
-                        <span class="toggle-switch__label" data-theme-label="light">☀</span>
-                        <span class="toggle-switch__label" data-theme-label="dark">☾</span>
-                    </span>
-                    <span class="toggle-switch__thumb" aria-hidden="true"></span>
-                </button>
-                <button class="language-toggle toggle-switch toggle-switch--language" id="languageToggle" type="button" aria-label="Mudar idioma para português" title="Mudar idioma para português" aria-pressed="false" data-language-switch="true" data-language="en">
-                    <span class="toggle-switch__track" aria-hidden="true">
-                        <span class="toggle-switch__label" data-lang-label="en">EN</span>
-                        <span class="toggle-switch__label" data-lang-label="pt">BR</span>
-                    </span>
-                    <span class="toggle-switch__thumb" aria-hidden="true"></span>
-                </button>
-            </div>
-            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks">
-                <i class="fas fa-bars"></i>
-            </button>
+<body class="showcase-page showcase-sage">
+    <a class="skip-link" href="#mainContent">Pular para o conteúdo principal</a>
+    <nav class="navbar" aria-label="Navegação principal"><div class="container"><a href="../../index.html" class="logo">Portfólio</a><ul class="nav-links" id="navLinks"><li><a href="../../index.html" class="nav-link">Home</a></li><li><a href="../../index.html#about" class="nav-link">Sobre</a></li><li><a href="../../index.html#resume" class="nav-link">Currículo</a></li><li><a href="../../projetos.html" class="nav-link active" aria-current="page">Projetos</a></li><li><a href="../../index.html#skills" class="nav-link">Habilidades</a></li><li><a href="../../index.html#contact" class="nav-link">Contato</a></li></ul><div class="nav-switches" aria-label="Controles de interface"><button class="theme-toggle toggle-switch toggle-switch--theme" id="themeToggle" type="button" aria-label="Alternar para tema escuro" aria-pressed="false" data-theme-mode="light"><span class="toggle-switch__track" aria-hidden="true"><span class="toggle-switch__label" data-theme-label="light">☀</span><span class="toggle-switch__label" data-theme-label="dark">☾</span></span><span class="toggle-switch__thumb" aria-hidden="true"></span></button><button class="language-toggle toggle-switch toggle-switch--language" id="languageToggle" type="button" aria-label="Mudar idioma para português" title="Mudar idioma para português" aria-pressed="false" data-language-switch="true" data-language="en"><span class="toggle-switch__track" aria-hidden="true"><span class="toggle-switch__label" data-lang-label="en">EN</span><span class="toggle-switch__label" data-lang-label="pt">BR</span></span><span class="toggle-switch__thumb" aria-hidden="true"></span></button></div><button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks"><i class="fas fa-bars"></i></button></div></nav>
+
+    <main id="mainContent"><section class="showcase-detail"><div class="container">
+        <a href="../../projetos.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar aos Projetos</a>
+        <header class="showcase-hero">
+            <div class="showcase-hero__content"><p class="showcase-eyebrow"><i class="fab fa-discord"></i> Automação para comunidades</p><h1>Sage - Bot de Discord</h1><p class="showcase-lead">Sage está em uma fase de transição para IA: a base do bot está pronta e a próxima etapa é integrar inteligência própria para elevar a automação e a experiência da comunidade.</p><div class="showcase-actions"><a href="#roadmap" class="btn btn-primary"><i class="fas fa-route"></i> Ver roadmap</a><a href="#features" class="btn btn-secondary"><i class="fas fa-list-check"></i> Ver recursos</a></div></div>
+            <div class="showcase-hero__visual"><img src="../../img/sage.jpg" alt="Identidade visual do bot Sage para Discord"></div>
+        </header>
+        <div class="showcase-stats" aria-label="Resumo do projeto"><div><i class="fab fa-python"></i><div><strong>Python</strong><span>Base modular</span></div></div><div><i class="fab fa-discord"></i><div><strong>Discord.py</strong><span>Comandos e eventos</span></div></div><div><i class="fas fa-circle-pause"></i><div><strong>Em pausa</strong><span>Próximo ciclo com IA</span></div></div></div>
+
+        <div class="showcase-grid" id="features">
+            <article class="showcase-panel showcase-panel--wide"><p class="showcase-label">Sobre o Projeto</p><h2>Sobre o Projeto</h2><p>Sage é um bot para Discord desenvolvido em Python, criado para centralizar utilidades e automações no meu servidor pessoal. A base atual já contempla comandos personalizados e uma estrutura modular para facilitar futuras expansões. Neste momento, o desenvolvimento de novas funcionalidades está pausado, pois estou focado em um projeto de criação voltado para IA, que será integrado futuramente ao próprio Sage.</p><span class="showcase-status"><i class="fas fa-circle-pause"></i> Desenvolvimento atualmente pausado</span></article>
+            <article class="showcase-panel"><p class="showcase-label">Funcionalidades</p><h2>Funcionalidades</h2><ul class="showcase-list"><li>Comandos de entretenimento (memes e interações sociais)</li><li>Comando SHIP para combinações divertidas entre membros</li><li>Automação de tarefas recorrentes no servidor Discord</li><li>Estrutura de comandos personalizada em Discord.py</li><li>Base modular para expansão de novas funcionalidades</li><li>Organização de respostas e eventos para facilitar manutenção</li></ul></article>
+            <article class="showcase-panel"><p class="showcase-label">Objetivos do Projeto</p><h2>Objetivos do Projeto</h2><p>O objetivo do Sage é evoluir para um bot mais inteligente, capaz de combinar automação, utilidade e interações contextualizadas para a comunidade. No curto prazo, meu foco está no desenvolvimento de um projeto de criação de IA dedicado. Após essa etapa, essa IA será implementada no próprio bot para ampliar suas capacidades.</p></article>
         </div>
-    </nav>
 
-    <!-- Project Detail Section -->
-    <section class="project-detail-section">
-        <div class="container">
-            <a href="../../projetos.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar aos Projetos</a>
-            
-            <div class="project-detail-content">
-                <header class="project-detail-header sage-hero sage-reveal">
-                    <div class="sage-hero-main">
-                        <p class="sage-eyebrow"><i class="fas fa-robot" aria-hidden="true"></i> Projeto de automação para Discord</p>
-                        <h1>Sage - Bot de Discord</h1>
-                        <p class="sage-lead">
-                            Sage está em uma fase de transição para IA: a base do bot está pronta e a próxima etapa é integrar
-                            inteligência própria para elevar a automação e a experiência da comunidade.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Discord.py</span>
-                            <span class="tag">Automação</span>
-                        </div>
-                    </div>
+        <section class="showcase-tech" aria-labelledby="tech-title"><p class="showcase-label">Tecnologias Utilizadas</p><h2 id="tech-title">Tecnologias Utilizadas</h2><div class="showcase-tech__grid"><span><i class="fab fa-python"></i> Python</span><span><i class="fab fa-discord"></i> Discord.py</span><span><i class="fas fa-gears"></i> Automação</span><span><i class="fas fa-code-branch"></i> Arquitetura modular</span><span><i class="fas fa-brain"></i> IA planejada</span></div></section>
 
-                    <aside class="sage-status-card">
-                        <h2>Status do Projeto</h2>
-                        <p class="project-status">
-                            <i class="fas fa-circle-pause"></i> Desenvolvimento atualmente pausado: foco em projeto de criação de IA para futura integração no próprio bot.
-                        </p>
-                        <ul class="sage-status-list">
-                            <li>
-                                <span>Stack principal</span>
-                                <strong>Python + Discord.py</strong>
-                            </li>
-                            <li>
-                                <span>Foco atual</span>
-                                <strong>Projeto de IA dedicado</strong>
-                            </li>
-                            <li>
-                                <span>Próximo marco</span>
-                                <strong>Integração de IA no Sage</strong>
-                            </li>
-                        </ul>
-                    </aside>
-                </header>
+        <section class="showcase-roadmap" id="roadmap" aria-labelledby="roadmap-title"><p class="showcase-label">Roadmap de Evolução</p><h2 id="roadmap-title">Roadmap de Evolução</h2><p>Andamento estratégico para o próximo ciclo do projeto.</p><ol class="showcase-roadmap__steps"><li><strong>01</strong>Pesquisa e construção da IA base</li><li><strong>02</strong>Treinamento e validação dos fluxos</li><li><strong>03</strong>Integração da IA no bot Sage</li></ol></section>
 
-                <div class="sage-content-grid">
-                    <article class="sage-panel sage-panel--full sage-reveal">
-                        <h2>Sobre o Projeto</h2>
-                        <p>
-                            Sage é um bot para Discord desenvolvido em Python, criado para centralizar utilidades e automações
-                            no meu servidor pessoal. A base atual já contempla comandos personalizados e uma estrutura modular
-                            para facilitar futuras expansões. Neste momento, o desenvolvimento de novas funcionalidades está
-                            pausado, pois estou focado em um projeto de criação voltado para IA, que será integrado
-                            futuramente ao próprio Sage.
-                        </p>
-                    </article>
+        <section class="showcase-gallery" aria-labelledby="gallery-title"><div class="showcase-gallery__heading"><p class="showcase-label">Identidade do projeto</p><h2 id="gallery-title">Sage em evolução</h2><p>O projeto mantém uma base funcional e uma identidade própria enquanto prepara o próximo ciclo de automação inteligente.</p></div><div class="showcase-gallery__grid"><figure class="showcase-shot showcase-shot--wide"><img src="../../img/sage.jpg" alt="Identidade visual do bot Sage para Discord" loading="eager" decoding="async"><figcaption>Sage — bot modular para comunidades no Discord</figcaption></figure></div></section>
 
-                    <article class="sage-panel sage-reveal">
-                        <h3>Funcionalidades</h3>
-                        <ul>
-                            <li>Comandos de entretenimento (memes e interações sociais)</li>
-                            <li>Comando SHIP para combinações divertidas entre membros</li>
-                            <li>Automação de tarefas recorrentes no servidor Discord</li>
-                            <li>Estrutura de comandos personalizada em Discord.py</li>
-                            <li>Base modular para expansão de novas funcionalidades</li>
-                            <li>Organização de respostas e eventos para facilitar manutenção</li>
-                        </ul>
-                    </article>
-
-                    <article class="sage-panel sage-reveal">
-                        <h3>Tecnologias Utilizadas</h3>
-                        <ul>
-                            <li><strong>Linguagem:</strong> Python</li>
-                            <li><strong>Bibliotecas:</strong> Discord.py e bibliotecas de integração</li>
-                            <li><strong>Foco:</strong> Evolução para automação inteligente com IA</li>
-                        </ul>
-                    </article>
-
-                    <article class="sage-panel sage-panel--full sage-reveal">
-                        <h3>Objetivos do Projeto</h3>
-                        <p>
-                            O objetivo do Sage é evoluir para um bot mais inteligente, capaz de combinar automação,
-                            utilidade e interações contextualizadas para a comunidade. No curto prazo, meu foco está no
-                            desenvolvimento de um projeto de criação de IA dedicado. Após essa etapa, essa IA será
-                            implementada no próprio bot para ampliar suas capacidades.
-                        </p>
-                    </article>
-                </div>
-
-                <section class="sage-roadmap sage-reveal" aria-label="Roadmap de evolução">
-                    <h3>Roadmap de Evolução</h3>
-                    <p>Andamento estratégico para o próximo ciclo do projeto.</p>
-                    <ol class="sage-roadmap-list">
-                        <li>
-                            <span class="sage-roadmap-step">01</span>
-                            <span>Pesquisa e construção da IA base</span>
-                        </li>
-                        <li>
-                            <span class="sage-roadmap-step">02</span>
-                            <span>Treinamento e validação dos fluxos</span>
-                        </li>
-                        <li>
-                            <span class="sage-roadmap-step">03</span>
-                            <span>Integração da IA no bot Sage</span>
-                        </li>
-                    </ol>
-                </section>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Gabriel Schwingel Conci. Todos os direitos reservados.</p>
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/gbsconci/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://discord.com/users/3gbzin" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/5551994464827" target="_blank" rel="noopener noreferrer" class="whatsapp-button" title="Fale comigo no WhatsApp" aria-label="Fale comigo no WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script src="../../site-language.js"></script>
-    <script src="sage.js"></script>
+        <section class="showcase-cta"><div><p class="showcase-label">Próximo ciclo</p><h2>Automação com inteligência própria</h2><p>A próxima etapa é conectar a base modular do Sage ao projeto de IA em desenvolvimento.</p></div><span class="showcase-status"><i class="fas fa-flask"></i> Em pesquisa e desenvolvimento</span></section>
+    </div></section></main>
+    <footer class="footer"><div class="container"><p>&copy; <span id="currentYear">2026</span> Gabriel Schwingel Conci. Todos os direitos reservados.</p><div class="footer-social"><a href="https://github.com/3Gb3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="https://www.instagram.com/gbsconci/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div></footer>
+    <button id="scrollTop" class="scroll-top" type="button" aria-label="Voltar ao topo" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button><a href="https://wa.me/5551994464827" target="_blank" rel="noopener noreferrer" class="whatsapp-button" title="Fale comigo no WhatsApp" aria-label="Fale comigo no WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <script src="../../site-language.js"></script><script src="../../portfolio.js"></script>
 </body>
 </html>

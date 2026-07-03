@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventude Planner - Gabriel Schwingel Conci</title>
+    <meta name="description" content="Planner pessoal responsivo para rotina, agenda, sono, alimentação e exercícios com autenticação e dados persistentes.">
+    <link rel="icon" type="image/svg+xml" href="../../img/favicon.svg">
+    <link rel="stylesheet" href="ventude-planner.css?v=20260703d">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="ventude-page">
+    <a class="skip-link" href="#mainContent">Pular para o conteúdo principal</a>
+
+    <nav class="navbar" aria-label="Navegação principal">
+        <div class="container">
+            <a href="../../index.html" class="logo">Portfólio</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../../index.html" class="nav-link">Home</a></li>
+                <li><a href="../../index.html#about" class="nav-link">Sobre</a></li>
+                <li><a href="../../index.html#resume" class="nav-link">Currículo</a></li>
+                <li><a href="../../projetos.html" class="nav-link active" aria-current="page">Projetos</a></li>
+                <li><a href="../../index.html#skills" class="nav-link">Habilidades</a></li>
+                <li><a href="../../index.html#contact" class="nav-link">Contato</a></li>
+            </ul>
+            <div class="nav-switches" aria-label="Controles de interface">
+                <button class="theme-toggle toggle-switch toggle-switch--theme" id="themeToggle" type="button" aria-label="Alternar para tema escuro" aria-pressed="false" data-theme-mode="light">
+                    <span class="toggle-switch__track" aria-hidden="true">
+                        <span class="toggle-switch__label" data-theme-label="light">☀</span>
+                        <span class="toggle-switch__label" data-theme-label="dark">☾</span>
+                    </span>
+                    <span class="toggle-switch__thumb" aria-hidden="true"></span>
+                </button>
+                <button class="language-toggle toggle-switch toggle-switch--language" id="languageToggle" type="button" aria-label="Mudar idioma para português" title="Mudar idioma para português" aria-pressed="false" data-language-switch="true" data-language="en">
+                    <span class="toggle-switch__track" aria-hidden="true">
+                        <span class="toggle-switch__label" data-lang-label="en">EN</span>
+                        <span class="toggle-switch__label" data-lang-label="pt">BR</span>
+                    </span>
+                    <span class="toggle-switch__thumb" aria-hidden="true"></span>
+                </button>
+            </div>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main id="mainContent">
+        <section class="ventude-detail">
+            <div class="container">
+                <a href="../../projetos.html" class="back-link"><i class="fas fa-arrow-left" aria-hidden="true"></i> Voltar aos Projetos</a>
+
+                <header class="ventude-hero">
+                    <div class="ventude-hero__content">
+                        <p class="ventude-eyebrow"><i class="fas fa-calendar-check" aria-hidden="true"></i> Rotina, energia e tempo no mesmo fluxo</p>
+                        <h1>Ventude Planner</h1>
+                        <p class="ventude-lead">Um planner privado que reúne visão diária, agenda e acompanhamento alimentar para transformar uma rotina complexa em decisões simples.</p>
+                        <div class="ventude-actions">
+                            <a href="https://3gb3.github.io/Ventude_Planner/" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Acessar planner</a>
+                            <a href="#gallery" class="btn btn-secondary"><i class="fas fa-images" aria-hidden="true"></i> Ver galeria</a>
+                        </div>
+                    </div>
+                    <div class="ventude-hero__visual">
+                        <img src="img/painel-hoje.png" alt="Painel diário do Ventude Planner">
+                    </div>
+                </header>
+
+                <div class="ventude-stats" aria-label="Resumo do projeto">
+                    <div><i class="fas fa-sun" aria-hidden="true"></i><span>Visão diária</span></div>
+                    <div><i class="fas fa-calendar-days" aria-hidden="true"></i><span>Agenda completa</span></div>
+                    <div><i class="fas fa-fire-flame-curved" aria-hidden="true"></i><span>Acompanhamento alimentar</span></div>
+                </div>
+
+                <div class="ventude-grid">
+                    <article class="ventude-panel ventude-panel--wide">
+                        <p class="panel-label">Sobre o planner</p>
+                        <h2>Sobre o planner</h2>
+                        <p>Ventude Planner centraliza rotina, sono, compromissos, alimentação e exercícios em uma experiência única. O painel mostra o momento atual, o progresso do dia e os próximos passos sem sobrecarregar a navegação.</p>
+                        <p>A aplicação foi pensada para uso contínuo: os dados ficam protegidos por autenticação, persistem no Firestore e se adaptam do desktop ao celular.</p>
+                    </article>
+
+                    <article class="ventude-panel">
+                        <p class="panel-label">Recursos principais</p>
+                        <h2>Recursos principais</h2>
+                        <ul class="ventude-features">
+                            <li><i class="fas fa-gauge-high" aria-hidden="true"></i><span>Resumo diário com atividade atual, progresso, sono e saldo calórico</span></li>
+                            <li><i class="fas fa-calendar-week" aria-hidden="true"></i><span>Agenda por dia, semana, mês e rotina fixa</span></li>
+                            <li><i class="fas fa-list-check" aria-hidden="true"></i><span>Linha do tempo com ações para concluir ou pular atividades</span></li>
+                            <li><i class="fas fa-chart-line" aria-hidden="true"></i><span>Registro de alimentos, exercícios, metas e análises semanais</span></li>
+                        </ul>
+                    </article>
+
+                    <article class="ventude-panel">
+                        <p class="panel-label">Decisões de produto</p>
+                        <h2>Decisões de produto</h2>
+                        <p>A interface usa hierarquia visual compacta, categorias por cor e indicadores objetivos. Em telas menores, a navegação vira um menu lateral e os painéis reorganizam o conteúdo sem rolagem horizontal.</p>
+                    </article>
+                </div>
+
+                <section class="ventude-tech" aria-labelledby="tech-title">
+                    <p class="panel-label">Tecnologias utilizadas</p>
+                    <h2 id="tech-title">Tecnologias utilizadas</h2>
+                    <div class="ventude-tech__grid">
+                        <div><i class="fab fa-html5" aria-hidden="true"></i><span>HTML5 e CSS3</span></div>
+                        <div><i class="fab fa-js" aria-hidden="true"></i><span>JavaScript puro</span></div>
+                        <div><i class="fas fa-shield-halved" aria-hidden="true"></i><span>Firebase Authentication</span></div>
+                        <div><i class="fas fa-cloud" aria-hidden="true"></i><span>Cloud Firestore</span></div>
+                        <div><i class="fas fa-chart-pie" aria-hidden="true"></i><span>Chart.js</span></div>
+                        <div><i class="fas fa-icons" aria-hidden="true"></i><span>Iconify</span></div>
+                    </div>
+                </section>
+
+                <section class="ventude-gallery" id="gallery" aria-labelledby="gallery-title">
+                    <div class="gallery-heading">
+                        <p class="panel-label">Galeria do projeto</p>
+                        <h2 id="gallery-title">Galeria do projeto</h2>
+                        <p>Capturas reais do planner após autenticação, sem exibir os dados de acesso da conta.</p>
+                    </div>
+                    <div class="ventude-gallery__grid">
+                        <figure class="ventude-shot ventude-shot--wide">
+                            <img src="img/painel-hoje.png" alt="Resumo diário com progresso e foco da rotina" loading="eager" decoding="async">
+                            <figcaption>Resumo diário com progresso e foco da rotina</figcaption>
+                        </figure>
+                        <figure class="ventude-shot">
+                            <img src="img/agenda-semanal.png" alt="Planejamento semanal com categorias e totais" loading="lazy" decoding="async">
+                            <figcaption>Planejamento semanal com categorias e totais</figcaption>
+                        </figure>
+                        <figure class="ventude-shot">
+                            <img src="img/alimentacao.png" alt="Controle de alimentação, exercícios e meta calórica" loading="lazy" decoding="async">
+                            <figcaption>Controle de alimentação, exercícios e meta calórica</figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <section class="ventude-cta">
+                    <div>
+                        <p class="panel-label">Conhecer o Ventude Planner</p>
+                        <h2>Conhecer o Ventude Planner</h2>
+                        <p>Acesse a versão publicada para conhecer o fluxo de autenticação e a experiência completa do planner.</p>
+                    </div>
+                    <a href="https://3gb3.github.io/Ventude_Planner/" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Abrir o planner</a>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear">2026</span> Gabriel Schwingel Conci. Todos os direitos reservados.</p>
+            <div class="footer-social">
+                <a href="https://github.com/3Gb3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/gbsconci/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTop" class="scroll-top" type="button" aria-label="Voltar ao topo" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+    <a href="https://wa.me/5551994464827" target="_blank" rel="noopener noreferrer" class="whatsapp-button" title="Fale comigo no WhatsApp" aria-label="Fale comigo no WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="../../site-language.js"></script>
+    <script src="../../portfolio.js"></script>
+</body>
+</html>

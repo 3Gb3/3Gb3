@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="portfolio.css?v=20260703d">
     <link rel="stylesheet" href="projetos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Preload das imagens -->
@@ -19,6 +19,7 @@
     <link rel="preload" as="image" href="Projetos/sustentabilidade/img/america.jpg">
     <link rel="preload" as="image" href="img/sage.jpg">
     <link rel="preload" as="image" href="Projetos/nosso-universo/img/sistema-solar.png">
+    <link rel="preload" as="image" href="Projetos/ventude-planner/img/painel-hoje.png">
 </head>
 <body class="projects-page">
     <a class="skip-link" href="#mainContent">Pular para o conteúdo principal</a>
@@ -66,7 +67,7 @@
                 <p class="projects-subtitle">Explore por tecnologia e categoria para encontrar rápido o tipo de solução que você quer analisar.</p>
                 <div class="projects-highlights">
                     <div class="projects-highlight-item">
-                        <strong>6</strong>
+                        <strong>7</strong>
                         <span>Projetos publicados</span>
                     </div>
                     <div class="projects-highlight-item">
@@ -96,7 +97,7 @@
                     <button class="filter-chip" type="button" data-filter="educacao" aria-pressed="false">Educação</button>
                     <button class="filter-chip" type="button" data-filter="automacao" aria-pressed="false">Automação</button>
                 </div>
-                <p id="projectResults" class="projects-results" aria-live="polite">Mostrando 6 de 6 projetos</p>
+                <p id="projectResults" class="projects-results" aria-live="polite">Mostrando 7 de 7 projetos</p>
             </div>
         </section>
 
@@ -105,6 +106,27 @@
             <div class="container">
                 <div class="projects-grid" id="projectsGrid">
                     <!-- Projeto 1 -->
+                    <a class="project-card" data-project-card data-category="web" data-keywords="ventude planner rotina agenda calendario alimentacao calorias exercicios firebase firestore chart js dashboard produtividade" href="Projetos/ventude-planner/ventude-planner.html" aria-label="Abrir projeto Ventude Planner">
+                        <div class="project-image">
+                            <img src="Projetos/ventude-planner/img/painel-hoje.png" alt="Painel diário do Ventude Planner" loading="eager" decoding="async">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-info-top">
+                                <span class="project-badge">Planner Web</span>
+                                <span class="project-year">2026</span>
+                            </div>
+                            <h3>Ventude Planner</h3>
+                            <p>Planner pessoal para organizar rotina, sono, compromissos e alimentação com indicadores claros em um único lugar.</p>
+                            <div class="project-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Firebase</span>
+                                <span class="tag">Chart.js</span>
+                            </div>
+                            <span class="project-cta">Explorar projeto <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Projeto 2 -->
                     <a class="project-card" data-project-card data-category="web" data-keywords="nosso universo three.js threejs webgl javascript 3d interativo planetas experiencia visual storytelling" href="Projetos/nosso-universo/nosso-universo.html" aria-label="Abrir projeto Nosso Universo">
                         <div class="project-image">
                             <img src="Projetos/nosso-universo/img/sistema-solar.png" alt="Sistema solar 3D do projeto Nosso Universo" loading="eager" decoding="async">
@@ -125,7 +147,7 @@
                         </div>
                     </a>
 
-                    <!-- Projeto 2 -->
+                    <!-- Projeto 3 -->
                     <a class="project-card" data-project-card data-category="python web educacao" data-keywords="code logic flask logica programacao ensino app web" href="Projetos/codelogic/codelogic.html" aria-label="Abrir projeto Code Logic">
                         <div class="project-image">
                             <img src="img/codelogic.png" alt="Code Logic" loading="eager" decoding="async">
@@ -147,7 +169,7 @@
                         </div>
                     </a>
 
-                    <!-- Projeto 3 -->
+                    <!-- Projeto 4 -->
                     <a class="project-card" data-project-card data-category="python educacao" data-keywords="bncc python pygame jogo educativo aprendizagem" href="Projetos/bncc/bncc.html" aria-label="Abrir Projeto BNCC">
                         <div class="project-image">
                             <img src="img/bncc.jpg" alt="Projeto BNCC" loading="eager" decoding="async">
@@ -168,7 +190,7 @@
                         </div>
                     </a>
 
-                    <!-- Projeto 4 -->
+                    <!-- Projeto 5 -->
                     <a class="project-card" data-project-card data-category="web" data-keywords="purpleplay plataforma web entretenimento html css javascript" href="Projetos/purpleplay/purpleplay.html" aria-label="Abrir projeto PurplePlay">
                         <div class="project-image">
                             <img src="img/purpleplay.jpg" alt="PurplePlay" loading="lazy" decoding="async">
@@ -189,7 +211,7 @@
                         </div>
                     </a>
 
-                    <!-- Projeto 5 -->
+                    <!-- Projeto 6 -->
                     <a class="project-card" data-project-card data-category="web educacao" data-keywords="sustentabilidade empresarial website institucional" href="Projetos/sustentabilidade/sustentabilidade.html" aria-label="Abrir projeto Sustentabilidade Empresarial">
                         <div class="project-image">
                             <img src="Projetos/sustentabilidade/img/america.jpg" alt="Sustentabilidade Empresarial" loading="lazy" decoding="async">
@@ -210,7 +232,7 @@
                         </div>
                     </a>
 
-                    <!-- Projeto 6 -->
+                    <!-- Projeto 7 -->
                     <a class="project-card" data-project-card data-category="python automacao" data-keywords="sage bot discord automacao python comunidade ia pausado" href="Projetos/sage/sage.html" aria-label="Abrir projeto Sage bot para Discord">
                         <div class="project-image">
                             <img src="img/sage.jpg" alt="Bot de Discord Sage" loading="lazy" decoding="async">

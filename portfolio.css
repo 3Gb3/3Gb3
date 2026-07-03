@@ -161,22 +161,26 @@ body {
     transition: opacity 0.42s cubic-bezier(0.2, 0.78, 0.16, 1), transform 0.42s cubic-bezier(0.2, 0.78, 0.16, 1), filter 0.42s ease;
 }
 
-body.language-switching {
+body.language-switching main,
+body.language-switching .footer {
     animation: languageSwitchPulse 0.3s ease;
 }
 
 @keyframes languageSwitchPulse {
     0% {
         opacity: 0.86;
-        transform: translateY(2px);
         filter: saturate(0.92);
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0);
         filter: saturate(1);
     }
+}
+
+body.language-switching .navbar {
+    animation: none;
+    transform: none;
 }
 
 /* Page transition */
@@ -1008,6 +1012,86 @@ section {
     margin-bottom: 0.5rem;
 }
 
+.course-repositories {
+    margin-top: 1.25rem;
+    padding: 1.4rem;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    background:
+        radial-gradient(circle at 95% 5%, rgba(29, 78, 216, 0.12), transparent 38%),
+        var(--surface-color);
+    box-shadow: var(--shadow);
+}
+
+.course-repositories__intro {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.course-repositories__icon {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    flex: 0 0 auto;
+    border-radius: 14px;
+    color: #fff;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    font-size: 1.25rem;
+}
+
+.course-repositories h4 {
+    color: var(--text-color);
+    font-size: 1.05rem;
+}
+
+.course-repositories p {
+    margin-top: 0.2rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.course-repositories__links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.7rem;
+}
+
+.course-repositories__links a {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.6rem;
+    min-height: 58px;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: 13px;
+    color: var(--text-color);
+    background: var(--bg-color);
+    text-decoration: none;
+    font-size: 0.84rem;
+    font-weight: 700;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.course-repositories__links a:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.1);
+}
+
+.course-repositories__links a > i:first-child {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.course-repositories__links a > i:last-child {
+    color: var(--text-light);
+    font-size: 0.75rem;
+}
+
 /* Projects Section */
 .projects-section {
     background: var(--bg-secondary);
@@ -1718,6 +1802,10 @@ section {
 
     .projects-section {
         padding-top: 5rem;
+    }
+
+    .course-repositories__links {
+        grid-template-columns: 1fr;
     }
 }
 

@@ -1,117 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto BNCC - Gabriel Schwingel Conci</title>
+    <meta name="description" content="Ferramenta educacional em Python para localizar e interpretar códigos da BNCC em documentos PDF.">
     <link rel="icon" type="image/svg+xml" href="../../img/favicon.svg">
-    <link rel="stylesheet" href="bncc.css">
+    <link rel="stylesheet" href="bncc.css?v=20260703d">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <!-- Navegação -->
-    <nav class="navbar">
+<body class="showcase-page showcase-bncc">
+    <a class="skip-link" href="#mainContent">Pular para o conteúdo principal</a>
+    <nav class="navbar" aria-label="Navegação principal">
         <div class="container">
-            <div class="logo">Portfólio</div>
-            <ul class="nav-links">
+            <a href="../../index.html" class="logo">Portfólio</a>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="../../index.html" class="nav-link">Home</a></li>
                 <li><a href="../../index.html#about" class="nav-link">Sobre</a></li>
                 <li><a href="../../index.html#resume" class="nav-link">Currículo</a></li>
-                <li><a href="../../projetos.html" class="nav-link">Projetos</a></li>
+                <li><a href="../../projetos.html" class="nav-link active" aria-current="page">Projetos</a></li>
                 <li><a href="../../index.html#skills" class="nav-link">Habilidades</a></li>
                 <li><a href="../../index.html#contact" class="nav-link">Contato</a></li>
             </ul>
-            <div class="theme-toggle" id="themeToggle">
-                <i class="fas fa-moon"></i>
+            <div class="nav-switches" aria-label="Controles de interface">
+                <button class="theme-toggle toggle-switch toggle-switch--theme" id="themeToggle" type="button" aria-label="Alternar para tema escuro" aria-pressed="false" data-theme-mode="light"><span class="toggle-switch__track" aria-hidden="true"><span class="toggle-switch__label" data-theme-label="light">☀</span><span class="toggle-switch__label" data-theme-label="dark">☾</span></span><span class="toggle-switch__thumb" aria-hidden="true"></span></button>
+                <button class="language-toggle toggle-switch toggle-switch--language" id="languageToggle" type="button" aria-label="Mudar idioma para português" title="Mudar idioma para português" aria-pressed="false" data-language-switch="true" data-language="en"><span class="toggle-switch__track" aria-hidden="true"><span class="toggle-switch__label" data-lang-label="en">EN</span><span class="toggle-switch__label" data-lang-label="pt">BR</span></span><span class="toggle-switch__thumb" aria-hidden="true"></span></button>
             </div>
-            <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language to Portuguese" title="Switch language to Portuguese" aria-pressed="false">EN</button>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navLinks"><i class="fas fa-bars" aria-hidden="true"></i></button>
         </div>
     </nav>
 
-    <!-- Project Detail Section -->
-    <section class="project-detail-section">
-        <div class="container">
-            <a href="../../projetos.html" class="back-link"><i class="fas fa-arrow-left"></i> Voltar aos Projetos</a>
-            
-            <div class="project-detail-content">
-                <div class="project-detail-header">
-                    <h1>Projeto BNCC</h1>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Tkinter</span>
-                        <span class="tag">Processamento de PDF</span>
-                        <span class="tag">Educação</span>
+    <main id="mainContent">
+        <section class="showcase-detail">
+            <div class="container">
+                <a href="../../projetos.html" class="back-link"><i class="fas fa-arrow-left" aria-hidden="true"></i> Voltar aos Projetos</a>
+                <header class="showcase-hero">
+                    <div class="showcase-hero__content">
+                        <p class="showcase-eyebrow"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Educação e automação pedagógica</p>
+                        <h1>Projeto BNCC</h1>
+                        <p class="showcase-lead">Leitura de PDF e busca de códigos BNCC em uma interface criada para tornar o planejamento pedagógico mais rápido e organizado.</p>
+                        <div class="showcase-actions">
+                            <a href="https://github.com/3Gb3/projeto_bncc" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fab fa-github" aria-hidden="true"></i> Ver no GitHub</a>
+                            <a href="#gallery" class="btn btn-secondary"><i class="fas fa-image" aria-hidden="true"></i> Ver galeria</a>
+                        </div>
                     </div>
+                    <div class="showcase-hero__visual"><img src="../../img/bncc.jpg" alt="Identidade visual do Projeto BNCC"></div>
+                </header>
+
+                <div class="showcase-stats" aria-label="Resumo do projeto">
+                    <div><i class="fab fa-python" aria-hidden="true"></i><div><strong>Python</strong><span>Aplicação desktop</span></div></div>
+                    <div><i class="fas fa-file-pdf" aria-hidden="true"></i><div><strong>PDF</strong><span>Leitura e análise</span></div></div>
+                    <div><i class="fas fa-school" aria-hidden="true"></i><div><strong>Educação</strong><span>Planejamento pedagógico</span></div></div>
                 </div>
 
-                <div class="project-detail-info">
-                    <h2>Sobre o Projeto</h2>
-                    <p>
-                        O Projeto BNCC é uma aplicação desenvolvida em Python utilizando a biblioteca Tkinter para interface gráfica. 
-                        A ferramenta foi criada para auxiliar educadores na identificação de códigos da Base Nacional Comum Curricular (BNCC). 
-                        O sistema realiza a leitura completa de arquivos PDF, procura por códigos da BNCC e retorna os códigos encontrados 
-                        junto com seus respectivos significados. Este projeto foi desenvolvido especialmente para auxiliar no planejamento 
-                        educacional e organização de conteúdos pedagógicos.
-                    </p>
-
-                    <h3>Funcionalidades</h3>
-                    <ul>
-                        <li>Leitura e processamento completo de arquivos PDF</li>
-                        <li>Busca automática por códigos da BNCC no documento</li>
-                        <li>Exibição dos códigos encontrados com seus significados</li>
-                        <li>Interface gráfica intuitiva desenvolvida com Tkinter</li>
-                        <li>Sistema de análise rápida e eficiente</li>
-                        <li>Facilita o trabalho de planejamento pedagógico</li>
-                    </ul>
-
-                    <h3>Tecnologias Utilizadas</h3>
-                    <ul>
-                        <li><strong>Linguagem:</strong> Python</li>
-                        <li><strong>Interface Gráfica:</strong> Tkinter</li>
-                        <li><strong>Processamento:</strong> Bibliotecas de leitura e análise de PDF</li>
-                        <li><strong>Foco:</strong> Educação e automação de processos pedagógicos</li>
-                    </ul>
-
-                    <h3>Objetivos do Projeto</h3>
-                    <p>
-                        O objetivo principal foi criar uma ferramenta prática que facilitasse o trabalho de identificação 
-                        e organização dos códigos da BNCC em documentos educacionais. O projeto surgiu de uma necessidade 
-                        real no contexto educacional, tornando mais ágil o processo de planejamento e alinhamento de 
-                        conteúdos com as diretrizes da Base Nacional Comum Curricular.
-                    </p>
-
-                    <div class="project-links">
-                        <a href="https://github.com/3Gb3/projeto_bncc" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                            <i class="fab fa-github"></i> Ver no GitHub
-                        </a>
-                    </div>
+                <div class="showcase-grid">
+                    <article class="showcase-panel showcase-panel--wide">
+                        <p class="showcase-label">Sobre o Projeto</p>
+                        <h2>Sobre o Projeto</h2>
+                        <p>O Projeto BNCC é uma aplicação desenvolvida em Python utilizando a biblioteca Tkinter para interface gráfica. A ferramenta foi criada para auxiliar educadores na identificação de códigos da Base Nacional Comum Curricular (BNCC). O sistema realiza a leitura completa de arquivos PDF, procura por códigos da BNCC e retorna os códigos encontrados junto com seus respectivos significados. Este projeto foi desenvolvido especialmente para auxiliar no planejamento educacional e organização de conteúdos pedagógicos.</p>
+                    </article>
+                    <article class="showcase-panel">
+                        <p class="showcase-label">Funcionalidades</p>
+                        <h2>Funcionalidades</h2>
+                        <ul class="showcase-list">
+                            <li>Leitura e processamento completo de arquivos PDF</li>
+                            <li>Busca automática por códigos da BNCC no documento</li>
+                            <li>Exibição dos códigos encontrados com seus significados</li>
+                            <li>Interface gráfica intuitiva desenvolvida com Tkinter</li>
+                            <li>Sistema de análise rápida e eficiente</li>
+                            <li>Facilita o trabalho de planejamento pedagógico</li>
+                        </ul>
+                    </article>
+                    <article class="showcase-panel">
+                        <p class="showcase-label">Objetivos do Projeto</p>
+                        <h2>Objetivos do Projeto</h2>
+                        <p>O objetivo principal foi criar uma ferramenta prática que facilitasse o trabalho de identificação e organização dos códigos da BNCC em documentos educacionais. O projeto surgiu de uma necessidade real no contexto educacional, tornando mais ágil o processo de planejamento e alinhamento de conteúdos com as diretrizes da Base Nacional Comum Curricular.</p>
+                    </article>
                 </div>
+
+                <section class="showcase-tech" aria-labelledby="tech-title">
+                    <p class="showcase-label">Tecnologias Utilizadas</p>
+                    <h2 id="tech-title">Tecnologias Utilizadas</h2>
+                    <div class="showcase-tech__grid"><span><i class="fab fa-python"></i> Python</span><span><i class="fas fa-window-maximize"></i> Tkinter</span><span><i class="fas fa-file-pdf"></i> Processamento de PDF</span><span><i class="fas fa-magnifying-glass"></i> Busca automatizada</span></div>
+                </section>
+
+                <section class="showcase-gallery" id="gallery" aria-labelledby="gallery-title">
+                    <div class="showcase-gallery__heading"><p class="showcase-label">Galeria do projeto</p><h2 id="gallery-title">Galeria do projeto</h2><p>Identidade visual da ferramenta criada para apoiar a leitura e organização de documentos educacionais.</p></div>
+                    <div class="showcase-gallery__grid"><figure class="showcase-shot showcase-shot--wide"><img src="../../img/bncc.jpg" alt="Identidade visual do Projeto BNCC" loading="eager" decoding="async"><figcaption>Projeto BNCC — automação aplicada à educação</figcaption></figure></div>
+                </section>
+
+                <section class="showcase-cta">
+                    <div><p class="showcase-label">Código e documentação</p><h2>Conhecer o Projeto BNCC</h2><p>Acesse o repositório para ver a implementação em Python e a documentação técnica.</p></div>
+                    <a href="https://github.com/3Gb3/projeto_bncc" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fab fa-github" aria-hidden="true"></i> Ver no GitHub</a>
+                </section>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Gabriel Schwingel Conci. Todos os direitos reservados.</p>
-            <div class="footer-social">
-                <a href="https://github.com/3Gb3" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/gbsconci/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://discord.com/users/3gbzin" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord"><i class="fab fa-discord"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/5551994464827" target="_blank" rel="noopener noreferrer" class="whatsapp-button" title="Fale comigo no WhatsApp" aria-label="Fale comigo no WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script src="../../site-language.js"></script>
-    <script src="bncc.js"></script>
+    <footer class="footer"><div class="container"><p>&copy; <span id="currentYear">2026</span> Gabriel Schwingel Conci. Todos os direitos reservados.</p><div class="footer-social"><a href="https://github.com/3Gb3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="https://www.instagram.com/gbsconci/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div></footer>
+    <button id="scrollTop" class="scroll-top" type="button" aria-label="Voltar ao topo" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+    <a href="https://wa.me/5551994464827" target="_blank" rel="noopener noreferrer" class="whatsapp-button" title="Fale comigo no WhatsApp" aria-label="Fale comigo no WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <script src="../../site-language.js"></script><script src="../../portfolio.js"></script>
 </body>
 </html>

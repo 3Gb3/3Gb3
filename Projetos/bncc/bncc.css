@@ -1,15 +1,9 @@
-/* Importando estilos base do portfólio principal */
-@import url('../../portfolio.css');
+@import url('../shared/project-detail.css');
 
-/* Estilos específicos do projeto BNCC */
-.project-detail-info h2 {
-    color: #48bb78;
-}
-
-.project-detail-info h3 {
-    color: #38a169;
-}
-
-.tag {
-    background: linear-gradient(135deg, #48bb78, #38a169);
+.showcase-bncc {
+    --showcase-primary: #0f766e;
+    --showcase-secondary: #2563eb;
+    --showcase-accent: #f59e0b;
+    --showcase-glow-a: rgba(15, 118, 110, .18);
+    --showcase-glow-b: rgba(37, 99, 235, .12);
 }
