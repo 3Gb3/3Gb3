@@ -5,6 +5,7 @@
 ### Desenvolvedor Full-Stack Júnior · Business Tech · Automação e IA
 
 [![Site profissional](https://img.shields.io/badge/Site_profissional-0F766E?style=for-the-badge&logo=googlechrome&logoColor=white)](https://3gb3.github.io/3Gb3/)
+[![Currículo](https://img.shields.io/badge/Currículo-2563EB?style=for-the-badge&logo=readme&logoColor=white)](https://3gb3.github.io/3Gb3/files/Gabriel_Conci.pdf)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gabriel-schwingel-conci-a0528a344/)
 [![E-mail](https://img.shields.io/badge/E--mail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gabrielsconci@gmail.com)
 
@@ -12,7 +13,7 @@
 
 ## Sobre mim
 
-Sou desenvolvedor full-stack júnior e gosto de transformar problemas reais em aplicações úteis, organizadas e fáceis de usar. Atualmente trabalho na **Quero-Quero**, no **Business Tech**, um time focado no desenvolvimento de automações.
+Sou desenvolvedor full-stack júnior e gosto de transformar problemas reais em aplicações úteis, organizadas e fáceis de usar. Atualmente trabalho na **Quero-Quero**, no **Business Tech + QQTech**, em um time focado no desenvolvimento de automações.
 
 Criamos **chatbots e soluções de IA** para personalizar a comunicação nos fluxos **cliente → empresa** e **empresa → cliente**.
 

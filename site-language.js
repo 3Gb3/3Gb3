@@ -1,6 +1,6 @@
 (function () {
     const STORAGE_KEY = 'portfolioLanguage';
-    const DEFAULT_LANGUAGE = 'en';
+    const DEFAULT_LANGUAGE = 'pt';
     const ATTRIBUTE_NAMES = ['placeholder', 'aria-label', 'title', 'alt'];
     const META_SELECTORS = [
         'meta[name="description"]',
@@ -53,6 +53,8 @@
 
         // Home section
         'Desenvolvedor Full-Stack Júnior': 'Junior Full-Stack Developer',
+        'Desenvolvedor Full-Stack Júnior | Automação e IA': 'Junior Full-Stack Developer | Automation and AI',
+        'Desenvolvo automações, chatbots, APIs e integrações com inteligência artificial para conectar clientes e empresas.': 'I build automations, chatbots, APIs, and AI-powered integrations to connect customers and companies.',
         'Transformo ideias em soluções digitais com foco em qualidade, performance e experiências claras para o usuário.': 'I turn ideas into digital solutions focused on quality, performance, and clear user experiences.',
         'Falar Comigo': 'Talk to Me',
         'Ver Projetos': 'View Projects',
@@ -64,12 +66,20 @@
         'Projetos práticos em tecnologia': 'Hands-on technology projects',
         'ADS 4º Semestre': 'Systems Analysis - 4th Semester',
         'Evolução constante com base acadêmica': 'Constant growth with academic foundation',
+        'Business Tech + QQTech': 'Business Tech + QQTech',
+        'Automação e IA na Quero-Quero': 'Automation and AI at Quero-Quero',
+        'Python & FastAPI': 'Python & FastAPI',
+        'Serviços, APIs e integrações': 'Services, APIs, and Integrations',
+        'QA + Desenvolvimento': 'QA + Development',
+        'Qualidade do fluxo à entrega': 'Quality from workflow to delivery',
 
         // About section
         'Sobre Mim': 'About Me',
         'Sou Gabriel Schwingel Conci, desenvolvedor full-stack júnior e estudante de Análise e Desenvolvimento de Sistemas na CESUCA. Gosto de construir soluções úteis, com código limpo e foco na experiência de quem usa.': 'I am Gabriel Schwingel Conci, a junior full-stack developer and Systems Analysis and Development student at CESUCA. I enjoy building useful solutions with clean code and a strong focus on user experience.',
+        'Sou Gabriel Schwingel Conci, desenvolvedor full-stack júnior com foco em automações, integrações e inteligência artificial aplicada. Gosto de construir soluções úteis, com código organizado e atenção à experiência de quem usa.': 'I am Gabriel Schwingel Conci, a junior full-stack developer focused on automation, integrations, and applied artificial intelligence. I enjoy building useful solutions with organized code and attention to user experience.',
         'Hoje atuo nas frentes de Business Tech e QQTech da Quero-Quero, trabalhando com ChatGraph, RabbitMQ, DBeaver, PostgreSQL e Docker Desktop.': 'Today I work in Quero-Quero\'s Business Tech and QQTech teams, using ChatGraph, RabbitMQ, DBeaver, PostgreSQL, and Docker Desktop.',
         'Hoje atuo no Business Tech da Quero-Quero, um time focado no desenvolvimento de automações, chatbots e soluções de IA que conectam clientes e empresa em fluxos de atendimento personalizados.': 'Today I work on Quero-Quero\'s Business Tech team, focused on developing automations, chatbots, and AI solutions that connect customers and the company through personalized service flows.',
+        'Hoje atuo no Business Tech + QQTech da Quero-Quero, em um time focado no desenvolvimento de automações, chatbots e soluções de IA que conectam clientes e empresa em fluxos de atendimento personalizados.': 'Today I work in Business Tech + QQTech at Quero-Quero, on a team focused on developing automations, chatbots, and AI solutions that connect customers and the company through personalized service flows.',
         'Automações de atendimento nos fluxos cliente → empresa e empresa → cliente.': 'Customer service automations for customer → company and company → customer flows.',
         'Integrações com ChatGraph, RabbitMQ e OpenRouter para experiências com IA.': 'Integrations with ChatGraph, RabbitMQ, and OpenRouter for AI-powered experiences.',
         'Desenvolvimento com Python e FastAPI, além de PostgreSQL para dados.': 'Development with Python and FastAPI, with PostgreSQL for data.',
@@ -90,6 +100,8 @@
         // Resume section
         'Download Currículo (PDF)': 'Download Resume (PDF)',
         'Projetos & Experiência': 'Projects & Experience',
+        'Experiência Profissional': 'Professional Experience',
+        'Desenvolvimento Autoral': 'Independent Development',
         '05/2026 - Presente': '05/2026 - Present',
         'Atuação nas frentes de Business Tech e QQTech': 'Working across the Business Tech and QQTech teams',
         'Trabalho com integrações utilizando ChatGraph e RabbitMQ': 'Integration work using ChatGraph and RabbitMQ',
@@ -188,6 +200,7 @@
         'Mensagem': 'Message',
         'Como posso te ajudar?': 'How can I help you?',
         'Retorno por e-mail em até 2 dias úteis.': 'I reply by email within 2 business days.',
+        'Retorno por e-mail em até 2 dias úteis. Seus dados serão usados somente para responder ao contato.': 'I reply by email within 2 business days. Your data will only be used to respond to your message.',
         'Empresa': 'Company',
         'Enviar Mensagem': 'Send Message',
 
@@ -548,6 +561,9 @@
         // Professional presentation, experience modals, and technologies
         'Tecnologias': 'Technologies',
         'Projetos em destaque': 'Featured Projects',
+        'Projetos em desenvolvimento web, automação, educação e inteligência artificial aplicada.': 'Projects in web development, automation, education, and applied artificial intelligence.',
+        'Catálogo de projetos': 'Project Catalog',
+        'Ferramenta desktop em Python e Tkinter para ler PDFs, localizar códigos BNCC e apoiar o planejamento pedagógico.': 'Desktop tool built with Python and Tkinter to read PDFs, locate BNCC codes, and support pedagogical planning.',
         'Automações, chatbots e soluções de IA para aproximar clientes e empresa por meio de atendimentos personalizados.': 'Automations, chatbots, and AI solutions that connect customers and the company through personalized service.',
         'Qualidade de experiências conversacionais, validação de fluxos e documentação de melhorias em chatbots.': 'Conversational experience quality, flow validation, and chatbot improvement documentation.',
         'Projetos autorais em desenvolvimento web, automação, educação e inteligência artificial aplicada.': 'Independent projects in web development, automation, education, and applied artificial intelligence.',

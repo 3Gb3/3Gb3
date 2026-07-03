@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://3gb3.github.io/3Gb3/sitemap.xml

@@ -1,25 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="pt-BR" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projetos - Gabriel Schwingel Conci</title>
     <meta name="description" content="Catálogo completo de projetos de Gabriel Schwingel Conci com foco em desenvolvimento web, automação e soluções em Python.">
+    <meta property="og:title" content="Projetos - Gabriel Schwingel Conci">
+    <meta property="og:description" content="Projetos em desenvolvimento web, automação, educação e inteligência artificial aplicada.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://3gb3.github.io/3Gb3/projetos.html">
+    <meta property="og:image" content="https://3gb3.github.io/3Gb3/Projetos/ventude-planner/img/painel-hoje.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Projetos - Gabriel Schwingel Conci">
+    <meta name="twitter:description" content="Projetos em desenvolvimento web, automação, educação e inteligência artificial aplicada.">
+    <meta name="twitter:image" content="https://3gb3.github.io/3Gb3/Projetos/ventude-planner/img/painel-hoje.png">
+    <link rel="canonical" href="https://3gb3.github.io/3Gb3/projetos.html">
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="portfolio.css?v=20260703f">
-    <link rel="stylesheet" href="projetos.css">
+    <link rel="stylesheet" href="portfolio.css?v=20260703i">
+    <link rel="stylesheet" href="projetos.css?v=20260703i">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Preload das imagens -->
-    <link rel="preload" as="image" href="img/codelogic.png">
-    <link rel="preload" as="image" href="img/bncc.jpg">
-    <link rel="preload" as="image" href="img/purpleplay.jpg">
-    <link rel="preload" as="image" href="Projetos/sustentabilidade/img/america.jpg">
-    <link rel="preload" as="image" href="img/sage.jpg">
-    <link rel="preload" as="image" href="Projetos/nosso-universo/img/sistema-solar.png">
-    <link rel="preload" as="image" href="Projetos/ventude-planner/img/painel-hoje.png">
 </head>
 <body class="projects-page">
     <a class="skip-link" href="#mainContent">Pular para o conteúdo principal</a>
@@ -37,7 +40,7 @@
                 <li><a href="index.html#contact" class="nav-link">Contato</a></li>
             </ul>
             <div class="nav-switches" aria-label="Controles de interface">
-                <button class="language-toggle toggle-switch toggle-switch--language" id="languageToggle" type="button" aria-label="Mudar idioma para português" title="Mudar idioma para português" aria-pressed="false" data-language-switch="true" data-language="en">
+                <button class="language-toggle toggle-switch toggle-switch--language" id="languageToggle" type="button" aria-label="Mudar idioma para inglês" title="Mudar idioma para inglês" aria-pressed="true" data-language-switch="true" data-language="pt">
                     <span class="toggle-switch__track" aria-hidden="true">
                         <span class="toggle-switch__label" data-lang-label="en">EN</span>
                         <span class="toggle-switch__label" data-lang-label="pt">BR</span>
@@ -97,11 +100,12 @@
         <!-- All Projects Section -->
         <section class="all-projects-section">
             <div class="container">
+                <h2 class="sr-only">Catálogo de projetos</h2>
                 <div class="projects-grid" id="projectsGrid">
                     <!-- Projeto 1 -->
                     <a class="project-card" data-project-card data-category="web" data-keywords="ventude planner rotina agenda calendario alimentacao calorias exercicios firebase firestore chart js dashboard produtividade" href="Projetos/ventude-planner/ventude-planner.html" aria-label="Abrir projeto Ventude Planner">
                         <div class="project-image">
-                            <img src="Projetos/ventude-planner/img/painel-hoje.png" alt="Painel diário do Ventude Planner" loading="eager" decoding="async">
+                            <img src="Projetos/ventude-planner/img/painel-hoje.png" alt="Painel diário do Ventude Planner" loading="lazy" decoding="async">
                         </div>
                         <div class="project-info">
                             <div class="project-info-top">
@@ -122,7 +126,7 @@
                     <!-- Projeto 2 -->
                     <a class="project-card" data-project-card data-category="web" data-keywords="nosso universo three.js threejs webgl javascript 3d interativo planetas experiencia visual storytelling" href="Projetos/nosso-universo/nosso-universo.html" aria-label="Abrir projeto Nosso Universo">
                         <div class="project-image">
-                            <img src="Projetos/nosso-universo/img/sistema-solar.png" alt="Sistema solar 3D do projeto Nosso Universo" loading="eager" decoding="async">
+                            <img src="Projetos/nosso-universo/img/sistema-solar.png" alt="Sistema solar 3D do projeto Nosso Universo" loading="lazy" decoding="async">
                         </div>
                         <div class="project-info">
                             <div class="project-info-top">
@@ -143,7 +147,7 @@
                     <!-- Projeto 3 -->
                     <a class="project-card" data-project-card data-category="python web educacao" data-keywords="code logic flask logica programacao ensino app web" href="Projetos/codelogic/codelogic.html" aria-label="Abrir projeto Code Logic">
                         <div class="project-image">
-                            <img src="img/codelogic.png" alt="Code Logic" loading="eager" decoding="async">
+                            <img src="img/codelogic.webp" alt="Code Logic" loading="lazy" decoding="async">
                         </div>
                         <div class="project-info">
                             <div class="project-info-top">
@@ -163,9 +167,9 @@
                     </a>
 
                     <!-- Projeto 4 -->
-                    <a class="project-card" data-project-card data-category="python educacao" data-keywords="bncc python pygame jogo educativo aprendizagem" href="Projetos/bncc/bncc.html" aria-label="Abrir Projeto BNCC">
+                    <a class="project-card" data-project-card data-category="python educacao automacao" data-keywords="bncc python tkinter pdf documentos codigos planejamento pedagogico automacao educacao" href="Projetos/bncc/bncc.html" aria-label="Abrir Projeto BNCC">
                         <div class="project-image">
-                            <img src="img/bncc.jpg" alt="Projeto BNCC" loading="eager" decoding="async">
+                            <img src="img/bncc.jpg" alt="Projeto BNCC" loading="lazy" decoding="async">
                         </div>
                         <div class="project-info">
                             <div class="project-info-top">
@@ -173,11 +177,11 @@
                                 <span class="project-year">2025</span>
                             </div>
                             <h3>Projeto BNCC</h3>
-                            <p>Aplicação educativa desenvolvida em Python com Pygame para aprendizado interativo.</p>
+                            <p>Ferramenta desktop em Python e Tkinter para ler PDFs, localizar códigos BNCC e apoiar o planejamento pedagógico.</p>
                             <div class="project-tags">
                                 <span class="tag">Python</span>
-                                <span class="tag">Pygame</span>
-                                <span class="tag">Educação</span>
+                                <span class="tag">Tkinter</span>
+                                <span class="tag">PDF</span>
                             </div>
                             <span class="project-cta">Explorar projeto <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
                         </div>
@@ -279,8 +283,8 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="site-language.js?v=20260703f"></script>
-    <script src="portfolio.js?v=20260703f"></script>
-    <script src="projetos.js"></script>
+    <script src="site-language.js?v=20260703i"></script>
+    <script src="portfolio.js?v=20260703i"></script>
+    <script src="projetos.js?v=20260703i"></script>
 </body>
 </html>
