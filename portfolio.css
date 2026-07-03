@@ -1353,6 +1353,355 @@ section {
     color: var(--text-color);
 }
 
+/* Professional experience */
+.experience-summary {
+    max-width: 720px;
+    margin-bottom: 1.15rem;
+    color: var(--text-light);
+    line-height: 1.75;
+}
+
+.experience-details-button {
+    min-height: 42px;
+    padding: 0.65rem 1rem;
+    font-size: 0.88rem;
+}
+
+.courses-callout {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 1.4rem;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    background:
+        radial-gradient(circle at 90% 0%, rgba(45, 212, 191, 0.13), transparent 38%),
+        var(--surface-color);
+    box-shadow: var(--shadow);
+}
+
+.courses-callout__icon {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 15px;
+    color: #fff;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    font-size: 1.3rem;
+}
+
+.courses-callout h3 {
+    margin-bottom: 0.2rem;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.courses-callout p {
+    color: var(--text-light);
+    font-size: 0.92rem;
+}
+
+/* Technologies */
+.technologies-section {
+    background: var(--bg-color);
+}
+
+.technologies-intro {
+    max-width: 760px;
+    margin: -1.3rem auto 2.5rem;
+    color: var(--text-light);
+    text-align: center;
+    line-height: 1.7;
+}
+
+.technology-groups {
+    display: grid;
+    gap: 1.4rem;
+}
+
+.technology-group {
+    padding: 1.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background: var(--surface-color);
+    box-shadow: var(--shadow);
+}
+
+.technology-group__heading {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1.2rem;
+    color: var(--primary-color);
+}
+
+.technology-group__heading i {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    color: #04111f;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.technology-group__heading h3 {
+    color: var(--text-color);
+    font-size: 1.18rem;
+}
+
+.technology-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+    gap: 0.75rem;
+}
+
+.technology-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 68px;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    color: var(--text-color);
+    background: rgba(148, 163, 184, 0.06);
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+
+.technology-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-color);
+    background: rgba(45, 212, 191, 0.08);
+}
+
+.technology-card img,
+.technology-icon {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    border-radius: 10px;
+}
+
+.technology-card img {
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.94);
+    object-fit: contain;
+}
+
+.technology-icon {
+    display: grid;
+    place-items: center;
+    color: #04111f;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    font-size: 1.05rem;
+}
+
+/* Detail modals */
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal[hidden] {
+    display: none !important;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2500;
+    display: grid;
+    place-items: center;
+    padding: 1.25rem;
+    background: rgba(2, 6, 23, 0.82);
+    backdrop-filter: blur(8px);
+}
+
+.modal-dialog {
+    position: relative;
+    width: min(720px, 100%);
+    max-height: calc(100vh - 2.5rem);
+    overflow-y: auto;
+    padding: clamp(1.5rem, 4vw, 2.4rem);
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+    color: var(--text-color);
+    background: var(--bg-secondary);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.55);
+}
+
+.modal-dialog--wide {
+    width: min(880px, 100%);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--text-color);
+    background: var(--surface-color);
+    cursor: pointer;
+    font-size: 1.05rem;
+}
+
+.modal-close:hover {
+    color: #04111f;
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+}
+
+.modal-eyebrow {
+    margin-bottom: 0.35rem;
+    color: var(--primary-color);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.modal-dialog h2 {
+    max-width: calc(100% - 48px);
+    margin-bottom: 0.55rem;
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.modal-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-meta span,
+.modal-tags span {
+    padding: 0.38rem 0.7rem;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    color: var(--text-light);
+    background: var(--surface-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.modal-lead {
+    margin-bottom: 1.4rem;
+    color: var(--text-light);
+}
+
+.modal-section + .modal-section {
+    margin-top: 1.35rem;
+}
+
+.modal-section h3 {
+    margin-bottom: 0.6rem;
+    color: var(--primary-color);
+    font-size: 1.05rem;
+}
+
+.modal-section p,
+.modal-section li {
+    color: var(--text-light);
+    line-height: 1.72;
+}
+
+.modal-section ul {
+    display: grid;
+    gap: 0.35rem;
+    padding-left: 1.2rem;
+}
+
+.modal-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.course-modal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+}
+
+.course-modal-card {
+    display: flex;
+    gap: 0.85rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    background: var(--surface-color);
+}
+
+.course-modal-card > i {
+    margin-top: 0.15rem;
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+.course-modal-card h3 {
+    margin-bottom: 0.2rem;
+    color: var(--text-color);
+    font-size: 0.98rem;
+}
+
+.course-modal-card p {
+    margin-bottom: 0.4rem;
+    color: var(--primary-color);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.course-modal-card span {
+    color: var(--text-light);
+    font-size: 0.84rem;
+    line-height: 1.55;
+}
+
+.course-repository-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.65rem;
+}
+
+.course-repository-links a {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 56px;
+    padding: 0.7rem 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    color: var(--text-color);
+    background: var(--surface-color);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.course-repository-links a:hover {
+    border-color: var(--primary-color);
+}
+
+.course-repository-links a > i:first-child {
+    color: var(--primary-color);
+}
+
+.course-repository-links a > i:last-child {
+    color: var(--text-light);
+    font-size: 0.7rem;
+}
+
 /* Contact Section */
 .contact-section {
     background: var(--bg-secondary);
@@ -1806,6 +2155,48 @@ section {
 
     .course-repositories__links {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .courses-callout {
+        grid-template-columns: auto 1fr;
+    }
+
+    .courses-callout .btn {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+
+    .technology-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .course-modal-grid,
+    .course-repository-links {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .technology-group {
+        padding: 1.1rem;
+    }
+
+    .technology-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal {
+        padding: 0;
+        place-items: end center;
+    }
+
+    .modal-dialog,
+    .modal-dialog--wide {
+        width: 100%;
+        max-height: 92vh;
+        border-radius: 22px 22px 0 0;
     }
 }
 

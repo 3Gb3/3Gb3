@@ -1,5 +1,4 @@
 const html = document.documentElement;
-const themeToggle = document.getElementById('themeToggle');
 const menuToggle = document.getElementById('menuToggle');
 const navLinksContainer = document.getElementById('navLinks');
 const navLinks = document.querySelectorAll('.nav-link');
@@ -36,13 +35,12 @@ function getActiveLanguage() {
     return 'pt';
 }
 
-const initialTheme = localStorage.getItem('theme') ||
-    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-
-setTheme(initialTheme);
+html.setAttribute('data-theme', 'dark');
+localStorage.removeItem('theme');
 prepareIncomingPageTransition();
 setupPageTransitions();
 setupNavigation();
+setupModals();
 setupScrollTopButton();
 setupFooterYear();
 setupContactForm();
@@ -54,15 +52,6 @@ if (document.readyState === 'loading') {
 }
 
 function setupNavigation() {
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const activeTheme = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-            const nextTheme = activeTheme === 'dark' ? 'light' : 'dark';
-            setTheme(nextTheme);
-            localStorage.setItem('theme', nextTheme);
-        });
-    }
-
     if (menuToggle && navLinksContainer) {
         menuToggle.addEventListener('click', () => {
             const isOpen = navLinksContainer.classList.toggle('active');
@@ -97,8 +86,69 @@ function setupNavigation() {
             );
         }
 
-        const activeTheme = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-        updateThemeButton(activeTheme);
+    });
+}
+
+function setupModals() {
+    const modalTriggers = document.querySelectorAll('[data-modal-open]');
+    const modals = document.querySelectorAll('.modal');
+    let activeModal = null;
+    let lastFocusedElement = null;
+
+    if (!modalTriggers.length || !modals.length) {
+        return;
+    }
+
+    const closeModal = () => {
+        if (!activeModal) {
+            return;
+        }
+
+        activeModal.hidden = true;
+        document.body.classList.remove('modal-open');
+        activeModal = null;
+
+        if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+            lastFocusedElement.focus();
+        }
+    };
+
+    const openModal = (modalId, trigger) => {
+        const modal = document.getElementById(modalId);
+        if (!modal || !modal.classList.contains('modal')) {
+            return;
+        }
+
+        lastFocusedElement = trigger;
+        activeModal = modal;
+        modal.hidden = false;
+        document.body.classList.add('modal-open');
+
+        const closeButton = modal.querySelector('[data-modal-close]');
+        if (closeButton) {
+            closeButton.focus();
+        }
+    };
+
+    modalTriggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+            openModal(trigger.getAttribute('data-modal-open'), trigger);
+        });
+    });
+
+    modals.forEach((modal) => {
+        modal.addEventListener('click', (event) => {
+            const clickedCloseControl = event.target.closest('[data-modal-close]');
+            if (event.target === modal || clickedCloseControl) {
+                closeModal();
+            }
+        });
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && activeModal) {
+            closeModal();
+        }
     });
 }
 
@@ -159,33 +209,6 @@ function closeMobileMenu() {
     navLinksContainer.classList.remove('active');
     menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.setAttribute('aria-label', translateMessage('nav.openMenu', {}, 'Abrir menu de navegação'));
-}
-
-function setTheme(theme) {
-    html.setAttribute('data-theme', theme);
-    updateThemeButton(theme);
-}
-
-function updateThemeButton(theme) {
-    if (!themeToggle) {
-        return;
-    }
-
-    const isDark = theme === 'dark';
-    themeToggle.setAttribute('aria-pressed', String(isDark));
-    themeToggle.setAttribute('data-theme-mode', isDark ? 'dark' : 'light');
-    themeToggle.setAttribute(
-        'aria-label',
-        isDark
-            ? translateMessage('theme.toLight', {}, 'Alternar para tema claro')
-            : translateMessage('theme.toDark', {}, 'Alternar para tema escuro')
-    );
-
-    const icon = themeToggle.querySelector('i');
-    if (icon) {
-        icon.classList.toggle('fa-moon', !isDark);
-        icon.classList.toggle('fa-sun', isDark);
-    }
 }
 
 function setupVisualEffects() {
@@ -439,7 +462,7 @@ function getTransitionMessage(destinationUrl) {
         const destination = new URL(destinationUrl, window.location.href);
 
         if (isHomePagePath(destination.pathname)) {
-            return translateMessage('transition.backToPortfolio', {}, 'Voltando ao portfolio...');
+            return translateMessage('transition.backToPortfolio', {}, 'Voltando ao site...');
         }
 
         if (isProjectsPagePath(destination.pathname)) {
