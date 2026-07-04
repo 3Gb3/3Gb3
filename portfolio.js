@@ -11,8 +11,8 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 
 const SUBMIT_COOLDOWN_MS = 60 * 1000;
 const MIN_FORM_FILL_TIME_MS = 3000;
-const PAGE_TRANSITION_DELAY_MS = 220;
-const PAGE_ENTER_ANIMATION_MS = 240;
+const PAGE_TRANSITION_DELAY_MS = 720;
+const PAGE_ENTER_ANIMATION_MS = 760;
 const PAGE_TRANSITION_STATE_KEY = 'sitePageTransition';
 const PAGE_TRANSITION_MAX_AGE_MS = 7000;
 
@@ -515,9 +515,19 @@ function createPageTransitionOverlay() {
     const overlay = document.createElement('div');
     overlay.className = 'page-transition-overlay';
     overlay.setAttribute('aria-hidden', 'true');
+    const shardOffsets = [
+        [-34, -24, -9], [-12, -32, 7], [14, -28, -6], [36, -18, 11],
+        [-40, 2, 8], [-16, -6, -5], [18, 4, 6], [42, -2, -10],
+        [-32, 28, -7], [-10, 34, 9], [16, 30, -8], [38, 24, 10]
+    ];
+    const shards = shardOffsets.map(([dx, dy, rotation], index) => `
+        <span class="page-transition-shard" style="--piece-col:${index % 4};--piece-row:${Math.floor(index / 4)};--piece-dx:${dx}vw;--piece-dy:${dy}vh;--piece-rotation:${rotation}deg"></span>
+    `).join('');
     overlay.innerHTML = `
-        <div class="page-transition-card">
-            <span class="page-transition-spinner" aria-hidden="true"></span>
+        <div class="page-transition-bands" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="page-transition-fracture" aria-hidden="true">${shards}</div>
+        <div class="page-transition-status">
+            <span class="page-transition-status__mark">GC</span>
             <span class="page-transition-text">${translateMessage('transition.loading', {}, 'Carregando...')}</span>
         </div>
     `;
@@ -555,10 +565,10 @@ function navigateWithTransition(destinationUrl) {
 
 function resetPageTransitionState() {
     pageTransitionInProgress = false;
-    document.body.classList.remove('page-transition-prep', 'page-transition-active');
+    document.body.classList.remove('page-transition-prep', 'page-transition-active', 'page-entering', 'page-enter-active');
 
     if (pageTransitionOverlay) {
-        pageTransitionOverlay.classList.remove('visible');
+        pageTransitionOverlay.classList.remove('visible', 'entering', 'fade-out');
     }
 }
 
@@ -578,9 +588,35 @@ function updatePageTransitionMessage(destinationUrl) {
 function getTransitionMessage(destinationUrl) {
     try {
         const destination = new URL(destinationUrl, window.location.href);
-        if (normalizePath(destination.pathname).endsWith('projetos.html')) {
-            return translateMessage('transition.openProjects', {}, 'Abrindo projetos...');
-        }
+        const path = normalizePath(destination.pathname);
+        const language = getActiveLanguage();
+        const messages = language === 'en'
+            ? {
+                home: 'Rebuilding the home page...',
+                projects: 'Rebuilding the projects page...',
+                experience: 'Rebuilding the experience page...',
+                skills: 'Rebuilding the skills page...',
+                certifications: 'Rebuilding the certifications page...',
+                contact: 'Rebuilding the contact page...',
+                project: 'Rebuilding the project...'
+            }
+            : {
+                home: 'Reconstruindo a página inicial...',
+                projects: 'Reconstruindo a página de projetos...',
+                experience: 'Reconstruindo a experiência...',
+                skills: 'Reconstruindo as habilidades...',
+                certifications: 'Reconstruindo as certificações...',
+                contact: 'Reconstruindo o contato...',
+                project: 'Reconstruindo o projeto...'
+            };
+
+        if (path.includes('/projetos/')) return messages.project;
+        if (path.endsWith('projetos.html')) return messages.projects;
+        if (path.endsWith('experiencia.html')) return messages.experience;
+        if (path.endsWith('habilidades.html')) return messages.skills;
+        if (path.endsWith('certificacoes.html')) return messages.certifications;
+        if (path.endsWith('contato.html')) return messages.contact;
+        if (path.endsWith('index.html') || path.endsWith('/')) return messages.home;
     } catch (_error) {
         return translateMessage('transition.loading', {}, 'Carregando...');
     }
