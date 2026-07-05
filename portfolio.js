@@ -11,13 +11,23 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 
 const SUBMIT_COOLDOWN_MS = 60 * 1000;
 const MIN_FORM_FILL_TIME_MS = 3000;
-const PAGE_TRANSITION_DELAY_MS = 720;
-const PAGE_ENTER_ANIMATION_MS = 760;
+const LANGUAGE_GATE_TRANSITION_MS = 720;
+const LANGUAGE_GATE_COVER_PROGRESS = 0.32;
+const PAGE_TRANSITION_COVER_MS = LANGUAGE_GATE_TRANSITION_MS * LANGUAGE_GATE_COVER_PROGRESS;
+const PAGE_TRANSITION_REVEAL_MS = LANGUAGE_GATE_TRANSITION_MS * (1 - LANGUAGE_GATE_COVER_PROGRESS);
+const PAGE_COVER_HOLD_MS = 80;
 const PAGE_TRANSITION_STATE_KEY = 'sitePageTransition';
 const PAGE_TRANSITION_MAX_AGE_MS = 7000;
+const PAGE_TRANSITION_PHASES = Object.freeze({
+    IDLE: 'idle',
+    ENTERING: 'entering',
+    COVERED: 'covered',
+    EXITING: 'exiting'
+});
 
 let pageTransitionOverlay = null;
-let pageTransitionInProgress = false;
+let pageTransitionPhase = PAGE_TRANSITION_PHASES.IDLE;
+let pageTransitionResetTimer = null;
 
 function translateMessage(key, params = {}, fallback = '') {
     if (window.siteLanguage && typeof window.siteLanguage.t === 'function') {
@@ -361,6 +371,11 @@ function setupPageTransitions() {
 
     linksWithTransition.forEach((link) => {
         link.addEventListener('click', (event) => {
+            if (isPageTransitionRunning()) {
+                event.preventDefault();
+                return;
+            }
+
             if (shouldSkipTransition(event, link)) {
                 return;
             }
@@ -375,39 +390,51 @@ function setupPageTransitions() {
         });
     });
 
-    window.addEventListener('pageshow', resetPageTransitionState);
+    window.addEventListener('pageshow', handlePageShow);
 }
 
 function prepareIncomingPageTransition() {
     const transitionState = consumePageTransitionState();
     if (!transitionState || prefersReducedMotion) {
+        html.removeAttribute('data-page-transition-boot');
         return;
     }
 
-    document.body.classList.add('page-entering');
-
     pageTransitionOverlay = createPageTransitionOverlay();
-    if (pageTransitionOverlay) {
-        pageTransitionOverlay.classList.add('visible', 'entering');
+    setPageTransitionPhase(PAGE_TRANSITION_PHASES.COVERED);
+    html.removeAttribute('data-page-transition-boot');
+
+    runWhenPageIsReady(startPageTransitionExit);
+}
+
+function runWhenPageIsReady(callback) {
+    const runOnNextPaint = () => {
+        window.requestAnimationFrame(() => {
+            window.requestAnimationFrame(() => {
+                window.setTimeout(callback, PAGE_COVER_HOLD_MS);
+            });
+        });
+    };
+
+    if (document.readyState === 'complete') {
+        runOnNextPaint();
+        return;
     }
 
-    window.requestAnimationFrame(() => {
-        window.requestAnimationFrame(() => {
-            document.body.classList.add('page-enter-active');
+    window.addEventListener('load', runOnNextPaint, { once: true });
+}
 
-            if (pageTransitionOverlay) {
-                pageTransitionOverlay.classList.add('fade-out');
-            }
-        });
-    });
+function startPageTransitionExit() {
+    if (pageTransitionPhase !== PAGE_TRANSITION_PHASES.COVERED) {
+        return;
+    }
 
-    window.setTimeout(() => {
-        document.body.classList.remove('page-entering', 'page-enter-active');
+    setPageTransitionPhase(PAGE_TRANSITION_PHASES.EXITING);
 
-        if (pageTransitionOverlay) {
-            pageTransitionOverlay.classList.remove('visible', 'entering', 'fade-out');
-        }
-    }, PAGE_ENTER_ANIMATION_MS + 40);
+    window.clearTimeout(pageTransitionResetTimer);
+    const middleBand = pageTransitionOverlay?.querySelector('.page-transition-bands span:nth-child(2)');
+    middleBand?.addEventListener('animationend', resetPageTransitionState, { once: true });
+    pageTransitionResetTimer = window.setTimeout(resetPageTransitionState, PAGE_TRANSITION_REVEAL_MS + 140);
 }
 
 function savePageTransitionState(destinationUrl) {
@@ -490,7 +517,7 @@ function isTransitionEligibleDestination(destination) {
 }
 
 function shouldSkipTransition(event, link) {
-    if (pageTransitionInProgress || event.defaultPrevented) {
+    if (event.defaultPrevented) {
         return true;
     }
 
@@ -515,29 +542,19 @@ function createPageTransitionOverlay() {
     const overlay = document.createElement('div');
     overlay.className = 'page-transition-overlay';
     overlay.setAttribute('aria-hidden', 'true');
-    const shardOffsets = [
-        [-34, -24, -9], [-12, -32, 7], [14, -28, -6], [36, -18, 11],
-        [-40, 2, 8], [-16, -6, -5], [18, 4, 6], [42, -2, -10],
-        [-32, 28, -7], [-10, 34, 9], [16, 30, -8], [38, 24, 10]
-    ];
-    const shards = shardOffsets.map(([dx, dy, rotation], index) => `
-        <span class="page-transition-shard" style="--piece-col:${index % 4};--piece-row:${Math.floor(index / 4)};--piece-dx:${dx}vw;--piece-dy:${dy}vh;--piece-rotation:${rotation}deg"></span>
-    `).join('');
     overlay.innerHTML = `
-        <div class="page-transition-bands" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div class="page-transition-fracture" aria-hidden="true">${shards}</div>
-        <div class="page-transition-status">
-            <span class="page-transition-status__mark">GC</span>
-            <span class="page-transition-text">${translateMessage('transition.loading', {}, 'Carregando...')}</span>
+        <div class="language-gate__bands page-transition-bands" aria-hidden="true">
+            <span></span><span></span><span></span>
         </div>
     `;
 
     document.body.appendChild(overlay);
+    overlay.dataset.transitionState = pageTransitionPhase;
     return overlay;
 }
 
 function navigateWithTransition(destinationUrl) {
-    if (pageTransitionInProgress) {
+    if (isPageTransitionRunning()) {
         return;
     }
 
@@ -545,83 +562,53 @@ function navigateWithTransition(destinationUrl) {
         pageTransitionOverlay = createPageTransitionOverlay();
     }
 
-    pageTransitionInProgress = true;
-    savePageTransitionState(destinationUrl);
-    updatePageTransitionMessage(destinationUrl);
-    document.body.classList.add('page-transition-prep');
+    setPageTransitionPhase(PAGE_TRANSITION_PHASES.ENTERING);
 
     window.requestAnimationFrame(() => {
-        document.body.classList.add('page-transition-active');
-
-        if (pageTransitionOverlay) {
-            pageTransitionOverlay.classList.add('visible');
+        if (pageTransitionPhase !== PAGE_TRANSITION_PHASES.ENTERING) {
+            return;
         }
-    });
 
-    window.setTimeout(() => {
-        window.location.assign(destinationUrl);
-    }, PAGE_TRANSITION_DELAY_MS);
+        document.body.classList.add('page-transition-active');
+        pageTransitionOverlay?.classList.add('is-animating');
+
+        window.setTimeout(() => {
+            if (pageTransitionPhase !== PAGE_TRANSITION_PHASES.ENTERING) {
+                return;
+            }
+
+            setPageTransitionPhase(PAGE_TRANSITION_PHASES.COVERED);
+            savePageTransitionState(destinationUrl);
+            window.location.assign(destinationUrl);
+        }, PAGE_TRANSITION_COVER_MS);
+    });
+}
+
+function setPageTransitionPhase(phase) {
+    pageTransitionPhase = phase;
+
+    if (pageTransitionOverlay) {
+        pageTransitionOverlay.dataset.transitionState = phase;
+    }
+}
+
+function isPageTransitionRunning() {
+    return pageTransitionPhase !== PAGE_TRANSITION_PHASES.IDLE;
+}
+
+function handlePageShow(event) {
+    if (event.persisted || pageTransitionPhase === PAGE_TRANSITION_PHASES.ENTERING) {
+        resetPageTransitionState();
+    }
 }
 
 function resetPageTransitionState() {
-    pageTransitionInProgress = false;
-    document.body.classList.remove('page-transition-prep', 'page-transition-active', 'page-entering', 'page-enter-active');
+    window.clearTimeout(pageTransitionResetTimer);
+    pageTransitionResetTimer = null;
+    document.body.classList.remove('page-transition-active');
+    pageTransitionOverlay?.classList.remove('is-animating');
 
-    if (pageTransitionOverlay) {
-        pageTransitionOverlay.classList.remove('visible', 'entering', 'fade-out');
-    }
-}
-
-function updatePageTransitionMessage(destinationUrl) {
-    if (!pageTransitionOverlay) {
-        return;
-    }
-
-    const textElement = pageTransitionOverlay.querySelector('.page-transition-text');
-    if (!textElement) {
-        return;
-    }
-
-    textElement.textContent = getTransitionMessage(destinationUrl);
-}
-
-function getTransitionMessage(destinationUrl) {
-    try {
-        const destination = new URL(destinationUrl, window.location.href);
-        const path = normalizePath(destination.pathname);
-        const language = getActiveLanguage();
-        const messages = language === 'en'
-            ? {
-                home: 'Rebuilding the home page...',
-                projects: 'Rebuilding the projects page...',
-                experience: 'Rebuilding the experience page...',
-                skills: 'Rebuilding the skills page...',
-                certifications: 'Rebuilding the certifications page...',
-                contact: 'Rebuilding the contact page...',
-                project: 'Rebuilding the project...'
-            }
-            : {
-                home: 'Reconstruindo a página inicial...',
-                projects: 'Reconstruindo a página de projetos...',
-                experience: 'Reconstruindo a experiência...',
-                skills: 'Reconstruindo as habilidades...',
-                certifications: 'Reconstruindo as certificações...',
-                contact: 'Reconstruindo o contato...',
-                project: 'Reconstruindo o projeto...'
-            };
-
-        if (path.includes('/projetos/')) return messages.project;
-        if (path.endsWith('projetos.html')) return messages.projects;
-        if (path.endsWith('experiencia.html')) return messages.experience;
-        if (path.endsWith('habilidades.html')) return messages.skills;
-        if (path.endsWith('certificacoes.html')) return messages.certifications;
-        if (path.endsWith('contato.html')) return messages.contact;
-        if (path.endsWith('index.html') || path.endsWith('/')) return messages.home;
-    } catch (_error) {
-        return translateMessage('transition.loading', {}, 'Carregando...');
-    }
-
-    return translateMessage('transition.loading', {}, 'Carregando...');
+    setPageTransitionPhase(PAGE_TRANSITION_PHASES.IDLE);
 }
 
 function setupProjectImages() {

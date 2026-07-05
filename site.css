@@ -44,6 +44,24 @@ html[data-language-choice="ready"] body > * {
     visibility: visible;
 }
 
+html[data-page-transition-boot="covered"] body > *:not(.page-transition-overlay):not(script) {
+    visibility: hidden !important;
+}
+
+html[data-page-transition-boot="covered"]::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 5001;
+    background: linear-gradient(
+        to bottom,
+        #0c0c0d 0 33.333%,
+        #6d3ae0 33.333% 66.666%,
+        #0c0c0d 66.666% 100%
+    );
+    pointer-events: auto;
+}
+
 body.site-revealed main { animation: siteReveal 0.55s var(--transition) both; }
 
 @keyframes siteReveal {
@@ -382,110 +400,51 @@ body.site-revealed main { animation: siteReveal 0.55s var(--transition) both; }
 [data-theme="dark"] .page-transition-overlay {
     position: fixed;
     inset: 0;
-    z-index: 4000;
-    display: block;
+    z-index: 5000;
     overflow: hidden;
-    opacity: 0;
-    transform: none;
-    background: transparent;
-    backdrop-filter: none;
+    visibility: hidden;
     pointer-events: none;
-    transition: opacity .08s linear;
 }
 
-.page-transition-overlay.visible,
-.page-transition-overlay.entering,
-.page-transition-overlay.fade-out {
-    opacity: 1;
-    transform: none;
+.page-transition-overlay[data-transition-state="entering"],
+.page-transition-overlay[data-transition-state="covered"],
+.page-transition-overlay[data-transition-state="exiting"] {
+    visibility: visible;
+    pointer-events: auto;
 }
 
-.page-transition-overlay.visible { pointer-events: auto; }
-.page-transition-overlay.fade-out { pointer-events: none; }
-
-.page-transition-bands,
-.page-transition-fracture {
-    position: absolute;
-    inset: 0;
+.page-transition-overlay[data-transition-state="covered"] .page-transition-bands span {
+    transform: scaleX(1);
 }
 
-.page-transition-bands { z-index: 1; display: grid; grid-template-rows: repeat(3, 1fr); }
-.page-transition-bands span { background: #0d0d0f; transform: scaleX(0); }
-.page-transition-bands span:nth-child(1) { clip-path: polygon(0 0, 100% 0, 97% 88%, 83% 94%, 69% 86%, 54% 100%, 36% 91%, 19% 98%, 0 90%); transform-origin: left; }
-.page-transition-bands span:nth-child(2) { clip-path: polygon(0 8%, 17% 1%, 34% 10%, 49% 0, 64% 9%, 81% 2%, 100% 12%, 100% 90%, 84% 98%, 66% 88%, 50% 100%, 32% 90%, 15% 99%, 0 91%); transform-origin: right; background: #6d3ae0; }
-.page-transition-bands span:nth-child(3) { clip-path: polygon(0 9%, 15% 1%, 31% 10%, 49% 0, 67% 12%, 84% 2%, 100% 10%, 100% 100%, 0 100%); transform-origin: left; background: #111113; }
-
-.page-transition-overlay.visible:not(.entering) .page-transition-bands span:nth-child(1),
-.page-transition-overlay.visible:not(.entering) .page-transition-bands span:nth-child(3) { animation: pageBandCoverRight .66s cubic-bezier(.72,.02,.18,1) forwards; }
-.page-transition-overlay.visible:not(.entering) .page-transition-bands span:nth-child(2) { animation: pageBandCoverLeft .66s cubic-bezier(.72,.02,.18,1) forwards; }
-
-.page-transition-overlay.entering .page-transition-bands span { transform: scaleX(1); }
-.page-transition-overlay.entering.fade-out .page-transition-bands span:nth-child(1),
-.page-transition-overlay.entering.fade-out .page-transition-bands span:nth-child(3) { animation: pageBandReleaseRight .74s cubic-bezier(.75,.02,.18,1) forwards; }
-.page-transition-overlay.entering.fade-out .page-transition-bands span:nth-child(2) { animation: pageBandReleaseLeft .74s cubic-bezier(.75,.02,.18,1) forwards; }
-
-.page-transition-fracture { z-index: 2; }
-.page-transition-shard {
-    position: absolute;
-    left: calc(var(--piece-col) * 25%);
-    top: calc(var(--piece-row) * 33.333%);
-    width: 25.2%;
-    height: 33.6%;
-    opacity: 0;
-    background: linear-gradient(145deg, rgba(28,28,31,.98), rgba(10,10,12,.98));
-    border: 1px solid rgba(167,139,250,.16);
-    transform: translate3d(var(--piece-dx), var(--piece-dy), 0) rotate(var(--piece-rotation)) scale(.82);
-    will-change: transform, opacity;
+.page-transition-overlay[data-transition-state="entering"].is-animating .page-transition-bands span:nth-child(1),
+.page-transition-overlay[data-transition-state="entering"].is-animating .page-transition-bands span:nth-child(3) {
+    transform-origin: left;
+    animation: bandExitRight .72s cubic-bezier(.78,.02,.2,1) both;
 }
-.page-transition-shard:nth-child(3n+1) { clip-path: polygon(0 0, 95% 4%, 100% 73%, 84% 100%, 6% 94%); }
-.page-transition-shard:nth-child(3n+2) { clip-path: polygon(6% 2%, 100% 0, 94% 91%, 69% 100%, 0 86%); background: linear-gradient(145deg, #5b32bd, #1b102f); }
-.page-transition-shard:nth-child(3n) { clip-path: polygon(0 7%, 89% 0, 100% 24%, 94% 100%, 8% 93%); }
 
-.page-transition-overlay.visible:not(.entering) .page-transition-shard { animation: pageShardAssemble .58s cubic-bezier(.2,.82,.16,1) forwards; animation-delay: calc((var(--piece-row) + var(--piece-col)) * 22ms); }
-.page-transition-overlay.entering .page-transition-shard { opacity: 1; transform: translate3d(0,0,0) rotate(0) scale(1); }
-.page-transition-overlay.entering.fade-out .page-transition-shard { animation: pageShardRelease .7s cubic-bezier(.72,.01,.22,1) forwards; animation-delay: calc((var(--piece-row) + var(--piece-col)) * 18ms); }
-
-.page-transition-status {
-    position: absolute;
-    z-index: 3;
-    left: 50%;
-    bottom: clamp(1.5rem, 6vh, 3.5rem);
-    display: inline-flex;
-    align-items: center;
-    gap: .7rem;
-    padding: .62rem .85rem;
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 999px;
-    color: #f5f5f5;
-    background: rgba(10,10,11,.78);
-    box-shadow: 0 14px 40px rgba(0,0,0,.36);
-    backdrop-filter: blur(12px);
-    opacity: 0;
-    transform: translate(-50%, 10px);
+.page-transition-overlay[data-transition-state="entering"].is-animating .page-transition-bands span:nth-child(2) {
+    transform-origin: right;
+    animation: bandExitLeft .72s cubic-bezier(.78,.02,.2,1) both;
 }
-.page-transition-status__mark { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 9px; color: #fff; background: linear-gradient(135deg,#7c3aed,#9333ea); font: 800 .62rem/1 'Sora',sans-serif; }
-.page-transition-text { font-size: .8rem; font-weight: 750; white-space: nowrap; }
-.page-transition-overlay.visible:not(.entering) .page-transition-status { animation: pageStatusIn .28s ease .22s forwards; }
-.page-transition-overlay.entering .page-transition-status { opacity: 1; transform: translate(-50%,0); }
-.page-transition-overlay.entering.fade-out .page-transition-status { animation: pageStatusOut .28s ease forwards; }
 
-body.page-transition-prep > *:not(.page-transition-overlay) { transition: opacity .55s ease, transform .62s cubic-bezier(.7,.02,.25,1), filter .55s ease; }
-body.page-transition-active > *:not(.page-transition-overlay) { opacity: .06; filter: blur(5px) saturate(.55); pointer-events: none; }
-body.page-transition-active > *:not(.page-transition-overlay):nth-child(odd) { transform: translate3d(-3vw,-2vh,0) rotate(-.55deg) scale(.97); }
-body.page-transition-active > *:not(.page-transition-overlay):nth-child(even) { transform: translate3d(3vw,2vh,0) rotate(.55deg) scale(.97); }
+.page-transition-overlay[data-transition-state="exiting"] .page-transition-bands span:nth-child(1),
+.page-transition-overlay[data-transition-state="exiting"] .page-transition-bands span:nth-child(3) {
+    transform-origin: left;
+    animation: bandExitRight .72s cubic-bezier(.78,.02,.2,1) -.2304s both;
+}
 
-body.page-entering { opacity: 1; transform: none; filter: none; overflow: hidden; }
-body.page-entering > *:not(.page-transition-overlay) { opacity: 0; transform: scale(.98); filter: blur(5px); }
-body.page-entering.page-enter-active > *:not(.page-transition-overlay) { opacity: 1; transform: none; filter: none; transition: opacity .54s ease .12s, transform .62s cubic-bezier(.2,.8,.16,1) .12s, filter .5s ease .12s; }
+.page-transition-overlay[data-transition-state="exiting"] .page-transition-bands span:nth-child(2) {
+    transform-origin: right;
+    animation: bandExitLeft .72s cubic-bezier(.78,.02,.2,1) -.2304s both;
+}
 
-@keyframes pageBandCoverRight { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-@keyframes pageBandCoverLeft { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-@keyframes pageBandReleaseRight { from { transform: scaleX(1) translateX(0); } to { transform: scaleX(1) translateX(108%); } }
-@keyframes pageBandReleaseLeft { from { transform: scaleX(1) translateX(0); } to { transform: scaleX(1) translateX(-108%); } }
-@keyframes pageShardAssemble { to { opacity: 1; transform: translate3d(0,0,0) rotate(0) scale(1); } }
-@keyframes pageShardRelease { from { opacity: 1; transform: translate3d(0,0,0) rotate(0) scale(1); } to { opacity: 0; transform: translate3d(var(--piece-dx),var(--piece-dy),0) rotate(var(--piece-rotation)) scale(.86); } }
-@keyframes pageStatusIn { to { opacity: 1; transform: translate(-50%,0); } }
-@keyframes pageStatusOut { to { opacity: 0; transform: translate(-50%,-8px); } }
+body.page-transition-active > *:not(.page-transition-overlay) {
+    animation: gateContentExit .28s ease both;
+    pointer-events: none;
+}
+
+body.page-transition-active { overflow: hidden; }
 
 @media (max-width: 1080px) {
     .navbar .container { padding-inline: 1rem; }
