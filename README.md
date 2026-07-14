@@ -94,13 +94,6 @@ Veja a apresentação completa no meu [site profissional](https://3gb3.github.io
   - [Exercícios de Python](https://github.com/3Gb3/curso_python)
 </details>
 
-## Estatísticas do GitHub
-
-<div align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=3Gb3&show_icons=true&theme=tokyonight&locale=pt-br&hide_border=true" alt="Estatísticas do GitHub de Gabriel">
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=3Gb3&theme=tokyonight&layout=compact&langs_count=8&locale=pt-br&hide_border=true" alt="Linguagens mais utilizadas por Gabriel">
-</div>
-
 ## Contato
 
 Estou aberto a oportunidades, projetos colaborativos e conversas sobre desenvolvimento web, automação, qualidade e IA aplicada.
@@ -109,15 +102,10 @@ Estou aberto a oportunidades, projetos colaborativos e conversas sobre desenvolv
 - [Instagram](https://www.instagram.com/gbsconci/)
 - [E-mail](mailto:gabrielsconci@gmail.com)
 
-## Estrutura do site profissional
-
-O conteúdo principal está organizado em páginas dedicadas:
-
-- `index.html`: apresentação e visão geral
-- `projetos.html`: catálogo com busca e filtros
-- `experiencia.html`: trajetória profissional
-- `habilidades.html`: tecnologias e práticas
-- `certificacoes.html`: cursos e repositórios de estudo
-- `contato.html`: canais diretos e formulário
-
-O cabeçalho e o rodapé são montados pelo `site-shell.js`, a identidade visual fica centralizada no `site.css` e a tradução compartilhada é controlada pelo `site-language.js`. Na primeira visita de cada aba, a escolha entre português e inglês é gravada em `sessionStorage` na chave `selectedLanguage`.
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/3Gb3/3Gb3/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/3Gb3/3Gb3/output/github-contribution-grid-snake.svg">
+    <img alt="Animação das contribuições no GitHub" src="https://raw.githubusercontent.com/3Gb3/3Gb3/output/github-contribution-grid-snake.svg">
+  </picture>
+</div>
