@@ -58,6 +58,8 @@
         'Cursos, formações complementares e aprendizado contínuo de Gabriel Schwingel Conci.': 'Courses, complementary education, and continuous learning by Gabriel Schwingel Conci.',
         'Entre em contato com Gabriel Schwingel Conci para oportunidades, projetos e conversas sobre desenvolvimento, automação e inteligência artificial.': 'Contact Gabriel Schwingel Conci about opportunities, projects, development, automation, and artificial intelligence.',
         'Catálogo completo de projetos de Gabriel Schwingel Conci com foco em desenvolvimento web, automação e soluções em Python.': 'Complete project catalog by Gabriel Schwingel Conci focused on web development, automation, and Python solutions.',
+        'Projetos públicos e cases profissionais de Gabriel Schwingel Conci em desenvolvimento web, automação, chatbots e inteligência artificial aplicada.': 'Public projects and professional case studies by Gabriel Schwingel Conci in web development, automation, chatbots, and applied artificial intelligence.',
+        'Projetos públicos e cases profissionais em desenvolvimento web, automação, chatbots e inteligência artificial aplicada.': 'Public projects and professional case studies in web development, automation, chatbots, and applied artificial intelligence.',
         'Projeto BNCC - Gabriel Schwingel Conci': 'BNCC Project - Gabriel Schwingel Conci',
         'Sage - Bot de Discord - Gabriel Schwingel Conci': 'Sage - Discord Bot - Gabriel Schwingel Conci',
         'Projeto Sustentabilidade Empresarial - Gabriel Schwingel Conci': 'Corporate Sustainability Project - Gabriel Schwingel Conci',
