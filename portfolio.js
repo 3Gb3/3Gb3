@@ -664,7 +664,7 @@ function setupProjectImages() {
 }
 
 function setupScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.reveal-on-scroll, .project-card, .skills-category, .resume-item, .highlight-item, .contact-item');
+    const animatedElements = document.querySelectorAll('.reveal-on-scroll, .project-card:not([data-project-card]), .skills-category, .resume-item, .highlight-item, .contact-item');
     if (!animatedElements.length) {
         return;
     }
