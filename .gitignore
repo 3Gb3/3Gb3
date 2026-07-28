@@ -1,0 +1,20 @@
+# Local tooling and temporary workspaces
+.agents/
+.codex/
+.playwright-cli/
+tmp/
+
+# Generated document artifacts
+output/
+
+# Python and test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Editor and operating-system metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

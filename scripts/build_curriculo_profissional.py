@@ -31,7 +31,6 @@ from reportlab.platypus import (
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_DOC = ROOT / "output" / "doc" / "Curriculo_Gabriel_Schwingel_Conci.docx"
 OUTPUT_PDF = ROOT / "files" / "Gabriel_Conci.pdf"
-OUTPUT_PDF_MIRROR = ROOT / "output" / "pdf" / "Gabriel_Conci.pdf"
 
 FONT = "Arial"
 INK = RGBColor(31, 42, 55)
@@ -790,14 +789,11 @@ def build_pdf() -> None:
 
 def main() -> None:
     OUTPUT_DOC.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT_PDF_MIRROR.parent.mkdir(parents=True, exist_ok=True)
     document = build_document()
     document.save(OUTPUT_DOC)
     build_pdf()
-    OUTPUT_PDF_MIRROR.write_bytes(OUTPUT_PDF.read_bytes())
     print(OUTPUT_DOC)
     print(OUTPUT_PDF)
-    print(OUTPUT_PDF_MIRROR)
 
 
 if __name__ == "__main__":
